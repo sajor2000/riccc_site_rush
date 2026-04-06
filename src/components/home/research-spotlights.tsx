@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import spotlightData from "../../../content/spotlights.json";
 import { isValidDoi, isValidPmid } from "@/lib/url";
+import { BLUR_PLACEHOLDER } from "@/lib/constants";
 
 interface Spotlight {
   title: string;
@@ -58,6 +59,8 @@ export function ResearchSpotlights() {
                         height={200}
                         sizes="(max-width: 768px) 100vw, 288px"
                         className="w-full h-48 md:h-full object-cover"
+                        placeholder="blur"
+                        blurDataURL={BLUR_PLACEHOLDER}
                       />
                     </div>
                   )}

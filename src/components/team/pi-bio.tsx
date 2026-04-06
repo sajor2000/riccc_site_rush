@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { type TeamMember } from "@/lib/team";
+import { BLUR_PLACEHOLDER } from "@/lib/constants";
 import {
   hasMemberSocialLinks,
   MemberSocialLinks,
@@ -112,6 +113,9 @@ export function PiBio({ member, index = 0 }: PiBioProps) {
               fill
               sizes="(max-width: 1024px) 100vw, 33vw"
               className="object-cover"
+              placeholder="blur"
+              blurDataURL={BLUR_PLACEHOLDER}
+              priority={index === 0}
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-rush-surface-container-high min-h-[280px]">

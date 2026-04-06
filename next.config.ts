@@ -19,6 +19,10 @@ const cspHeader = `
 
 const nextConfig: NextConfig = {
   serverExternalPackages: ["sharp"],
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 86400,
+  },
   async redirects() {
     return [{ source: "/software", destination: "/tools", permanent: true }];
   },

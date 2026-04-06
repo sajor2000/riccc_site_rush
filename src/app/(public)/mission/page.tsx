@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/config";
 import { RESEARCH_PILLARS } from "@/lib/research-pillars";
+import { BLUR_PLACEHOLDER } from "@/lib/constants";
 import { getAllTeamMembers, type TeamMember } from "@/lib/team";
 
 export const metadata: Metadata = {
@@ -128,6 +129,8 @@ export default function MissionPage() {
                       height={64}
                       sizes="64px"
                       className="w-full h-full object-cover"
+                      placeholder="blur"
+                      blurDataURL={BLUR_PLACEHOLDER}
                     />
                   )}
                 </div>

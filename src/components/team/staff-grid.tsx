@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { type TeamMember } from "@/lib/team";
+import { BLUR_PLACEHOLDER } from "@/lib/constants";
 import { MemberSocialLinks } from "@/components/team/member-social-links";
 import { Mail } from "lucide-react";
 
@@ -85,6 +86,8 @@ function MemberRow({
             height={96}
             sizes="96px"
             className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+            placeholder="blur"
+            blurDataURL={BLUR_PLACEHOLDER}
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
