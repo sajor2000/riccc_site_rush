@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 // Protected paths — all /staff/* except the login page itself, and all /api/staff/* routes
 const PUBLIC_STAFF_PATHS = ["/staff/login", "/api/staff/login"];
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Only run on /staff/* and /api/staff/*
