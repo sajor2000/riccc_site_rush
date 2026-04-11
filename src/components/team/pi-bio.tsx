@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { type TeamMember } from "@/lib/team";
+import { type TeamMember, getMemberInitials } from "@/lib/team";
 import { BLUR_PLACEHOLDER } from "@/lib/constants";
 import {
   hasMemberSocialLinks,
@@ -120,11 +120,7 @@ export function PiBio({ member, index = 0 }: PiBioProps) {
           ) : (
             <div className="w-full h-full flex items-center justify-center bg-rush-surface-container-high min-h-[280px]">
               <span className="font-mono text-6xl font-bold text-rush-on-surface-variant/20 select-none">
-                {member.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")
-                  .slice(0, 2)}
+                {getMemberInitials(member.name)}
               </span>
             </div>
           )}

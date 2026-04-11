@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { type TeamMember } from "@/lib/team";
+import { type TeamMember, getMemberInitials } from "@/lib/team";
 import { BLUR_PLACEHOLDER } from "@/lib/constants";
 import { MemberSocialLinks } from "@/components/team/member-social-links";
 import { Mail } from "lucide-react";
@@ -45,11 +45,7 @@ function MemberRow({
   member: TeamMember;
   variant: "light" | "dark";
 }) {
-  const initials = member.name
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .slice(0, 2);
+  const initials = getMemberInitials(member.name);
 
   const nameClass =
     variant === "dark"
@@ -81,10 +77,10 @@ function MemberRow({
         {member.photo ? (
           <Image
             src={member.photo}
-            alt={member.name}
-            width={96}
-            height={96}
-            sizes="96px"
+            alt={`Portrait of ${member.name}`}
+            width={1024}
+            height={1024}
+            sizes="(max-width: 640px) 80px, 96px"
             className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
             placeholder="blur"
             blurDataURL={BLUR_PLACEHOLDER}

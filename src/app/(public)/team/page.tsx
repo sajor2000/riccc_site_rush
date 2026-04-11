@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-
-export const revalidate = 3600; // ISR: revalidate at most every hour (on-demand via admin panel)
 import Link from "next/link";
 import { getTeamMembersByTier } from "@/lib/team";
 import { PiBio } from "@/components/team/pi-bio";
@@ -8,6 +6,8 @@ import { StaffGrid } from "@/components/team/staff-grid";
 import { CompactMemberGrid } from "@/components/team/compact-member-grid";
 import { JsonLd } from "@/components/seo/json-ld";
 import { siteConfig } from "@/lib/config";
+
+export const revalidate = 3600; // ISR: revalidate at most every hour (on-demand via admin panel)
 
 export const metadata: Metadata = {
   title: "Team | ICU Researchers & Data Scientists",

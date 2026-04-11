@@ -1,4 +1,4 @@
-import { type TeamMember } from "@/lib/team";
+import { type TeamMember, getMemberInitials } from "@/lib/team";
 import { MemberSocialLinks } from "@/components/team/member-social-links";
 
 // Compact roster for trainees / collaborators — Stitch-aligned: soft surfaces, no harsh grid lines.
@@ -17,11 +17,7 @@ export function CompactMemberGrid({
       className={`flex flex-col gap-3 ${className ?? ""}`}
     >
       {members.map((member, i) => {
-        const initials = member.name
-          .split(" ")
-          .map((n) => n[0])
-          .join("")
-          .slice(0, 2);
+        const initials = getMemberInitials(member.name);
 
         const surface =
           i % 2 === 0

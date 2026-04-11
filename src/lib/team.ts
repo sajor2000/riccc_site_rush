@@ -79,6 +79,16 @@ export function getAllTeamMembers(): TeamMember[] {
     });
 }
 
+/** Returns up to two uppercase initials from a member's name. */
+export function getMemberInitials(name: string): string {
+  return name
+    .split(" ")
+    .map((n) => n[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
+
 export function getTeamMembersByTier(): Record<TeamTier, TeamMember[]> {
   const members = getAllTeamMembers();
   const grouped: Record<TeamTier, TeamMember[]> = {

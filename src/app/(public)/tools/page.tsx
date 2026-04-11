@@ -78,13 +78,13 @@ const openStandardsFeatures = [
   },
 ];
 
-const FAIRCARE_GITHUB = "https://github.com/riccc-rush-lab/faircare";
+const FAIRCARE_GITHUB = "https://github.com/riccc-rush-lab/faircareai";
 
 const fairCareAiHighlights = [
-  "Two report personas: full technical validation for data scientists, and streamlined 3–5 page governance-ready summaries.",
-  "Implements the Van Calster et al. (2025) fairness visualization framework (e.g., AUROC, calibration, sensitivity/TPR, selection rate) with plain-language explanations.",
-  "Aligned with the Coalition for Health AI (CHAI) Responsible AI Checkpoint 1 and RAIC governance artifacts (model card, reproducibility bundle).",
-  "Runs locally with no cloud requirement for audit computation (HIPAA-friendly workflow). Accessibility-minded outputs (WCAG-oriented typography, colorblind-safe palettes).",
+  "Two output personas: full technical reports for data scientists, and streamlined 3–5 page governance-ready summaries for clinical leadership and committees.",
+  "Discrimination, calibration & clinical utility: AUROC, calibration curves, Brier score, DCA, and subgroup analysis by race, sex, insurance, and more — per Van Calster et al. (2025), with plain-language explanations for every visualization.",
+  "Multiple export formats: HTML, PDF, PowerPoint, PNG bundles, model cards, and reproducibility bundles. Streamlit dashboard for interactive, no-code use.",
+  "HIPAA-friendly: all computation runs locally, no data leaves your machine. Publication-ready figures — WCAG 2.1 AA compliant, colorblind-safe Okabe-Ito palette.",
 ];
 
 const clifJsonLd = {
@@ -323,14 +323,15 @@ export default function ToolsPage() {
               Open software
             </span>
             <h2 className="text-4xl font-bold text-rush-on-surface mb-4 leading-tight">
-              Healthcare AI fairness auditing for clinical decision support
+              Healthcare AI fairness auditing, from predictions to governance-ready reports
             </h2>
             <p className="text-lg text-rush-on-surface-variant leading-relaxed">
-              <strong className="font-semibold text-rush-on-surface">FairCareAI</strong> is a Python
-              package for auditing machine learning models for fairness in clinical settings. It is
-              built on the Van Calster et al. (2025) methodology and aligned with the CHAI RAIC
-              governance framework, so health system teams can bring evidence-based fairness analysis to
-              governance and clinical stakeholders.
+              Healthcare AI models can quietly harm patients when they perform differently across
+              demographic groups — and these disparities are invisible without deliberate measurement.{" "}
+              <strong className="font-semibold text-rush-on-surface">FairCareAI</strong> takes your
+              model&apos;s predictions and produces a complete fairness audit — discrimination,
+              calibration, clinical utility, and subgroup analysis — built on the Van Calster et al.
+              (2025) methodology and aligned with the CHAI RAIC governance framework.
             </p>
           </div>
 
@@ -374,7 +375,10 @@ export default function ToolsPage() {
               <p className="mt-2 text-xs text-rush-on-surface-variant">
                 Optional exports (PDF, PowerPoint, PNG bundles):{" "}
                 <code className="font-mono text-rush-on-surface">pip install &quot;faircareai[export]&quot;</code>
-                . See the repository for Playwright/Chromium setup for PDF generation.
+                , then{" "}
+                <code className="font-mono text-rush-on-surface">python -m playwright install chromium</code>
+                {" "}for PDF generation. See{" "}
+                <code className="font-mono text-rush-on-surface">docs/PDF_SETUP_GUIDE.md</code> in the repo.
               </p>
             </div>
 
