@@ -45,7 +45,7 @@ export default async function PublicationsPage() {
       <PageHeader
         label="The Living Archive"
         title="Publications"
-        description="Papers from the lab: critical care, machine learning, federated data, and healthcare equity. Automatically synced from PubMed, OpenAlex, and Semantic Scholar."
+        description="Papers from the lab: critical care, machine learning, federated data, and healthcare equity."
       />
 
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-8 py-24">
