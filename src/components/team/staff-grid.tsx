@@ -81,7 +81,7 @@ function MemberRow({
             width={1024}
             height={1024}
             sizes="(max-width: 640px) 80px, 96px"
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+            className="w-full h-full object-cover"
             placeholder="blur"
             blurDataURL={BLUR_PLACEHOLDER}
           />
