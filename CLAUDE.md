@@ -18,7 +18,8 @@
 - Team members: content/team/*.mdx
 - Research spotlights: content/spotlights.json (edit JSON directly or via code)
 - Site config: content/site-config.json (edit JSON directly or via code)
-- Photos: public/images/team/ (uploaded via staff panel, auto-resized to 400x400)
+- Photos: public/images/team/ as WebP (1024×1024; staff upload or `npm run optimize:team-photos`). Pipeline trims uniform borders (e.g. Teams/LinkedIn circle-on-gray) then attention-crops to square.
+- **Headshot sources:** Prefer rectangular originals or LinkedIn profile photo at full size—not circular Teams thumbnails. Aim for ~800px+ on the short side before upload; re-crop in a photo app if needed. Team page avatars are `rounded-sm` squares; mission PI chips use `rounded-full`.
 
 ## Rush Brand System (from Rush Digital Quick Guide)
 Official Rush colors with green as primary, defined in globals.css:

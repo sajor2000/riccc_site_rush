@@ -10,7 +10,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "audit:team-links": "node scripts/audit-team-links.mjs",
-    "audit:team-links:check": "node scripts/audit-team-links.mjs --check"
+    "audit:team-links:check": "node scripts/audit-team-links.mjs --check",
+    "optimize:team-photos": "tsx scripts/optimize-team-photos.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
@@ -42,6 +43,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.1",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5",
     "vitest": "^3.2.4"
   }

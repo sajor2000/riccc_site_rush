@@ -62,14 +62,14 @@ export async function POST(req: NextRequest) {
 
   try {
     const processed = await processPhoto(file);
-    const photoPath = `public/images/team/${slug}.jpg`;
+    const photoPath = `public/images/team/${slug}.webp`;
 
     // Check if file already exists (get SHA for update, undefined for create)
     const existingSha = await getFileSha(photoPath) ?? undefined;
 
     await upsertFile(photoPath, processed, `admin: upload photo for ${slug}`, existingSha);
 
-    const publicUrl = `/images/team/${slug}.jpg`;
+    const publicUrl = `/images/team/${slug}.webp`;
     auditLog("upload", ip, slug, { size: processed.length });
 
     return NextResponse.json({ data: { url: publicUrl } });

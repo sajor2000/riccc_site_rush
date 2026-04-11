@@ -125,8 +125,8 @@ export default function MissionPage() {
                     <Image
                       src={pi.photo}
                       alt={pi.name}
-                      width={64}
-                      height={64}
+                      width={1024}
+                      height={1024}
                       sizes="64px"
                       className="w-full h-full object-cover"
                       placeholder="blur"

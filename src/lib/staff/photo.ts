@@ -1,4 +1,4 @@
-import sharp from "sharp";
+import { pipelineTeamPhoto } from "./photo-pipeline";
 
 // Validate by magic bytes — never trust Content-Type header
 const MAGIC: Record<string, number[]> = {
@@ -21,8 +21,5 @@ export async function processPhoto(file: File): Promise<Buffer> {
   const mime = sniffMimeType(buf);
   if (!mime) throw new Error("Unsupported image type");
 
-  return sharp(buf)
-    .resize(400, 400, { fit: "cover", position: "attention" })
-    .jpeg({ quality: 80 })
-    .toBuffer();
+  return pipelineTeamPhoto(buf);
 }
