@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 export const metadata: Metadata = {
   title: "Tools | CLIF Consortium & Open ICU Data Standards",
   description:
-    "Open-source ICU data infrastructure — CLIF federated data standard, reproducible pipelines, and FairCareAI for healthcare AI auditing at Rush University.",
+    "Open-source ICU data infrastructure — CLIF federated data standard, reproducible pipelines, and faircare for healthcare AI auditing at Rush University.",
   openGraph: { url: "/tools" },
 };
 
@@ -80,7 +80,7 @@ const openStandardsFeatures = [
 
 const FAIRCARE_GITHUB = "https://github.com/riccc-rush-lab/faircareai";
 
-const fairCareAiHighlights = [
+const faircareHighlights = [
   "Two output personas: full technical reports for data scientists, and streamlined 3–5 page governance-ready summaries for clinical leadership and committees.",
   "Discrimination, calibration & clinical utility: AUROC, calibration curves, Brier score, DCA, and subgroup analysis by race, sex, insurance, and more — per Van Calster et al. (2025), with plain-language explanations for every visualization.",
   "Multiple export formats: HTML, PDF, PowerPoint, PNG bundles, model cards, and reproducibility bundles. Streamlit dashboard for interactive, no-code use.",
@@ -315,7 +315,7 @@ export default function ToolsPage() {
         </div>
       </section>
 
-      {/* Open software: FairCareAI */}
+      {/* Open software: faircare */}
       <section className="bg-rush-surface-container-low py-24 border-t border-rush-outline-variant/10">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
@@ -328,8 +328,10 @@ export default function ToolsPage() {
             <p className="text-lg text-rush-on-surface-variant leading-relaxed">
               Healthcare AI models can quietly harm patients when they perform differently across
               demographic groups — and these disparities are invisible without deliberate measurement.{" "}
-              <strong className="font-semibold text-rush-on-surface">FairCareAI</strong> takes your
-              model&apos;s predictions and produces a complete fairness audit — discrimination,
+              <strong className="font-semibold text-rush-on-surface font-mono tracking-tight">
+                faircare
+              </strong>{" "}
+              takes your model&apos;s predictions and produces a complete fairness audit — discrimination,
               calibration, clinical utility, and subgroup analysis — built on the Van Calster et al.
               (2025) methodology and aligned with the CHAI RAIC governance framework.
             </p>
@@ -338,9 +340,11 @@ export default function ToolsPage() {
           <div className="rounded-sm border border-rush-outline-variant/25 bg-rush-surface p-8 md:p-10 shadow-sm">
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8">
               <div>
-                <h3 className="text-2xl font-bold text-rush-dark-green mb-2">FairCareAI</h3>
+                <h3 className="text-2xl font-bold text-rush-dark-green mb-2 font-mono tracking-tight">
+                  faircare
+                </h3>
                 <p className="text-sm text-rush-on-surface-variant max-w-xl leading-relaxed">
-                  Package suggests, humans decide. FairCareAI produces metrics and visualizations for
+                  Package suggests, humans decide. <span className="font-mono">faircare</span> produces metrics and visualizations for
                   review; deployment and policy choices remain with your institution and committees.
                 </p>
               </div>
@@ -355,7 +359,7 @@ export default function ToolsPage() {
             </div>
 
             <ul className="space-y-3 mb-8 text-sm text-rush-on-surface-variant leading-relaxed">
-              {fairCareAiHighlights.map((line) => (
+              {faircareHighlights.map((line) => (
                 <li key={line} className="flex gap-3">
                   <span className="text-rush-teal font-bold shrink-0" aria-hidden>
                     ·
@@ -370,11 +374,11 @@ export default function ToolsPage() {
                 Install
               </p>
               <pre className="bg-rush-surface-container-high rounded-sm p-4 font-mono text-sm text-rush-on-surface overflow-x-auto border border-rush-outline-variant/20">
-                <code>pip install faircareai</code>
+                <code>pip install faircare</code>
               </pre>
               <p className="mt-2 text-xs text-rush-on-surface-variant">
                 Optional exports (PDF, PowerPoint, PNG bundles):{" "}
-                <code className="font-mono text-rush-on-surface">pip install &quot;faircareai[export]&quot;</code>
+                <code className="font-mono text-rush-on-surface">pip install &quot;faircare[export]&quot;</code>
                 , then{" "}
                 <code className="font-mono text-rush-on-surface">python -m playwright install chromium</code>
                 {" "}for PDF generation. See{" "}
@@ -383,7 +387,7 @@ export default function ToolsPage() {
             </div>
 
             <p className="text-xs text-rush-on-surface-variant leading-relaxed border-t border-rush-outline-variant/20 pt-6">
-              FairCareAI supports CHAI-grounded fairness review; all outputs are advisory. Validate
+              <span className="font-mono">faircare</span> supports CHAI-grounded fairness review; all outputs are advisory. Validate
               results in your local context before any clinical or operational use. Software is
               provided as-is; see the project license and documentation on GitHub.
             </p>
