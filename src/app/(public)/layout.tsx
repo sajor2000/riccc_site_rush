@@ -29,12 +29,19 @@ const organizationJsonLd = {
     {
       "@type": "Person",
       name: "Juan C. Rojas",
-      jobTitle: "Assistant Professor",
+      alternateName: ["J.C. Rojas", "JC Rojas", "Juan Carlos Rojas"],
+      jobTitle: "Assistant Professor of Medicine",
+      url: `${siteConfig.url}/team#juan-rojas`,
+      sameAs: [
+        "https://scholar.google.com/citations?user=XXHTvWEAAAAJ&hl=en",
+        "https://orcid.org/0000-0002-8561-4575",
+      ],
     },
     {
       "@type": "Person",
       name: "Kevin Buell",
       jobTitle: "Assistant Professor",
+      url: `${siteConfig.url}/team#kevin-buell`,
     },
   ],
   sameAs: [
