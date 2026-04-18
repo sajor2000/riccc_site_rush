@@ -348,14 +348,24 @@ export default function ToolsPage() {
                   review; deployment and policy choices remain with your institution and committees.
                 </p>
               </div>
-              <a
-                href={FAIRCARE_GITHUB}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center justify-center bg-rush-dark-green text-white px-6 py-3 rounded-sm font-semibold text-sm hover:opacity-90 transition-opacity"
-              >
-                View on GitHub
-              </a>
+              <div className="shrink-0 flex gap-3">
+                <a
+                  href="https://www.faircare.space/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center bg-rush-dark-green text-white px-6 py-3 rounded-sm font-semibold text-sm hover:opacity-90 transition-opacity"
+                >
+                  Visit faircare.space
+                </a>
+                <a
+                  href={FAIRCARE_GITHUB}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center border border-rush-outline-variant text-rush-dark-green px-6 py-3 rounded-sm font-semibold text-sm hover:bg-rush-surface-container transition-colors"
+                >
+                  View on GitHub
+                </a>
+              </div>
             </div>
 
             <ul className="space-y-3 mb-8 text-sm text-rush-on-surface-variant leading-relaxed">
