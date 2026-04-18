@@ -10,7 +10,8 @@ import { pipelineTeamPhoto } from "../src/lib/staff/photo-pipeline";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const TEAM_DIR = path.join(__dirname, "..", "public", "images", "team");
 
-const INPUT_RE = /\.(png|jpe?g|webp)$/i;
+/** Only raster sources — do not treat `.webp` outputs as inputs (would re-encode every headshot). */
+const INPUT_RE = /\.(png|jpe?g)$/i;
 
 async function main() {
   const files = fs.readdirSync(TEAM_DIR).filter((f) => INPUT_RE.test(f));
