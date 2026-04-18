@@ -19,8 +19,7 @@ export async function pipelineTeamPhoto(input: Buffer): Promise<Buffer> {
       .rotate()
       .trim({ threshold: TEAM_PHOTO_TRIM_THRESHOLD })
       .resize(TEAM_PHOTO_SIZE, TEAM_PHOTO_SIZE, { fit: "cover", position: "attention" })
-      .sharpen({ sigma: 0.65, m1: 0.35, m2: 0.35 })
-      .webp({ quality: 91, effort: 4 });
+      .webp({ quality: 92, effort: 4 });
 
   try {
     return await chain().toBuffer();
@@ -28,8 +27,7 @@ export async function pipelineTeamPhoto(input: Buffer): Promise<Buffer> {
     return sharp(input)
       .rotate()
       .resize(TEAM_PHOTO_SIZE, TEAM_PHOTO_SIZE, { fit: "cover", position: "attention" })
-      .sharpen({ sigma: 0.65, m1: 0.35, m2: 0.35 })
-      .webp({ quality: 91, effort: 4 })
+      .webp({ quality: 92, effort: 4 })
       .toBuffer();
   }
 }
