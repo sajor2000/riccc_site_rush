@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { PageHeader } from "@/components/layout/page-header";
+import { getAllNews, formatNewsDate } from "@/lib/news";
+import { getAllTeamMembers } from "@/lib/team";
+
+export const revalidate = 3600; // ISR: revalidate at most every hour
 
 export const metadata: Metadata = {
   title: "News & Updates",
@@ -10,6 +15,11 @@ export const metadata: Metadata = {
 };
 
 export default function NewsPage() {
+  const items = getAllNews();
+
+  // Map team slug -> display name for author links.
+  const nameBySlug = new Map(getAllTeamMembers().map((m) => [m.slug, m.name]));
+
   return (
     <main className="bg-rush-surface text-rush-on-surface">
       <PageHeader
@@ -19,35 +29,121 @@ export default function NewsPage() {
       />
 
       <div className="max-w-screen-2xl mx-auto px-6 lg:px-8 py-24">
-        <div className="max-w-2xl">
-          <div className="pl-8">
-            <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-4 block">
-              Coming Soon
-            </span>
-            <h2 className="text-2xl font-bold text-rush-on-surface mb-4">
-              Newsfeed in Progress
-            </h2>
-            <p className="text-rush-on-surface-variant leading-relaxed">
-              We are putting together a feed of lab news, grant awards, and milestones.
-              It is not ready yet. In the meantime, you can follow our work through
-              the{" "}
-              <Link
-                href="/publications"
-                className="text-rush-dark-green font-semibold underline underline-offset-4 hover:text-rush-teal transition-colors"
-              >
-                publications page
-              </Link>{" "}
-              or reach out via the{" "}
-              <Link
-                href="/contact"
-                className="text-rush-dark-green font-semibold underline underline-offset-4 hover:text-rush-teal transition-colors"
-              >
-                contact page
-              </Link>
-              .
-            </p>
+        {items.length === 0 ? (
+          <div className="max-w-2xl">
+            <div className="pl-8">
+              <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-4 block">
+                Coming Soon
+              </span>
+              <h2 className="text-2xl font-bold text-rush-on-surface mb-4">
+                Newsfeed in Progress
+              </h2>
+              <p className="text-rush-on-surface-variant leading-relaxed">
+                We are putting together a feed of lab news, grant awards, and milestones.
+                It is not ready yet. In the meantime, you can follow our work through
+                the{" "}
+                <Link
+                  href="/publications"
+                  className="text-rush-dark-green font-semibold underline underline-offset-4 hover:text-rush-teal transition-colors"
+                >
+                  publications page
+                </Link>{" "}
+                or reach out via the{" "}
+                <Link
+                  href="/contact"
+                  className="text-rush-dark-green font-semibold underline underline-offset-4 hover:text-rush-teal transition-colors"
+                >
+                  contact page
+                </Link>
+                .
+              </p>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="space-y-20">
+            {items.map((item) => {
+              const dateLabel = formatNewsDate(item.date);
+              const paragraphs = item.body
+                .split("\n\n")
+                .map((p) => p.trim())
+                .filter(Boolean);
+
+              return (
+                <article
+                  key={item.slug}
+                  id={item.slug}
+                  className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 scroll-mt-28"
+                >
+                  {item.image && (
+                    <div className="lg:col-span-5">
+                      <div className="overflow-hidden border border-rush-outline-variant/30 bg-rush-surface-container-low">
+                        <Image
+                          src={item.image}
+                          alt={item.imageAlt ?? item.title}
+                          width={1400}
+                          height={1867}
+                          className="w-full h-auto"
+                          sizes="(max-width: 1024px) 100vw, 40vw"
+                        />
+                      </div>
+                    </div>
+                  )}
+
+                  <div className={item.image ? "lg:col-span-7" : "lg:col-span-12 max-w-3xl"}>
+                    {(dateLabel || item.location) && (
+                      <p className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-4">
+                        {dateLabel}
+                        {dateLabel && item.location ? " · " : ""}
+                        {item.location}
+                      </p>
+                    )}
+
+                    <h2 className="text-3xl md:text-4xl font-bold text-rush-dark-green leading-tight mb-6">
+                      {item.title}
+                    </h2>
+
+                    <div className="space-y-4">
+                      {paragraphs.map((p, i) => (
+                        <p
+                          key={i}
+                          className="text-base md:text-lg text-rush-on-surface-variant leading-relaxed"
+                        >
+                          {p}
+                        </p>
+                      ))}
+                    </div>
+
+                    {item.authors.length > 0 && (
+                      <p className="mt-8 text-sm text-rush-on-surface-variant">
+                        <span className="font-mono text-xs uppercase tracking-widest text-rush-on-surface-variant/60 mr-2">
+                          Featuring
+                        </span>
+                        {item.authors.map((slug, i) => {
+                          const name = nameBySlug.get(slug);
+                          return (
+                            <span key={slug}>
+                              {i > 0 && ", "}
+                              {name ? (
+                                <Link
+                                  href={`/team#${slug}`}
+                                  className="text-rush-dark-green font-semibold underline underline-offset-4 hover:text-rush-teal transition-colors"
+                                >
+                                  {name}
+                                </Link>
+                              ) : (
+                                slug
+                              )}
+                            </span>
+                          );
+                        })}
+                      </p>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        )}
       </div>
     </main>
   );
