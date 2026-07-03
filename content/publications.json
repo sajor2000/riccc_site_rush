@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-03T12:57:12.708Z",
-  "count": 212,
+  "generatedAt": "2026-07-03T13:14:13.192Z",
+  "count": 152,
   "sources": {
     "pubmed": 71,
-    "semanticScholar": 24,
+    "semanticScholar": 12,
     "openalex": 160
   },
   "authors": [
@@ -13,61 +13,133 @@
   "publications": [
     {
       "pmid": "41951238",
-      "title": "Airway management of adults in the acute care setting",
-      "authors": "Michael Gottlieb, S. Demasi, J. Casey, et al.",
-      "journal": "British medical journal",
+      "title": "Airway management of adults in the acute care setting.",
+      "authors": "Gottlieb M, DeMasi SC, Casey JD, et al.",
+      "journal": "BMJ",
       "year": "2026",
       "doi": "10.1136/bmj-2025-086612",
-      "citationCount": 2,
-      "source": "semantic-scholar",
       "volume": "393",
-      "pages": "e086612"
+      "pages": "e086612",
+      "source": "pubmed",
+      "citationCount": 2
     },
     {
-      "pmid": "",
-      "title": "Defining Who Counts: Spontaneous Awakening Trial and Spontaneous Breathing Trial Eligibility in the Era of Electronic Quality Metrics",
-      "authors": "Sachin Jain, J.C. Rojas, Harlan M. Krumholz",
-      "journal": "Critical Care Medicine",
+      "pmid": "41631945",
+      "title": "Defining Who Counts: Spontaneous Awakening Trial and Spontaneous Breathing Trial Eligibility in the Era of Electronic Quality Metrics.",
+      "authors": "Jain S, Rojas JC, Krumholz HM",
+      "journal": "Crit Care Med",
       "year": "2026",
-      "doi": "10.1097/ccm.0000000000006915",
+      "doi": "10.1097/CCM.0000000000006915",
       "volume": "54",
       "issue": "2",
       "pages": "380-381",
-      "citationCount": 0,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 0
     },
     {
       "pmid": "41505930",
       "title": "Diagnosis and treatment of sexually transmitted infections among emergency department patients.",
-      "authors": "Michael Gottlieb, Eric Moyer, Kevin G. Buell, et al.",
-      "journal": "American Journal of Emergency Medicine",
+      "authors": "Gottlieb M, Moyer E, Buell KG, et al.",
+      "journal": "Am J Emerg Med",
       "year": "2026",
       "doi": "10.1016/j.ajem.2025.12.037",
-      "citationCount": 0,
-      "source": "semantic-scholar"
+      "volume": "101",
+      "pages": "124-128",
+      "source": "pubmed"
+    },
+    {
+      "pmid": "40235163",
+      "title": "Discussing End-of-Life in the Intensive Care Unit: Education Practices in Pulmonary and Critical Care Medicine Fellowship Programs.",
+      "authors": "Yuan L, Chaudhari V, Rabin S, et al.",
+      "journal": "Am J Hosp Palliat Care",
+      "year": "2026",
+      "doi": "10.1177/10499091251333401",
+      "volume": "43",
+      "issue": "5",
+      "pages": "512-519",
+      "source": "pubmed",
+      "citationCount": 1
+    },
+    {
+      "pmid": "40992286",
+      "title": "Epidemiology of alcohol intoxication among United States emergency department patients from 2016 to 2024.",
+      "authors": "Landry A, Buell KG, Moyer E, et al.",
+      "journal": "Am J Emerg Med",
+      "year": "2026",
+      "doi": "10.1016/j.ajem.2025.09.016",
+      "volume": "99",
+      "pages": "76-82",
+      "source": "pubmed",
+      "citationCount": 1
     },
     {
       "pmid": "41606795",
       "title": "Epidemiology of Hyperkalemia Among United States Emergency Departments Patients without End-Stage Renal Disease from 2016-2023.",
-      "authors": "Michael Gottlieb, Robert Hlavin, S. Rabin, et al.",
-      "journal": "Clinical and Experimental Emergency Medicine",
+      "authors": "Gottlieb M, Hlavin R, Rabin S, et al.",
+      "journal": "Clin Exp Emerg Med",
       "year": "2026",
       "doi": "10.15441/ceem.25.149",
-      "citationCount": 1,
-      "source": "semantic-scholar"
+      "source": "pubmed"
     },
     {
-      "pmid": "",
-      "title": "Federation, not centralization: a new paradigm for electronic health record–based critical care research",
-      "authors": "Patrick G. Lyons, Kevin G. Buell, Kathryn A. Riman, et al.",
-      "journal": "Annals of the American Thoracic Society",
+      "pmid": "41915560",
+      "title": "Federation, not centralization: a new paradigm for electronic health record-based critical care research.",
+      "authors": "Lyons PG, Buell KG, Connell KA, et al.",
+      "journal": "Ann Am Thorac Soc",
       "year": "2026",
       "doi": "10.1093/annalsats/aaoaf067",
       "volume": "23",
       "issue": "4",
       "pages": "475-482",
-      "citationCount": 0,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 0
+    },
+    {
+      "pmid": "41460637",
+      "title": "Flexible Fidelity: Adaptation of the ICU-PAUSE Handoff Tool During Implementation Across 11 ICUs.",
+      "authors": "Arnold E, Wile R, Cornell E, et al.",
+      "journal": "Crit Care Explor",
+      "year": "2026",
+      "doi": "10.1097/CCE.0000000000001362",
+      "volume": "8",
+      "issue": "1",
+      "pages": "e1362",
+      "source": "pubmed"
+    },
+    {
+      "pmid": "42307255",
+      "title": "Large Language Models Provide Accurate but Potentially Unsafe Answers to Multimodal Critical Care Medicine Board Review Questions.",
+      "authors": "Sethi I, Khan S, Lyons PG, et al.",
+      "journal": "Crit Care Med",
+      "year": "2026",
+      "doi": "10.1097/CCM.0000000000007228",
+      "source": "pubmed"
+    },
+    {
+      "pmid": "42171428",
+      "title": "Prone Positioning in a North American Cohort of Hypoxemic Patients on Mechanical Ventilation.",
+      "authors": "Barker AK, Nishimura A, Nuppnau M, et al.",
+      "journal": "Crit Care Med",
+      "year": "2026",
+      "doi": "10.1097/CCM.0000000000007148",
+      "volume": "54",
+      "issue": "7",
+      "pages": "1597-1609",
+      "source": "pubmed",
+      "citationCount": 0
+    },
+    {
+      "pmid": "41707676",
+      "title": "Unlocking Practice Patterns at Scale: A Framework for Developing Clinical Insights Using Epic's Cosmos.",
+      "authors": "Bernard K, Declan ABL, Buell K, et al.",
+      "journal": "Appl Clin Inform",
+      "year": "2026",
+      "doi": "10.1055/a-2815-2064",
+      "volume": "17",
+      "issue": "1",
+      "pages": "99-106",
+      "source": "pubmed",
+      "citationCount": 0
     },
     {
       "pmid": "",
@@ -82,30 +154,30 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "A common longitudinal intensive care unit data format (CLIF) for critical illness research",
-      "authors": "J.C. Rojas, Patrick G. Lyons, K. Chhikara, et al.",
-      "journal": "Intensive Care Medicine",
+      "pmid": "40080116",
+      "title": "A common longitudinal intensive care unit data format (CLIF) for critical illness research.",
+      "authors": "Rojas JC, Lyons PG, Chhikara K, et al.",
+      "journal": "Intensive Care Med",
       "year": "2025",
       "doi": "10.1007/s00134-025-07848-7",
       "volume": "51",
       "issue": "3",
       "pages": "556-569",
-      "citationCount": 20,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 20
     },
     {
-      "pmid": "",
-      "title": "Adoption of artificial intelligence in healthcare: survey of health system priorities, successes, and challenges",
-      "authors": "Eric G. Poon, Christy Harris Lemak, J.C. Rojas, et al.",
-      "journal": "Journal of the American Medical Informatics Association",
+      "pmid": "40323320",
+      "title": "Adoption of artificial intelligence in healthcare: survey of health system priorities, successes, and challenges.",
+      "authors": "Poon EG, Lemak CH, Rojas JC, et al.",
+      "journal": "J Am Med Inform Assoc",
       "year": "2025",
       "doi": "10.1093/jamia/ocaf065",
       "volume": "32",
       "issue": "7",
       "pages": "1093-1100",
-      "citationCount": 96,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 96
     },
     {
       "pmid": "",
@@ -121,17 +193,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
+      "pmid": "40928319",
       "title": "Can a Machine Learning Model Personalize the Use of Sodium Bicarbonate and Neutralize Out-of-Hospital Cardiac Arrest?",
-      "authors": "Kevin G. Buell, Emma J. Graham Linck, Kevin P. Seitz",
-      "journal": "Critical Care Medicine",
+      "authors": "Buell KG, Graham Linck EJ, Seitz KP",
+      "journal": "Crit Care Med",
       "year": "2025",
-      "doi": "10.1097/ccm.0000000000006846",
+      "doi": "10.1097/CCM.0000000000006846",
       "volume": "53",
       "issue": "10",
       "pages": "e2082-e2085",
-      "citationCount": 0,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 0
     },
     {
       "pmid": "",
@@ -147,62 +219,63 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Clinical Implementation of an AI Algorithm for Substance Misuse Screening in Hospitalized Adults",
-      "authors": "J.C. Rojas, Cara Joyce, Talar Markossian, et al.",
+      "pmid": "41332823",
+      "title": "Clinical Implementation of an AI Algorithm for Substance Misuse Screening in Hospitalized Adults.",
+      "authors": "Rojas JC, Joyce C, Markossian TW, et al.",
       "journal": "medRxiv",
       "year": "2025",
       "doi": "10.1101/2025.11.17.25340323",
-      "citationCount": 0,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 0
     },
     {
-      "pmid": "",
-      "title": "Comparison of Chart Review and Administrative Data in Developing Predictive Models for Readmissions in Chronic Obstructive Pulmonary Disease",
-      "authors": "Sukarn Chokkara, M. Hermsen, Matthew Bonomo, et al.",
-      "journal": "Chronic Obstructive Pulmonary Diseases Journal of the COPD Foundation",
+      "pmid": "39874959",
+      "title": "Comparison of Chart Review and Administrative Data in Developing Predictive Models for Readmissions in Chronic Obstructive Pulmonary Disease.",
+      "authors": "Chokkara S, Hermsen MG, Bonomo M, et al.",
+      "journal": "Chronic Obstr Pulm Dis",
       "year": "2025",
       "doi": "10.15326/jcopdf.2024.0542",
       "volume": "12",
       "issue": "2",
       "pages": "175-183",
-      "citationCount": 2,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 2
+    },
+    {
+      "pmid": "40163136",
+      "title": "Correction: A common longitudinal intensive care unit data format (CLIF) for critical illness research.",
+      "authors": "Rojas JC, Lyons PG, Chhikara K, et al.",
+      "journal": "Intensive Care Med",
+      "year": "2025",
+      "doi": "10.1007/s00134-025-07869-2",
+      "volume": "51",
+      "issue": "4",
+      "pages": "836-839",
+      "source": "pubmed"
     },
     {
       "pmid": "40588709",
-      "title": "Delays in Diagnosis of Diabetes Mellitus Among Emergency Department Patients with Hyperglycemia Using the Epic Cosmos Database",
-      "authors": "M. Gottlieb, Eric Moyer, K. Bernard, et al.",
-      "journal": "Journal of general internal medicine",
+      "title": "Delays in Diagnosis of Diabetes Mellitus Among Emergency Department Patients with Hyperglycemia Using the Epic Cosmos Database.",
+      "authors": "Gottlieb M, Moyer E, Bernard K, et al.",
+      "journal": "J Gen Intern Med",
       "year": "2025",
       "doi": "10.1007/s11606-025-09679-0",
-      "citationCount": 0,
-      "source": "semantic-scholar"
-    },
-    {
-      "pmid": "",
-      "title": "Discussing End-of-Life in the Intensive Care Unit: Education Practices in Pulmonary and Critical Care Medicine Fellowship Programs",
-      "authors": "LEAH YUAN, Vaishvik Chaudhari, Sydney Rabin, et al.",
-      "journal": "American Journal of Hospice and Palliative Medicine®",
-      "year": "2025",
-      "doi": "10.1177/10499091251333401",
-      "volume": "43",
-      "issue": "5",
-      "pages": "512-519",
-      "citationCount": 1,
-      "source": "openalex"
+      "volume": "40",
+      "issue": "16",
+      "pages": "4098-4101",
+      "source": "pubmed"
     },
     {
       "pmid": "40184660",
       "title": "Disparities in troponin and ECG testing among emergency department patients with chest pain.",
-      "authors": "Michael Gottlieb, Eric Moyer, Vinodinee Dissanayake, et al.",
-      "journal": "American Journal of Emergency Medicine",
+      "authors": "Gottlieb M, Moyer E, Dissanayake V, et al.",
+      "journal": "Am J Emerg Med",
       "year": "2025",
       "doi": "10.1016/j.ajem.2025.03.064",
-      "citationCount": 6,
-      "source": "semantic-scholar",
       "volume": "93",
-      "pages": "109-114"
+      "pages": "109-114",
+      "source": "pubmed",
+      "citationCount": 6
     },
     {
       "pmid": "",
@@ -218,18 +291,6 @@
       "source": "openalex"
     },
     {
-      "pmid": "40992286",
-      "title": "Epidemiology of alcohol intoxication among United States emergency department patients from 2016 to 2024.",
-      "authors": "A. Landry, Kevin G. Buell, Eric Moyer, et al.",
-      "journal": "American Journal of Emergency Medicine",
-      "year": "2025",
-      "doi": "10.1016/j.ajem.2025.09.016",
-      "citationCount": 1,
-      "source": "semantic-scholar",
-      "volume": "99",
-      "pages": "76-82"
-    },
-    {
       "pmid": "",
       "title": "EVALUATING INTERVENTION ADHERENCE AND POSTIMPLEMENTATION ADAPTATIONS OF THE ICU-PAUSE HANDOFF TOOL FOR ICU WARD TRANSITIONS AFTER NATIONAL MULTICENTER SCALE-UP",
       "authors": "Rachel K. Wile, Paul Tominez, PATRICK G LYONS, et al.",
@@ -243,17 +304,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Evidence-based personalised medicine in critical care: a framework for quantifying and applying individualised treatment effects in patients who are critically ill",
-      "authors": "Elizabeth Munroe, Alexandra B. Spicer, Andrea Castellví-Font, et al.",
-      "journal": "The Lancet Respiratory Medicine",
+      "pmid": "40250459",
+      "title": "Evidence-based personalised medicine in critical care: a framework for quantifying and applying individualised treatment effects in patients who are critically ill.",
+      "authors": "Munroe ES, Spicer A, Castellvi-Font A, et al.",
+      "journal": "Lancet Respir Med",
       "year": "2025",
-      "doi": "10.1016/s2213-2600(25)00054-2",
+      "doi": "10.1016/S2213-2600(25)00054-2",
       "volume": "13",
       "issue": "6",
       "pages": "556-568",
-      "citationCount": 33,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 33
     },
     {
       "pmid": "",
@@ -318,17 +379,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Innovating the Procedure of Evidence-Based Extubation Through Alternating Cluster-Controlled Trial Design",
-      "authors": "Kevin G. Buell, K.S. Wolfe",
-      "journal": "Critical Care Medicine",
+      "pmid": "40928315",
+      "title": "Innovating the Procedure of Evidence-Based Extubation Through Alternating Cluster-Controlled Trial Design.",
+      "authors": "Buell KG, Wolfe KS",
+      "journal": "Crit Care Med",
       "year": "2025",
-      "doi": "10.1097/ccm.0000000000006854",
+      "doi": "10.1097/CCM.0000000000006854",
       "volume": "53",
       "issue": "11",
       "pages": "e2353-e2355",
-      "citationCount": 0,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 0
     },
     {
       "pmid": "",
@@ -385,14 +446,14 @@
     {
       "pmid": "40602005",
       "title": "Presentations to United States emergency departments for gastroparesis, cyclic vomiting, and cannabinoid hyperemesis syndrome from 2016 to 2024.",
-      "authors": "Michael Shalaby, Eric Moyer, Kevin G. Buell, et al.",
-      "journal": "American Journal of Emergency Medicine",
+      "authors": "Shalaby M, Moyer E, Buell KG, et al.",
+      "journal": "Am J Emerg Med",
       "year": "2025",
       "doi": "10.1016/j.ajem.2025.06.067",
-      "citationCount": 6,
-      "source": "semantic-scholar",
       "volume": "96",
-      "pages": "201-207"
+      "pages": "201-207",
+      "source": "pubmed",
+      "citationCount": 6
     },
     {
       "pmid": "",
@@ -408,30 +469,26 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Prone Positioning in a North American Cohort of Hypoxemic Patients on Mechanical Ventilation",
-      "authors": "Anna Barker, Akihiko Nishimura, Mark Nuppnau, et al.",
-      "journal": "Critical Care Medicine",
+      "pmid": "40950483",
+      "title": "Prone Positioning in a North American Cohort of Hypoxemic Patients on Mechanical Ventilation.",
+      "authors": "Barker AK, Nishimura A, Nuppnau M, et al.",
+      "journal": "medRxiv",
       "year": "2025",
-      "doi": "10.1097/ccm.0000000000007148",
-      "volume": "54",
-      "issue": "7",
-      "pages": "1597-1609",
-      "citationCount": 0,
-      "source": "openalex"
+      "doi": "10.1101/2025.09.03.25334942",
+      "source": "pubmed"
     },
     {
       "pmid": "40558021",
-      "title": "Return Visits Among Emergency Department Patients Leaving Against Medical Advice",
-      "authors": "M. Gottlieb, Eric Moyer, K. Bernard, et al.",
-      "journal": "Academic Emergency Medicine",
+      "title": "Return Visits Among Emergency Department Patients Leaving Against Medical Advice.",
+      "authors": "Gottlieb M, Moyer E, Bernard K, et al.",
+      "journal": "Acad Emerg Med",
       "year": "2025",
       "doi": "10.1111/acem.70091",
-      "citationCount": 0,
-      "source": "semantic-scholar",
       "volume": "32",
       "issue": "11",
-      "pages": "1246-1247"
+      "pages": "1246-1247",
+      "source": "pubmed",
+      "citationCount": 0
     },
     {
       "pmid": "",
@@ -499,17 +556,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "The Epidemiology of ICU Readmissions Across Ten Health Systems",
-      "authors": "Saki Amagai, Vaishvik Chaudhari, K. Chhikara, et al.",
-      "journal": "Critical Care Explorations",
+      "pmid": "41165278",
+      "title": "The Epidemiology of ICU Readmissions Across Ten Health Systems.",
+      "authors": "Amagai S, Chaudhari V, Chhikara K, et al.",
+      "journal": "Crit Care Explor",
       "year": "2025",
-      "doi": "10.1097/cce.0000000000001341",
+      "doi": "10.1097/CCE.0000000000001341",
       "volume": "7",
       "issue": "11",
       "pages": "e1341",
-      "citationCount": 0,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 0
     },
     {
       "pmid": "",
@@ -525,49 +582,36 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "The Epidemiology of Intensive Care Unit Readmissions Across Ten Health Systems",
-      "authors": "Saki Amagai, Vaishvik Chaudhari, K. Chhikara, et al.",
+      "pmid": "40162266",
+      "title": "The Epidemiology of Intensive Care Unit Readmissions Across Ten Health Systems.",
+      "authors": "Amagai S, Chaudhari V, Chhikara K, et al.",
       "journal": "medRxiv",
       "year": "2025",
       "doi": "10.1101/2025.03.10.25323672",
-      "citationCount": 1,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 1
     },
     {
       "pmid": "40112681",
       "title": "Trends in cardiac arrest care and mortality in United States emergency departments over eight years.",
-      "authors": "Kevin G. Buell, Robert Hlavin, Emily Wusterbarth, et al.",
-      "journal": "American Journal of Emergency Medicine",
+      "authors": "Buell KG, Hlavin R, Wusterbarth E, et al.",
+      "journal": "Am J Emerg Med",
       "year": "2025",
       "doi": "10.1016/j.ajem.2025.03.012",
-      "citationCount": 2,
-      "source": "semantic-scholar",
       "volume": "92",
-      "pages": "126-134"
+      "pages": "126-134",
+      "source": "pubmed",
+      "citationCount": 2
     },
     {
-      "pmid": "41707676",
-      "title": "Unlocking Practice Patterns at Scale: A Framework for Developing Clinical Insights Using Epic's Cosmos",
-      "authors": "K. Bernard, Arwen B L Declan, Kevin G. Buell, et al.",
-      "journal": "Applied Clinical Informatics",
-      "year": "2025",
-      "doi": "10.1055/a-2815-2064",
-      "citationCount": 0,
-      "source": "semantic-scholar",
-      "volume": "17",
-      "issue": "01",
-      "pages": "099-106"
-    },
-    {
-      "pmid": "",
-      "title": "A Common Longitudinal Intensive Care Unit data Format (CLIF) to enable multi-institutional federated critical illness research",
-      "authors": "J.C. Rojas, Patrick G. Lyons, K. Chhikara, et al.",
+      "pmid": "39281737",
+      "title": "A Common Longitudinal Intensive Care Unit data Format (CLIF) to enable multi-institutional federated critical illness research.",
+      "authors": "Rojas JC, Lyons PG, Chhikara K, et al.",
       "journal": "medRxiv",
       "year": "2024",
       "doi": "10.1101/2024.09.04.24313058",
-      "citationCount": 4,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 4
     },
     {
       "pmid": "",
@@ -616,17 +660,30 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Association between Dexmedetomidine Use and Mortality in Patients with COVID-19 Receiving Invasive Mechanical Ventilation: A U.S. National COVID Cohort Collaborative (N3C) Study",
-      "authors": "John L. Hamilton, Rachel Baccile, Thomas J. Best, et al.",
-      "journal": "Journal of Clinical Medicine",
+      "pmid": "38929961",
+      "title": "Association between Dexmedetomidine Use and Mortality in Patients with COVID-19 Receiving Invasive Mechanical Ventilation: A U.S. National COVID Cohort Collaborative (N3C) Study.",
+      "authors": "Hamilton JL, Baccile R, Best TJ, et al.",
+      "journal": "J Clin Med",
       "year": "2024",
       "doi": "10.3390/jcm13123429",
       "volume": "13",
       "issue": "12",
       "pages": "3429",
-      "citationCount": 2,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 2
+    },
+    {
+      "pmid": "38156422",
+      "title": "Association of preadmission insomnia symptoms with objective in-hospital sleep and clinical outcomes among hospitalized patients.",
+      "authors": "Neborak JM, Press VG, Parker WF, et al.",
+      "journal": "J Clin Sleep Med",
+      "year": "2024",
+      "doi": "10.5664/jcsm.10964",
+      "volume": "20",
+      "issue": "5",
+      "pages": "681-687",
+      "source": "pubmed",
+      "citationCount": 1
     },
     {
       "pmid": "",
@@ -662,17 +719,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Development and Validation of a Machine Learning Model for Early Detection of Untreated Infection",
-      "authors": "Kevin G. Buell, Kyle A. Carey, Nicole Dussault, et al.",
-      "journal": "Critical Care Explorations",
+      "pmid": "39392375",
+      "title": "Development and Validation of a Machine Learning Model for Early Detection of Untreated Infection.",
+      "authors": "Buell KG, Carey KA, Dussault N, et al.",
+      "journal": "Crit Care Explor",
       "year": "2024",
-      "doi": "10.1097/cce.0000000000001165",
+      "doi": "10.1097/CCE.0000000000001165",
       "volume": "6",
       "issue": "10",
       "pages": "e1165",
-      "citationCount": 0,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 0
     },
     {
       "pmid": "",
@@ -712,17 +769,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Evaluating Quality of Care for Patients with Asthma in the Readmission Penalty Era",
-      "authors": "Sukarn Chokkara, J.C. Rojas, Mengqi Zhu, et al.",
-      "journal": "Annals of the American Thoracic Society",
+      "pmid": "38748912",
+      "title": "Evaluating Quality of Care for Patients with Asthma in the Readmission Penalty Era.",
+      "authors": "Chokkara S, Rojas JC, Zhu M, et al.",
+      "journal": "Ann Am Thorac Soc",
       "year": "2024",
-      "doi": "10.1513/annalsats.202311-928oc",
+      "doi": "10.1513/AnnalsATS.202311-928OC",
       "volume": "21",
       "issue": "8",
       "pages": "1166-1175",
-      "citationCount": 0,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 0
     },
     {
       "pmid": "",
@@ -738,17 +795,29 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Individualized Treatment Effects of Oxygen Targets in Mechanically Ventilated Critically Ill Adults",
-      "authors": "Kevin G. Buell, Alexandra B. Spicer, Jonathan D. Casey, et al.",
+      "pmid": "38501205",
+      "title": "Individualized Treatment Effects of Oxygen Targets in Mechanically Ventilated Critically Ill Adults.",
+      "authors": "Buell KG, Spicer AB, Casey JD, et al.",
       "journal": "JAMA",
       "year": "2024",
       "doi": "10.1001/jama.2024.2933",
       "volume": "331",
       "issue": "14",
-      "pages": "1195",
-      "citationCount": 115,
-      "source": "openalex"
+      "pages": "1195-1204",
+      "source": "pubmed",
+      "citationCount": 115
+    },
+    {
+      "pmid": "38985181",
+      "title": "Individualized treatment in critical care: the oxygenation paradigm.",
+      "authors": "Buell KG, Semler MW, Churpek MM",
+      "journal": "Intensive Care Med",
+      "year": "2024",
+      "doi": "10.1007/s00134-024-07538-w",
+      "volume": "50",
+      "issue": "8",
+      "pages": "1327-1330",
+      "source": "pubmed"
     },
     {
       "pmid": "",
@@ -760,6 +829,18 @@
       "pages": "A1573",
       "citationCount": 0,
       "source": "openalex"
+    },
+    {
+      "pmid": "39102234",
+      "title": "Prediction Models for Individualized Treatment Effects of Oxygen Targets-Reply.",
+      "authors": "Buell KG, Semler MW, Churpek MM",
+      "journal": "JAMA",
+      "year": "2024",
+      "doi": "10.1001/jama.2024.12038",
+      "volume": "332",
+      "issue": "9",
+      "pages": "758-759",
+      "source": "pubmed"
     },
     {
       "pmid": "",
@@ -797,17 +878,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Validating the Physician Documentation Quality Instrument for Intensive Care Unit–Ward Transfer Notes",
-      "authors": "Patrick G. Lyons, J.C. Rojas, Alice F. Bewley, et al.",
-      "journal": "ATS Scholar",
+      "pmid": "39055332",
+      "title": "Validating the Physician Documentation Quality Instrument for Intensive Care Unit-Ward Transfer Notes.",
+      "authors": "Lyons PG, Rojas JC, Bewley AF, et al.",
+      "journal": "ATS Sch",
       "year": "2024",
-      "doi": "10.34197/ats-scholar.2023-0094oc",
+      "doi": "10.34197/ats-scholar.2023-0094OC",
       "volume": "5",
       "issue": "2",
       "pages": "274-285",
-      "citationCount": 3,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 3
     },
     {
       "pmid": "",
@@ -821,17 +902,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Association of preadmission insomnia symptoms with objective in-hospital sleep and clinical outcomes among hospitalized patients",
-      "authors": "Julie M. Neborak, Valerie G. Press, William F. Parker, et al.",
-      "journal": "Journal of Clinical Sleep Medicine",
+      "pmid": "35916652",
+      "title": "Care Quality for Patients with Chronic Obstructive Pulmonary Disease in the Readmission Penalty Era.",
+      "authors": "Rojas JC, Chokkara S, Zhu M, et al.",
+      "journal": "Am J Respir Crit Care Med",
       "year": "2023",
-      "doi": "10.5664/jcsm.10964",
-      "volume": "20",
-      "issue": "5",
-      "pages": "681-687",
-      "citationCount": 1,
-      "source": "openalex"
+      "doi": "10.1164/rccm.202203-0496OC",
+      "volume": "207",
+      "issue": "1",
+      "pages": "29-37",
+      "source": "pubmed",
+      "citationCount": 13
     },
     {
       "pmid": "",
@@ -845,17 +926,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Clinician Trust in Artificial Intelligence",
-      "authors": "J.C. Rojas, Mario D. Terán, Craig A. Umscheid",
-      "journal": "Critical Care Clinics",
+      "pmid": "37704339",
+      "title": "Clinician Trust in Artificial Intelligence: What is Known and How Trust Can Be Facilitated.",
+      "authors": "Rojas JC, Teran M, Umscheid CA",
+      "journal": "Crit Care Clin",
       "year": "2023",
       "doi": "10.1016/j.ccc.2023.02.004",
       "volume": "39",
       "issue": "4",
       "pages": "769-782",
-      "citationCount": 29,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 29
     },
     {
       "pmid": "",
@@ -867,6 +948,18 @@
       "pages": "A6507",
       "citationCount": 0,
       "source": "openalex"
+    },
+    {
+      "pmid": "37054955",
+      "title": "Equity in Using Artificial Intelligence to Target Serious Illness Conversations for Patients With Life-Limiting Illness.",
+      "authors": "Piscitello GM, Rojas JC, Arnold RM",
+      "journal": "J Pain Symptom Manage",
+      "year": "2023",
+      "doi": "10.1016/j.jpainsymman.2023.04.002",
+      "volume": "66",
+      "issue": "2",
+      "pages": "e299-e301",
+      "source": "pubmed"
     },
     {
       "pmid": "",
@@ -902,29 +995,42 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Improving Communication in Intensive Care Unit to Ward Transitions: Protocol for Multisite National Implementation of the ICU-PAUSE Handoff Tool",
-      "authors": "Elle Fukui, Patrick G. Lyons, E. J. Harris, et al.",
-      "journal": "JMIR Research Protocols",
+      "pmid": "36580369",
+      "title": "Helmet noninvasive ventilation in acute hypoxic respiratory failure.",
+      "authors": "Buell KG, Patel BK",
+      "journal": "Curr Opin Crit Care",
+      "year": "2023",
+      "doi": "10.1097/MCC.0000000000001008",
+      "volume": "29",
+      "issue": "1",
+      "pages": "8-13",
+      "source": "pubmed",
+      "citationCount": 2
+    },
+    {
+      "pmid": "36745494",
+      "title": "Improving Communication in Intensive Care Unit to Ward Transitions: Protocol for Multisite National Implementation of the ICU-PAUSE Handoff Tool.",
+      "authors": "Fukui EM, Lyons PG, Harris E, et al.",
+      "journal": "JMIR Res Protoc",
       "year": "2023",
       "doi": "10.2196/40918",
       "volume": "12",
       "pages": "e40918",
-      "citationCount": 9,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 9
     },
     {
-      "pmid": "",
-      "title": "Individualized Treatment Effects of Bougie versus Stylet for Tracheal Intubation in Critical Illness",
-      "authors": "Kevin P. Seitz, Alexandra B. Spicer, Jonathan D. Casey, et al.",
-      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "pmid": "36877594",
+      "title": "Individualized Treatment Effects of Bougie versus Stylet for Tracheal Intubation in Critical Illness.",
+      "authors": "Seitz KP, Spicer AB, Casey JD, et al.",
+      "journal": "Am J Respir Crit Care Med",
       "year": "2023",
-      "doi": "10.1164/rccm.202209-1799oc",
+      "doi": "10.1164/rccm.202209-1799OC",
       "volume": "207",
       "issue": "12",
       "pages": "1602-1611",
-      "citationCount": 30,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 30
     },
     {
       "pmid": "",
@@ -938,29 +1044,29 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "No-show Prediction Model Performance Among People With HIV: External Validation Study",
-      "authors": "Joseph A. Mason, Eleanor E. Friedman, J.C. Rojas, et al.",
-      "journal": "Journal of Medical Internet Research",
+      "pmid": "36989038",
+      "title": "No-show Prediction Model Performance Among People With HIV: External Validation Study.",
+      "authors": "Mason JA, Friedman EE, Rojas JC, et al.",
+      "journal": "J Med Internet Res",
       "year": "2023",
       "doi": "10.2196/43277",
       "volume": "25",
       "pages": "e43277",
-      "citationCount": 5,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 5
     },
     {
-      "pmid": "",
-      "title": "Scaling up a diagnostic pause at the ICU-to-ward transition: an exploration of barriers and facilitators to implementation of the ICU-PAUSE handoff tool",
-      "authors": "E.G. Cornell, E. J. Harris, Emma McCune, et al.",
-      "journal": "Diagnosis",
+      "pmid": "37598362",
+      "title": "Scaling up a diagnostic pause at the ICU-to-ward transition: an exploration of barriers and facilitators to implementation of the ICU-PAUSE handoff tool.",
+      "authors": "Cornell EG, Harris E, McCune E, et al.",
+      "journal": "Diagnosis (Berl)",
       "year": "2023",
       "doi": "10.1515/dx-2023-0046",
       "volume": "10",
       "issue": "4",
       "pages": "417-423",
-      "citationCount": 6,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 6
     },
     {
       "pmid": "",
@@ -1007,69 +1113,55 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Care Quality for Patients with Chronic Obstructive Pulmonary Disease in the Readmission Penalty Era",
-      "authors": "J.C. Rojas, Sukarn Chokkara, Mengqi Zhu, et al.",
-      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "pmid": "35924191",
+      "title": "Cocreating the ICU-PAUSE Tool for Intensive Care Unit-Ward Transitions.",
+      "authors": "Santhosh L, Rojas JC, Garcia B, et al.",
+      "journal": "ATS Sch",
       "year": "2022",
-      "doi": "10.1164/rccm.202203-0496oc",
-      "volume": "207",
-      "issue": "1",
-      "pages": "29-37",
-      "citationCount": 13,
-      "source": "openalex"
-    },
-    {
-      "pmid": "",
-      "title": "Cocreating the ICU-PAUSE Tool for Intensive Care Unit–Ward Transitions",
-      "authors": "Lekshmi Santhosh, J.C. Rojas, Briana M. Garcia, et al.",
-      "journal": "ATS Scholar",
-      "year": "2022",
-      "doi": "10.34197/ats-scholar.2021-0135in",
+      "doi": "10.34197/ats-scholar.2021-0135IN",
       "volume": "3",
       "issue": "2",
       "pages": "312-323",
-      "citationCount": 15,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 15
     },
     {
-      "pmid": "",
-      "title": "Creation of a medical procedure service in a tertiary medical center: Blueprint and procedural outcomes",
-      "authors": "Kevin G. Buell, Muhammad Hashim Hayat, David Walsh, et al.",
-      "journal": "Journal of Hospital Medicine",
+      "pmid": "35797494",
+      "title": "Creation of a medical procedure service in a tertiary medical center: Blueprint and procedural outcomes.",
+      "authors": "Buell KG, Hayat MH, Walsh DW, et al.",
+      "journal": "J Hosp Med",
       "year": "2022",
       "doi": "10.1002/jhm.12901",
       "volume": "17",
       "issue": "8",
       "pages": "594-600",
-      "citationCount": 9,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 9
     },
     {
-      "pmid": "",
-      "title": "Framework for Integrating Equity Into Machine Learning Models",
-      "authors": "J.C. Rojas, John Fahrenbach, Sonya Makhni, et al.",
-      "journal": "CHEST Journal",
+      "pmid": "35526892",
+      "title": "Equity Challenges for Artificial Intelligence Algorithms in Health Care.",
+      "authors": "Makhni S, Chin MH, Fahrenbach J, et al.",
+      "journal": "Chest",
+      "year": "2022",
+      "doi": "10.1016/j.chest.2022.01.009",
+      "volume": "161",
+      "issue": "5",
+      "pages": "1343-1346",
+      "source": "pubmed"
+    },
+    {
+      "pmid": "35143823",
+      "title": "Framework for Integrating Equity Into Machine Learning Models: A Case Study.",
+      "authors": "Rojas JC, Fahrenbach J, Makhni S, et al.",
+      "journal": "Chest",
       "year": "2022",
       "doi": "10.1016/j.chest.2022.02.001",
       "volume": "161",
       "issue": "6",
       "pages": "1621-1627",
-      "citationCount": 46,
-      "source": "openalex"
-    },
-    {
-      "pmid": "",
-      "title": "Helmet noninvasive ventilation in acute hypoxic respiratory failure",
-      "authors": "Kevin G. Buell, Bhakti K. Patel",
-      "journal": "Current Opinion in Critical Care",
-      "year": "2022",
-      "doi": "10.1097/mcc.0000000000001008",
-      "volume": "29",
-      "issue": "1",
-      "pages": "8-13",
-      "citationCount": 2,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 46
     },
     {
       "pmid": "",
@@ -1094,6 +1186,19 @@
       "source": "openalex"
     },
     {
+      "pmid": "34310379",
+      "title": "Integrating Physicians Into Lean Quality Improvement Through a Structured Educational Program: The ECLIPSE Program.",
+      "authors": "Patel A, Adili H, Rojas JC, et al.",
+      "journal": "Am J Med Qual",
+      "year": "2022",
+      "doi": "10.1097/01.JMQ.0000750804.54998.16",
+      "volume": "37",
+      "issue": "1",
+      "pages": "6-13",
+      "source": "pubmed",
+      "citationCount": 1
+    },
+    {
       "pmid": "",
       "title": "National Differences in Equitable Distribution of the COVID-19 Vaccine",
       "authors": "Amber Hardeman, Teresa Layfon Jarrín Wong, J.C. Rojas, et al.",
@@ -1115,30 +1220,42 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Oxygen-Saturation Targets for Critically Ill Adults Receiving Mechanical Ventilation",
-      "authors": "Matthew W. Semler, Jonathan D. Casey, Bradley D. Lloyd, et al.",
-      "journal": "New England Journal of Medicine",
+      "pmid": "36278971",
+      "title": "Oxygen-Saturation Targets for Critically Ill Adults Receiving Mechanical Ventilation.",
+      "authors": "Semler MW, Casey JD, Lloyd BD, et al.",
+      "journal": "N Engl J Med",
       "year": "2022",
-      "doi": "10.1056/nejmoa2208415",
+      "doi": "10.1056/NEJMoa2208415",
       "volume": "387",
       "issue": "19",
       "pages": "1759-1769",
-      "citationCount": 212,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 212
     },
     {
-      "pmid": "",
-      "title": "The Evaluation of a Clinical Decision Support Tool Using Natural Language Processing to Screen Hospitalized Adults for Unhealthy Substance Use: Protocol for a Quasi-Experimental Design",
-      "authors": "Cara Joyce, Talar Markossian, Jenna K. Nikolaides, et al.",
-      "journal": "JMIR Research Protocols",
+      "pmid": "35396657",
+      "title": "Predictive Analytics Programs at Large Healthcare Systems in the USA: a National Survey.",
+      "authors": "Rojas JC, Rohweder G, Guptill J, et al.",
+      "journal": "J Gen Intern Med",
+      "year": "2022",
+      "doi": "10.1007/s11606-022-07517-1",
+      "volume": "37",
+      "issue": "15",
+      "pages": "4015-4017",
+      "source": "pubmed"
+    },
+    {
+      "pmid": "36534461",
+      "title": "The Evaluation of a Clinical Decision Support Tool Using Natural Language Processing to Screen Hospitalized Adults for Unhealthy Substance Use: Protocol for a Quasi-Experimental Design.",
+      "authors": "Joyce C, Markossian TW, Nikolaides J, et al.",
+      "journal": "JMIR Res Protoc",
       "year": "2022",
       "doi": "10.2196/42971",
       "volume": "11",
       "issue": "12",
       "pages": "e42971",
-      "citationCount": 8,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 8
     },
     {
       "pmid": "",
@@ -1152,29 +1269,29 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Using Machine Learning to Predict Likelihood and Cause of Readmission After Hospitalization for Chronic Obstructive Pulmonary Disease Exacerbation",
-      "authors": "Matthew Bonomo, Michael G Hermsen, Samuel Kaskovich, et al.",
-      "journal": "International Journal of COPD",
+      "pmid": "36299799",
+      "title": "Using Machine Learning to Predict Likelihood and Cause of Readmission After Hospitalization for Chronic Obstructive Pulmonary Disease Exacerbation.",
+      "authors": "Bonomo M, Hermsen MG, Kaskovich S, et al.",
+      "journal": "Int J Chron Obstruct Pulmon Dis",
       "year": "2022",
-      "doi": "10.2147/copd.s379700",
-      "volume": "Volume 17",
+      "doi": "10.2147/COPD.S379700",
+      "volume": "17",
       "pages": "2701-2709",
-      "citationCount": 17,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 17
     },
     {
-      "pmid": "",
-      "title": "Cryptococcal Meningitis Causing Refractory Hemichorea-Hemiballismus Treated With Pallidotomy",
-      "authors": "Kevin G. Buell, Brian Vickers, Karen C. Bloch, et al.",
+      "pmid": "34430108",
+      "title": "Cryptococcal Meningitis Causing Refractory Hemichorea-Hemiballismus Treated With Pallidotomy.",
+      "authors": "Buell KG, Vickers BP, Bloch KC, et al.",
       "journal": "Cureus",
       "year": "2021",
       "doi": "10.7759/cureus.16493",
       "volume": "13",
       "issue": "7",
       "pages": "e16493",
-      "citationCount": 3,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 3
     },
     {
       "pmid": "",
@@ -1188,56 +1305,43 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Evaluation of Health Equity in COVID-19 Vaccine Distribution Plans in the United States",
-      "authors": "Amber Hardeman, Taylor Wong, Joshua L. Denson, et al.",
-      "journal": "JAMA Network Open",
+      "pmid": "34213561",
+      "title": "Evaluation of Health Equity in COVID-19 Vaccine Distribution Plans in the United States.",
+      "authors": "Hardeman A, Wong T, Denson JL, et al.",
+      "journal": "JAMA Netw Open",
       "year": "2021",
       "doi": "10.1001/jamanetworkopen.2021.15653",
       "volume": "4",
       "issue": "7",
       "pages": "e2115653",
-      "citationCount": 36,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 36
     },
     {
-      "pmid": "",
-      "title": "Integrating Physicians Into Lean Quality Improvement Through a Structured Educational Program",
-      "authors": "Ajanta Patel, Hasime Adili, J.C. Rojas, et al.",
-      "journal": "American Journal of Medical Quality",
-      "year": "2021",
-      "doi": "10.1097/01.jmq.0000750804.54998.16",
-      "volume": "37",
-      "issue": "1",
-      "pages": "6-13",
-      "citationCount": 1,
-      "source": "openalex"
-    },
-    {
-      "pmid": "",
-      "title": "Medical Procedure Services in Internal Medicine Residencies in the US: a Systematic Review and Meta-Analysis",
-      "authors": "Muhammad Hashim Hayat, Matthew H. Meyers, Ioannis A. Ziogas, et al.",
-      "journal": "Journal of General Internal Medicine",
+      "pmid": "33547571",
+      "title": "Medical Procedure Services in Internal Medicine Residencies in the US: a Systematic Review and Meta-Analysis.",
+      "authors": "Hayat MH, Meyers MH, Ziogas IA, et al.",
+      "journal": "J Gen Intern Med",
       "year": "2021",
       "doi": "10.1007/s11606-020-06526-2",
       "volume": "36",
       "issue": "8",
       "pages": "2400-2407",
-      "citationCount": 22,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 22
     },
     {
-      "pmid": "34228854",
+      "pmid": "",
       "title": "Neurocysticercosis and HIV/AIDS co‐infection: A scoping review",
-      "authors": "P. Jewell, Annette Abraham, V. Schmidt, et al.",
-      "journal": "Tropical medicine & international health",
+      "authors": "Paul Jewell, Annette Abraham, Veronika Schmidt, et al.",
+      "journal": "Tropical Medicine & International Health",
       "year": "2021",
       "doi": "10.1111/tmi.13652",
-      "citationCount": 16,
-      "source": "semantic-scholar",
       "volume": "26",
       "issue": "10",
-      "pages": "1140-1152"
+      "pages": "1140-1152",
+      "citationCount": 16,
+      "source": "openalex"
     },
     {
       "pmid": "",
@@ -1262,30 +1366,30 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Protocol and statistical analysis plan for the Pragmatic Investigation of optimaL Oxygen Targets (PILOT) clinical trial",
-      "authors": "Matthew W. Semler, Jonathan D. Casey, Bradley D. Lloyd, et al.",
+      "pmid": "34711597",
+      "title": "Protocol and statistical analysis plan for the Pragmatic Investigation of optimaL Oxygen Targets (PILOT) clinical trial.",
+      "authors": "Semler MW, Casey JD, Lloyd BD, et al.",
       "journal": "BMJ Open",
       "year": "2021",
       "doi": "10.1136/bmjopen-2021-052013",
       "volume": "11",
       "issue": "10",
       "pages": "e052013",
-      "citationCount": 6,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 6
     },
     {
-      "pmid": "",
-      "title": "Protocolized Postextubation Respiratory Support to Prevent Reintubation: A Randomized Clinical Trial",
-      "authors": "Jonathan D. Casey, Erin M. Vaughan, Bradley D. Lloyd, et al.",
-      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "pmid": "33794131",
+      "title": "Protocolized Postextubation Respiratory Support to Prevent Reintubation: A Randomized Clinical Trial.",
+      "authors": "Casey JD, Vaughan EM, Lloyd BD, et al.",
+      "journal": "Am J Respir Crit Care Med",
       "year": "2021",
-      "doi": "10.1164/rccm.202009-3561oc",
+      "doi": "10.1164/rccm.202009-3561OC",
       "volume": "204",
       "issue": "3",
       "pages": "294-302",
-      "citationCount": 33,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 33
     },
     {
       "pmid": "",
@@ -1310,17 +1414,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Zooming into Focus Groups: Strategies for Qualitative Research in the Era of Social Distancing",
-      "authors": "Lekshmi Santhosh, J.C. Rojas, Patrick G. Lyons",
-      "journal": "ATS Scholar",
+      "pmid": "34409412",
+      "title": "Zooming into Focus Groups: Strategies for Qualitative Research in the Era of Social Distancing.",
+      "authors": "Santhosh L, Rojas JC, Lyons PG",
+      "journal": "ATS Sch",
       "year": "2021",
-      "doi": "10.34197/ats-scholar.2020-0127ps",
+      "doi": "10.34197/ats-scholar.2020-0127PS",
       "volume": "2",
       "issue": "2",
       "pages": "176-184",
-      "citationCount": 88,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 88
     },
     {
       "pmid": "",
@@ -1334,17 +1438,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Accuracy of Clinicians’ Ability to Predict the Need for Intensive Care Unit Readmission",
-      "authors": "J.C. Rojas, Patrick G. Lyons, Teresa Jiang, et al.",
-      "journal": "Annals of the American Thoracic Society",
+      "pmid": "32125877",
+      "title": "Accuracy of Clinicians' Ability to Predict the Need for Intensive Care Unit Readmission.",
+      "authors": "Rojas JC, Lyons PG, Jiang T, et al.",
+      "journal": "Ann Am Thorac Soc",
       "year": "2020",
-      "doi": "10.1513/annalsats.201911-828oc",
+      "doi": "10.1513/AnnalsATS.201911-828OC",
       "volume": "17",
       "issue": "7",
       "pages": "847-853",
-      "citationCount": 14,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 14
     },
     {
       "pmid": "",
@@ -1358,17 +1462,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Big Data for Clinical Trials: Automated Collection of SpO2 for a Trial of Oxygen Targets during Mechanical Ventilation",
-      "authors": "Kevin G. Buell, Jonathan D. Casey, Li Wang, et al.",
-      "journal": "Journal of Medical Systems",
+      "pmid": "32737684",
+      "title": "Big Data for Clinical Trials: Automated Collection of SpO(2) for a Trial of Oxygen Targets during Mechanical Ventilation.",
+      "authors": "Buell KG, Casey JD, Wang L, et al.",
+      "journal": "J Med Syst",
       "year": "2020",
       "doi": "10.1007/s10916-020-01632-4",
       "volume": "44",
       "issue": "9",
       "pages": "153",
-      "citationCount": 7,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 7
     },
     {
       "pmid": "",
@@ -1380,6 +1484,19 @@
       "pages": "A1401",
       "citationCount": 0,
       "source": "openalex"
+    },
+    {
+      "pmid": "31474461",
+      "title": "Diabetic Myonecrosis: A Poorly Recognized Complication in an Adult With Type 2 Diabetes.",
+      "authors": "Buell KG, Ajmal SR",
+      "journal": "Can J Diabetes",
+      "year": "2020",
+      "doi": "10.1016/j.jcjd.2019.07.147",
+      "volume": "44",
+      "issue": "3",
+      "pages": "213-215",
+      "source": "pubmed",
+      "citationCount": 1
     },
     {
       "pmid": "",
@@ -1415,14 +1532,16 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Open career fairs for online computing students in Ohio",
-      "authors": "Kevin G. Buell",
-      "journal": "Journal of Computing Sciences in Colleges (JCSC; Formerly: Journal of Computing in Small Colleges)",
+      "pmid": "32966729",
+      "title": "Patient Safety and Resident Schedules without 24-Hour Shifts.",
+      "authors": "Lyons PG, Rojas JC, Santhosh L",
+      "journal": "N Engl J Med",
       "year": "2020",
-      "doi": "10.5555/3447286.3447289",
-      "citationCount": 1,
-      "source": "semantic-scholar"
+      "doi": "10.1056/NEJMc2025843",
+      "volume": "383",
+      "issue": "13",
+      "pages": "1286-1287",
+      "source": "pubmed"
     },
     {
       "pmid": "",
@@ -1464,17 +1583,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Variation in Ventilator Allocation Guidelines by US State During the Coronavirus Disease 2019 Pandemic",
-      "authors": "Gina M. Piscitello, Esha M. Kapania, William Miller, et al.",
-      "journal": "JAMA Network Open",
+      "pmid": "32558916",
+      "title": "Variation in Ventilator Allocation Guidelines by US State During the Coronavirus Disease 2019 Pandemic: A Systematic Review.",
+      "authors": "Piscitello GM, Kapania EM, Miller WD, et al.",
+      "journal": "JAMA Netw Open",
       "year": "2020",
       "doi": "10.1001/jamanetworkopen.2020.12606",
       "volume": "3",
       "issue": "6",
       "pages": "e2012606",
-      "citationCount": 141,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 141
     },
     {
       "pmid": "",
@@ -1490,56 +1609,55 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "A resident’s perspective on postgraduate medical education in the United States and United Kingdom",
-      "authors": "Kevin G. Buell",
-      "journal": "International Journal of Clinical Practice",
+      "pmid": "30831063",
+      "title": "A Case of Catatonia Nearly Mistaken for Hepatic Encephalopathy.",
+      "authors": "Buell KG, Kiser SB, Vasilevskis EE",
+      "journal": "Am J Med",
+      "year": "2019",
+      "doi": "10.1016/j.amjmed.2019.01.035",
+      "volume": "132",
+      "issue": "6",
+      "pages": "e587-e588",
+      "source": "pubmed"
+    },
+    {
+      "pmid": "31264325",
+      "title": "A resident's perspective on postgraduate medical education in the United States and United Kingdom.",
+      "authors": "Buell KG",
+      "journal": "Int J Clin Pract",
       "year": "2019",
       "doi": "10.1111/ijcp.13390",
       "volume": "73",
       "issue": "9",
       "pages": "1-3",
-      "citationCount": 0,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 0
     },
     {
-      "pmid": "",
-      "title": "A Unilateral Facial Rash with Eye Involvement",
-      "authors": "Kevin G. Buell, Silas P. Trumbo, Volker H. Haase",
-      "journal": "The American Journal of Medicine",
+      "pmid": "30849384",
+      "title": "A Unilateral Facial Rash with Eye Involvement.",
+      "authors": "Buell KG, Trumbo SP, Haase VH",
+      "journal": "Am J Med",
       "year": "2019",
       "doi": "10.1016/j.amjmed.2019.02.007",
       "volume": "132",
       "issue": "7",
       "pages": "823-825",
-      "citationCount": 0,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 0
     },
     {
-      "pmid": "",
-      "title": "Characterising ICU–ward handoffs at three academic medical centres: process and perceptions",
-      "authors": "Lekshmi Santhosh, Patrick G. Lyons, J.C. Rojas, et al.",
-      "journal": "BMJ Quality & Safety",
+      "pmid": "30636201",
+      "title": "Characterising ICU-ward handoffs at three academic medical centres: process and perceptions.",
+      "authors": "Santhosh L, Lyons PG, Rojas JC, et al.",
+      "journal": "BMJ Qual Saf",
       "year": "2019",
       "doi": "10.1136/bmjqs-2018-008328",
       "volume": "28",
       "issue": "8",
       "pages": "627-634",
-      "citationCount": 35,
-      "source": "openalex"
-    },
-    {
-      "pmid": "",
-      "title": "Diabetic Myonecrosis: A Poorly Recognized Complication in an Adult With Type 2 Diabetes",
-      "authors": "Kevin G. Buell, SAIRA AJMAL",
-      "journal": "Canadian Journal of Diabetes",
-      "year": "2019",
-      "doi": "10.1016/j.jcjd.2019.07.147",
-      "volume": "44",
-      "issue": "3",
-      "pages": "213-215",
-      "citationCount": 1,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 35
     },
     {
       "pmid": "",
@@ -1566,17 +1684,29 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Protocolized Post-Extubation Respiratory Support to prevent reintubation: protocol and statistical analysis plan for a clinical trial",
-      "authors": "Jonathan D. Casey, Erin R Vaughan, Bradley D. Lloyd, et al.",
+      "pmid": "31377713",
+      "title": "Protocolized Post-Extubation Respiratory Support to prevent reintubation: protocol and statistical analysis plan for a clinical trial.",
+      "authors": "Casey JD, Vaughan ER, Lloyd BD, et al.",
       "journal": "BMJ Open",
       "year": "2019",
       "doi": "10.1136/bmjopen-2019-030476",
       "volume": "9",
       "issue": "8",
       "pages": "e030476",
-      "citationCount": 6,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 6
+    },
+    {
+      "pmid": "30055119",
+      "title": "A Case of Addison's Disease Nearly Mistaken for Anorexia Nervosa.",
+      "authors": "Feeney C, Buell K",
+      "journal": "Am J Med",
+      "year": "2018",
+      "doi": "10.1016/j.amjmed.2018.06.027",
+      "volume": "131",
+      "issue": "11",
+      "pages": "e457-e458",
+      "source": "pubmed"
     },
     {
       "pmid": "",
@@ -1592,17 +1722,17 @@
       "source": "openalex"
     },
     {
-      "pmid": "",
-      "title": "Predicting Intensive Care Unit Readmission with Machine Learning Using Electronic Health Record Data",
-      "authors": "J.C. Rojas, Kyle A. Carey, Dana P. Edelson, et al.",
-      "journal": "Annals of the American Thoracic Society",
+      "pmid": "29787309",
+      "title": "Predicting Intensive Care Unit Readmission with Machine Learning Using Electronic Health Record Data.",
+      "authors": "Rojas JC, Carey KA, Edelson DP, et al.",
+      "journal": "Ann Am Thorac Soc",
       "year": "2018",
-      "doi": "10.1513/annalsats.201710-787oc",
+      "doi": "10.1513/AnnalsATS.201710-787OC",
       "volume": "15",
       "issue": "7",
       "pages": "846-853",
-      "citationCount": 187,
-      "source": "openalex"
+      "source": "pubmed",
+      "citationCount": 187
     },
     {
       "pmid": "",
@@ -1716,645 +1846,6 @@
       "pages": "A1608",
       "citationCount": 0,
       "source": "openalex"
-    },
-    {
-      "pmid": "29787309",
-      "title": "Publication (PMID: 29787309)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "30055119",
-      "title": "Publication (PMID: 30055119)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "30636201",
-      "title": "Publication (PMID: 30636201)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "30831063",
-      "title": "Publication (PMID: 30831063)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "30849384",
-      "title": "Publication (PMID: 30849384)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "31264325",
-      "title": "Publication (PMID: 31264325)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "31377713",
-      "title": "Publication (PMID: 31377713)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "31474461",
-      "title": "Publication (PMID: 31474461)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "32125877",
-      "title": "Publication (PMID: 32125877)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "32558916",
-      "title": "Publication (PMID: 32558916)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "32737684",
-      "title": "Publication (PMID: 32737684)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "32966729",
-      "title": "Publication (PMID: 32966729)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "33547571",
-      "title": "Publication (PMID: 33547571)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "33794131",
-      "title": "Publication (PMID: 33794131)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "34213561",
-      "title": "Publication (PMID: 34213561)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "34310379",
-      "title": "Publication (PMID: 34310379)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "34409412",
-      "title": "Publication (PMID: 34409412)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "34430108",
-      "title": "Publication (PMID: 34430108)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "34711597",
-      "title": "Publication (PMID: 34711597)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "35143823",
-      "title": "Publication (PMID: 35143823)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "35396657",
-      "title": "Publication (PMID: 35396657)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "35526892",
-      "title": "Publication (PMID: 35526892)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "35797494",
-      "title": "Publication (PMID: 35797494)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "35916652",
-      "title": "Publication (PMID: 35916652)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "35924191",
-      "title": "Publication (PMID: 35924191)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "36278971",
-      "title": "Publication (PMID: 36278971)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "36299799",
-      "title": "Publication (PMID: 36299799)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "36534461",
-      "title": "Publication (PMID: 36534461)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "36580369",
-      "title": "Publication (PMID: 36580369)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "36745494",
-      "title": "Publication (PMID: 36745494)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "36877594",
-      "title": "Publication (PMID: 36877594)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "36989038",
-      "title": "Publication (PMID: 36989038)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "37054955",
-      "title": "Publication (PMID: 37054955)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "37598362",
-      "title": "Publication (PMID: 37598362)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "37704339",
-      "title": "Publication (PMID: 37704339)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "38156422",
-      "title": "Publication (PMID: 38156422)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "38501205",
-      "title": "Publication (PMID: 38501205)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "38748912",
-      "title": "Publication (PMID: 38748912)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "38929961",
-      "title": "Publication (PMID: 38929961)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "38985181",
-      "title": "Publication (PMID: 38985181)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "39055332",
-      "title": "Publication (PMID: 39055332)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "39102234",
-      "title": "Publication (PMID: 39102234)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "39281737",
-      "title": "Publication (PMID: 39281737)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "39392375",
-      "title": "Publication (PMID: 39392375)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "39874959",
-      "title": "Publication (PMID: 39874959)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40080116",
-      "title": "Publication (PMID: 40080116)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40112681",
-      "title": "Publication (PMID: 40112681)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40162266",
-      "title": "Publication (PMID: 40162266)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40163136",
-      "title": "Publication (PMID: 40163136)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40184660",
-      "title": "Publication (PMID: 40184660)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40235163",
-      "title": "Publication (PMID: 40235163)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40250459",
-      "title": "Publication (PMID: 40250459)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40323320",
-      "title": "Publication (PMID: 40323320)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40558021",
-      "title": "Publication (PMID: 40558021)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40588709",
-      "title": "Publication (PMID: 40588709)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40602005",
-      "title": "Publication (PMID: 40602005)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40928315",
-      "title": "Publication (PMID: 40928315)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40928319",
-      "title": "Publication (PMID: 40928319)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40950483",
-      "title": "Publication (PMID: 40950483)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "40992286",
-      "title": "Publication (PMID: 40992286)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "41165278",
-      "title": "Publication (PMID: 41165278)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "41332823",
-      "title": "Publication (PMID: 41332823)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "41460637",
-      "title": "Publication (PMID: 41460637)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "41505930",
-      "title": "Publication (PMID: 41505930)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "41606795",
-      "title": "Publication (PMID: 41606795)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "41631945",
-      "title": "Publication (PMID: 41631945)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "41707676",
-      "title": "Publication (PMID: 41707676)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "41915560",
-      "title": "Publication (PMID: 41915560)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "41951238",
-      "title": "Publication (PMID: 41951238)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "42171428",
-      "title": "Publication (PMID: 42171428)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
-    },
-    {
-      "pmid": "42307255",
-      "title": "Publication (PMID: 42307255)",
-      "authors": "Metadata unavailable",
-      "journal": "",
-      "year": "",
-      "doi": null,
-      "source": "pubmed"
     }
   ]
 }
