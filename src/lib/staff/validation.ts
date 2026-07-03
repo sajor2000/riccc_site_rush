@@ -2,6 +2,7 @@ import { z } from "zod";
 import { TEAM_TIERS } from "@/lib/team-constants";
 import type { TeamTier } from "@/lib/team-constants";
 import type { MemberFrontmatter } from "@/lib/staff/types";
+import { normalizeGithubToUsername } from "@/lib/team/github";
 
 // Cast for z.enum — preserves literal union type
 const TIERS_TUPLE = TEAM_TIERS as readonly [TeamTier, ...TeamTier[]];
@@ -22,7 +23,10 @@ export const MemberSchema = z.object({
     .or(z.literal("")),
   scholar: z.string().url("Must be a URL").startsWith("https://").optional().or(z.literal("")),
   website: z.string().url("Must be a URL").startsWith("https://").optional().or(z.literal("")),
-  github: z.string().url("Must be a URL").startsWith("https://").optional().or(z.literal("")),
+  github: z
+    .string()
+    .transform((v) => normalizeGithubToUsername(v))
+    .optional(),
   mission_subtitle: z.string().max(300).optional().or(z.literal("")),
   mission_blurb: z.string().max(1000).optional().or(z.literal("")),
   alternate_names: z.array(z.string().max(100)).optional(),
