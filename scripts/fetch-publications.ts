@@ -23,6 +23,7 @@ import { searchByAuthor } from "../src/lib/pubmed";
 import { searchAuthorPapers } from "../src/lib/semantic-scholar";
 import { fetchAuthorWorks } from "../src/lib/openalex";
 import { mergePublications } from "../src/lib/merge-publications";
+import { comparePublications } from "../src/lib/publications-snapshot";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(__dirname, "..", "content", "publications.json");
@@ -36,7 +37,10 @@ async function main() {
 
   const s2Papers = s2Results.flat();
   const oaWorks = oaResults.flat();
-  const publications = mergePublications(pubmedPubs, s2Papers, oaWorks);
+  // Deterministic order so the committed snapshot only diffs on real changes.
+  const publications = mergePublications(pubmedPubs, s2Papers, oaWorks).sort(
+    comparePublications
+  );
 
   // Guard: never overwrite a good snapshot with an empty one (API outage protection).
   if (publications.length === 0) {

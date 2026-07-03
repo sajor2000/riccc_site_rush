@@ -32,6 +32,18 @@ function pubKey(p: Publication): string {
 }
 
 /**
+ * Deterministic ordering: newest year first, then title A→Z as a stable tiebreaker.
+ * The title tiebreaker keeps the committed snapshot's order stable across monthly
+ * runs, so diffs show only real additions/changes — not reshuffled rows.
+ */
+export function comparePublications(a: Publication, b: Publication): number {
+  return (
+    b.year.localeCompare(a.year) ||
+    a.title.toLowerCase().localeCompare(b.title.toLowerCase())
+  );
+}
+
+/**
  * Merge a live fetch over the committed snapshot: snapshot is the resilient base,
  * live results win on conflict (fresher metadata / citation counts) and add any
  * brand-new papers indexed since the last monthly refresh. Sorted newest-first.
@@ -43,5 +55,5 @@ export function mergeWithSnapshot(
   const byKey = new Map<string, Publication>();
   for (const p of snapshot) byKey.set(pubKey(p), p);
   for (const p of live) byKey.set(pubKey(p), p); // live overwrites snapshot
-  return Array.from(byKey.values()).sort((a, b) => b.year.localeCompare(a.year));
+  return Array.from(byKey.values()).sort(comparePublications);
 }
