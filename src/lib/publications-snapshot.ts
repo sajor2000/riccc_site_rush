@@ -57,3 +57,29 @@ export function mergeWithSnapshot(
   for (const p of live) byKey.set(pubKey(p), p); // live overwrites snapshot
   return Array.from(byKey.values()).sort(comparePublications);
 }
+
+/**
+ * Monotonic union used to build the committed monthly snapshot. Keeps every
+ * previously captured paper — so a transient source outage (e.g. a PubMed or
+ * Semantic Scholar rate-limit) can never DROP publications from the snapshot —
+ * refreshes citation counts to the highest seen, and appends newly indexed
+ * papers. Existing metadata stays authoritative so monthly diffs remain minimal
+ * (new papers + citation bumps only). Sorted newest-first, then title.
+ */
+export function unionSnapshot(
+  existing: readonly Publication[],
+  fresh: readonly Publication[]
+): Publication[] {
+  const byKey = new Map<string, Publication>();
+  for (const p of existing) byKey.set(pubKey(p), { ...p });
+  for (const p of fresh) {
+    const key = pubKey(p);
+    const cur = byKey.get(key);
+    if (cur) {
+      cur.citationCount = Math.max(cur.citationCount ?? 0, p.citationCount ?? 0);
+    } else {
+      byKey.set(key, { ...p });
+    }
+  }
+  return Array.from(byKey.values()).sort(comparePublications);
+}

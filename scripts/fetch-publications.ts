@@ -23,7 +23,7 @@ import { searchByAuthor } from "../src/lib/pubmed";
 import { searchAuthorPapers } from "../src/lib/semantic-scholar";
 import { fetchAuthorWorks } from "../src/lib/openalex";
 import { mergePublications } from "../src/lib/merge-publications";
-import { comparePublications } from "../src/lib/publications-snapshot";
+import { getPublicationsSnapshot, unionSnapshot } from "../src/lib/publications-snapshot";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.join(__dirname, "..", "content", "publications.json");
@@ -37,16 +37,17 @@ async function main() {
 
   const s2Papers = s2Results.flat();
   const oaWorks = oaResults.flat();
-  // Deterministic order so the committed snapshot only diffs on real changes.
-  const publications = mergePublications(pubmedPubs, s2Papers, oaWorks).sort(
-    comparePublications
-  );
+  const fresh = mergePublications(pubmedPubs, s2Papers, oaWorks);
 
-  // Guard: never overwrite a good snapshot with an empty one (API outage protection).
+  // Monotonic union with the existing snapshot: a transient source outage this run
+  // can never DROP previously captured papers; new papers are added, citation
+  // counts refreshed. Keeps the committed snapshot stable and diffs minimal.
+  const existing = getPublicationsSnapshot();
+  const publications = unionSnapshot(existing, fresh);
+
+  // Guard: only fails if there is neither prior snapshot nor any fresh result.
   if (publications.length === 0) {
-    console.error(
-      "No publications returned from any source — refusing to overwrite the existing snapshot."
-    );
+    console.error("No publications available from any source or the existing snapshot.");
     process.exit(1);
   }
 
@@ -63,9 +64,11 @@ async function main() {
   };
 
   fs.writeFileSync(OUT, JSON.stringify(payload, null, 2) + "\n");
+  const added = publications.length - existing.length;
   console.log(
     `Wrote ${publications.length} publications to ${path.relative(process.cwd(), OUT)} ` +
-      `(pubmed=${pubmedPubs.length}, s2=${s2Papers.length}, openalex=${oaWorks.length})`
+      `(existing=${existing.length}, +${added} new; this run's sources: ` +
+      `pubmed=${pubmedPubs.length}, s2=${s2Papers.length}, openalex=${oaWorks.length})`
   );
 }
 
