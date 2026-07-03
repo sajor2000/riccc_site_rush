@@ -1,0 +1,50 @@
+name: Refresh publications
+
+# Fetches papers + published conference abstracts for the lab's authors on the 1st
+# of each month, writes content/publications.json, and commits it. The push to main
+# triggers a Vercel production deploy with the refreshed data.
+
+on:
+  schedule:
+    - cron: "0 6 1 * *" # 06:00 UTC on the 1st of every month
+  workflow_dispatch: {} # allow manual runs from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-publications
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch publications snapshot
+        env:
+          # Optional — higher API rate limits. Job works without them.
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+        run: npm run fetch:publications
+
+      - name: Commit snapshot if changed
+        run: |
+          if [[ -n "$(git status --porcelain content/publications.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add content/publications.json
+            git commit -m "chore(publications): monthly refresh $(date -u +%Y-%m-%d)"
+            git push
+          else
+            echo "No changes to the publications snapshot."
+          fi

@@ -3,6 +3,8 @@ import { searchByAuthor } from "@/lib/pubmed";
 import { searchAuthorPapers } from "@/lib/semantic-scholar";
 import { fetchAuthorWorks } from "@/lib/openalex";
 import { mergePublications } from "@/lib/merge-publications";
+import { getPublicationsSnapshot, mergeWithSnapshot } from "@/lib/publications-snapshot";
+import type { Publication } from "@/lib/types";
 import { PubFilters } from "@/components/publications/pub-filters";
 import { ExternalLink } from "lucide-react";
 import { siteConfig } from "@/lib/config";
@@ -18,27 +20,29 @@ export const metadata: Metadata = {
 // ISR: revalidate every 24 hours
 export const revalidate = 86400;
 
-export default async function PublicationsPage() {
-  // Fetch from all 3 sources in parallel
-  const [pubmedPubs, s2Results, oaResults] = await Promise.all([
-    // PubMed: author-name query
-    searchByAuthor(siteConfig.pubmedQuery),
-    // Semantic Scholar: per-author name search
-    Promise.all(siteConfig.authors.map((author) => searchAuthorPapers(author))),
-    // OpenAlex: per-author ID search (most reliable, broadest coverage)
-    Promise.all(siteConfig.openalexAuthors.map((a) => fetchAuthorWorks(a.id))),
-  ]);
-
-  const s2Papers = s2Results.flat();
-  const oaWorks = oaResults.flat();
-
-  // Merge and deduplicate across all 3 sources
-  const publications = mergePublications(pubmedPubs, s2Papers, oaWorks);
-
-  // If all APIs failed, throw so ISR preserves the previous cached page
-  if (publications.length === 0 && (siteConfig.pubmedQuery || siteConfig.openalexAuthors.length > 0)) {
-    throw new Error("No publications returned from any source — preserving stale cache");
+/** Live fetch across all 3 sources; returns [] on any failure so the snapshot carries the page. */
+async function fetchLivePublications(): Promise<Publication[]> {
+  try {
+    const [pubmedPubs, s2Results, oaResults] = await Promise.all([
+      // PubMed: author-name query
+      searchByAuthor(siteConfig.pubmedQuery),
+      // Semantic Scholar: per-author name search
+      Promise.all(siteConfig.authors.map((author) => searchAuthorPapers(author))),
+      // OpenAlex: per-author ID search (most reliable, broadest coverage)
+      Promise.all(siteConfig.openalexAuthors.map((a) => fetchAuthorWorks(a.id))),
+    ]);
+    return mergePublications(pubmedPubs, s2Results.flat(), oaResults.flat());
+  } catch {
+    return [];
   }
+}
+
+export default async function PublicationsPage() {
+  // Resilient base: the committed monthly snapshot (content/publications.json).
+  const snapshot = getPublicationsSnapshot();
+  // Live results on top for within-month freshness; snapshot covers API outages.
+  const live = await fetchLivePublications();
+  const publications = mergeWithSnapshot(live, snapshot);
 
   return (
     <main className="bg-rush-surface text-rush-on-surface">

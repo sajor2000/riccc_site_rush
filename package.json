@@ -11,7 +11,8 @@
     "test:watch": "vitest",
     "audit:team-links": "node scripts/audit-team-links.mjs",
     "audit:team-links:check": "node scripts/audit-team-links.mjs --check",
-    "optimize:team-photos": "tsx scripts/optimize-team-photos.ts"
+    "optimize:team-photos": "tsx scripts/optimize-team-photos.ts",
+    "fetch:publications": "tsx scripts/fetch-publications.ts"
   },
   "dependencies": {
     "@base-ui/react": "^1.3.0",
