@@ -13,7 +13,7 @@ import { PageHeader } from "@/components/layout/page-header";
 export const metadata: Metadata = {
   title: "Publications | ICU & Critical Care Research",
   description:
-    "Publications from J.C. Rojas, Kevin Buell, and the RICCC Lab — ICU data science, AI, clinical trials, and federated critical care research at Rush University.",
+    "Publications from the RICCC team, including J.C. Rojas and Kevin Buell — ICU data science, AI, clinical trials, and federated critical care research at Rush University.",
   openGraph: { url: "/publications" },
 };
 

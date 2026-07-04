@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "RICCC — ICU Data Science & AI Lab at Rush University",
+    name: "RICCC — Rush Interdisciplinary Consortium for Critical Care Trials and Data Science",
     short_name: "RICCC",
     description:
-      "ICU data science, AI, and clinical trials lab at Rush University, Chicago — led by J.C. Rojas and Kevin Buell.",
+      "ICU data science, AI, and clinical trials consortium at Rush University, Chicago.",
     start_url: "/",
     display: "browser",
     background_color: "#FFFBEC",
