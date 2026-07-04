@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Publications | ICU & Critical Care Research",
   description:
     "Publications from the RICCC team, including J.C. Rojas and Kevin Buell — ICU data science, AI, clinical trials, and federated critical care research at Rush University.",
+  alternates: { canonical: "/publications" },
   openGraph: { url: "/publications" },
 };
 
@@ -61,7 +62,7 @@ export default async function PublicationsPage() {
               href={profile.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-rush-teal hover:text-rush-dark-green transition-colors underline underline-offset-4"
+              className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-rush-dark-green hover:text-rush-teal transition-colors underline underline-offset-4"
             >
               Google Scholar — {profile.name}{" "}
               <ExternalLink className="h-3 w-3" aria-hidden="true" />
@@ -72,7 +73,7 @@ export default async function PublicationsPage() {
               href={siteConfig.links.myNcbi}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-rush-teal hover:text-rush-dark-green transition-colors underline underline-offset-4"
+              className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-rush-dark-green hover:text-rush-teal transition-colors underline underline-offset-4"
             >
               MyNCBI <ExternalLink className="h-3 w-3" aria-hidden="true" />
             </a>
@@ -88,7 +89,7 @@ export default async function PublicationsPage() {
               href={profile.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-rush-teal hover:text-rush-dark-green transition-colors underline underline-offset-4"
+              className="inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-rush-dark-green hover:text-rush-teal transition-colors underline underline-offset-4"
             >
               Google Scholar — {profile.name}{" "}
               <ExternalLink className="h-3 w-3" aria-hidden="true" />

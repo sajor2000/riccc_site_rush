@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Research | ICU Data Science, AI & Clinical Trials",
   description:
     "ICU data science, AI, pragmatic clinical trials, and federated critical care research through the CLIF consortium at Rush University, Chicago.",
+  alternates: { canonical: "/research" },
   openGraph: { url: "/research" },
 };
 
@@ -24,7 +25,7 @@ export default function ResearchPage() {
       <header className="max-w-screen-2xl mx-auto px-6 lg:px-8 mb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <div className="lg:col-span-8">
-            <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-6 block">
+            <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-6 block">
               Research
             </span>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-rush-on-surface mb-8 leading-[1.1]">

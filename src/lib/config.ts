@@ -12,7 +12,7 @@ interface SiteConfig {
   authors: string[];
   openalexAuthors: { name: string; id: string }[];
   excludeTitlePatterns: string[];
-  metrics: { publications: number; activeProjects: number; teamMembers: number; founded: number };
+  metrics: { founded: number };
   pi: { name: string; credentials: string; title: string; email: string };
   links: {
     googleScholar: string;
@@ -39,9 +39,6 @@ export const siteConfig: SiteConfig = {
   openalexAuthors: siteConfigData.openalex_authors ?? [],
   excludeTitlePatterns: siteConfigData.exclude_title_patterns ?? [],
   metrics: {
-    publications: siteConfigData.metrics?.publications ?? 50,
-    activeProjects: siteConfigData.metrics?.active_projects ?? 8,
-    teamMembers: siteConfigData.metrics?.team_members ?? 15,
     founded: siteConfigData.metrics?.founded ?? 2020,
   },
   pi: siteConfigData.pi,

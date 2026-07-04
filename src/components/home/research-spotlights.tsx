@@ -87,7 +87,7 @@ export function ResearchSpotlights() {
 
                     {/* DOI link */}
                     {href && (
-                      <span className="inline-flex items-center gap-1 text-sm font-medium text-rush-teal group-hover:underline">
+                      <span className="inline-flex items-center gap-1 text-sm font-medium text-rush-dark-green group-hover:underline">
                         Read paper <ExternalLink className="h-3.5 w-3.5" />
                       </span>
                     )}

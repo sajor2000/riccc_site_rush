@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "Team | ICU Researchers & Data Scientists",
   description:
     "J.C. Rojas, Kevin Buell, and the RICCC team — clinicians and data scientists advancing ICU AI and clinical trials at Rush University, Chicago.",
+  alternates: { canonical: "/team" },
   openGraph: { url: "/team" },
 };
 
@@ -70,7 +71,7 @@ export default function TeamPage() {
       {/* ── Hero header ─────────────────────────────────────────────── */}
       <header className="pt-32 pb-20 max-w-screen-2xl mx-auto px-8">
         <div className="ml-0 lg:ml-12">
-          <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-4 block">
+          <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-4 block">
             Our Investigators
           </span>
           <h1
@@ -115,7 +116,7 @@ export default function TeamPage() {
         >
           {/* Section header — Stitch: asymmetric gutter + bar */}
           <div className="ml-0 lg:ml-12 mb-14 max-w-3xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-3 block">
+            <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-3 block">
               Heart of the lab
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-rush-dark-green leading-tight">

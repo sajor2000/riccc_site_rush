@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Tools | CLIF Consortium & Open ICU Data Standards",
   description:
     "Open-source ICU data infrastructure — CLIF federated data standard, reproducible pipelines, and faircare for healthcare AI auditing at Rush University.",
+  alternates: { canonical: "/tools" },
   openGraph: { url: "/tools" },
 };
 
@@ -116,7 +117,7 @@ export default function ToolsPage() {
       <header className="pt-32 pb-16 max-w-screen-2xl mx-auto px-6 lg:px-8 mb-0">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="lg:col-span-8">
-            <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-4 block">
+            <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-4 block">
               Tools & Infrastructure
             </span>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-rush-on-surface leading-[1.1] mb-8">
@@ -131,7 +132,7 @@ export default function ToolsPage() {
           </div>
           <div className="lg:col-span-4 flex items-end">
             <div className="p-6 bg-rush-surface-container rounded-sm w-full">
-              <span className="font-mono text-[0.7rem] uppercase tracking-widest text-rush-teal block mb-2">
+              <span className="font-mono text-[0.7rem] uppercase tracking-widest text-rush-dark-green block mb-2">
                 Technical Approach
               </span>
               <p className="text-sm font-medium italic text-rush-on-surface-variant leading-relaxed">
@@ -319,7 +320,7 @@ export default function ToolsPage() {
       <section className="bg-rush-surface-container-low py-24 border-t border-rush-outline-variant/10">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-4 block">
+            <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-4 block">
               Open software
             </span>
             <h2 className="text-4xl font-bold text-rush-on-surface mb-4 leading-tight">
@@ -409,7 +410,7 @@ export default function ToolsPage() {
       <section className="bg-rush-surface py-24 border-t border-rush-outline-variant/10">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-4 block">
+            <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-4 block">
               Get Involved
             </span>
             <h2 className="text-4xl font-bold text-rush-dark-green mb-6 tracking-tight">

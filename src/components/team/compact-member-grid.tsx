@@ -40,7 +40,7 @@ export function CompactMemberGrid({
                 <p className="font-semibold text-sm text-rush-on-surface group-hover:text-rush-dark-green transition-colors leading-snug">
                   {member.name}
                 </p>
-                <p className="font-mono text-[10px] text-rush-teal uppercase tracking-widest mt-1">
+                <p className="font-mono text-[10px] text-rush-dark-green uppercase tracking-widest mt-1">
                   {member.role}
                 </p>
               </div>

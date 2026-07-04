@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "News & Updates",
   description:
     "Latest from the RICCC Lab at Rush University — ICU data science milestones, clinical trial updates, CLIF consortium developments, and team announcements.",
+  alternates: { canonical: "/news" },
   openGraph: { url: "/news" },
 };
 
@@ -32,7 +33,7 @@ export default function NewsPage() {
         {items.length === 0 ? (
           <div className="max-w-2xl">
             <div className="pl-8">
-              <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-4 block">
+              <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-4 block">
                 Coming Soon
               </span>
               <h2 className="text-2xl font-bold text-rush-on-surface mb-4">
@@ -91,7 +92,7 @@ export default function NewsPage() {
 
                   <div className={item.image ? "lg:col-span-7" : "lg:col-span-12 max-w-3xl"}>
                     {(dateLabel || item.location) && (
-                      <p className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-4">
+                      <p className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-4">
                         {dateLabel}
                         {dateLabel && item.location ? " · " : ""}
                         {item.location}

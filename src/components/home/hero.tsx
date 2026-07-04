@@ -8,7 +8,7 @@ export function Hero() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
         {/* Left: 8 cols */}
         <div className="lg:col-span-8">
-          <p className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-6">
+          <p className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-6">
             Established {siteConfig.metrics.founded} &bull; Rush University
           </p>
 
