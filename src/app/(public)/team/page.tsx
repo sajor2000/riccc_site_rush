@@ -33,18 +33,29 @@ export default function TeamPage() {
     grouped.alumni.length > 0 ||
     grouped.collaborator.length > 0;
 
-  const piSchemas = grouped.pi.map((pi) => {
+  // Person JSON-LD for every named, currently-affiliated member (not alumni),
+  // so the whole team — not just PIs — is discoverable by name in search.
+  const schemaMembers = [
+    ...grouped.pi,
+    ...grouped.staff,
+    ...grouped.student,
+    ...grouped.collaborator,
+  ];
+
+  const memberSchemas = schemaMembers.map((member) => {
     const sameAs: string[] = [];
-    if (pi.scholar) sameAs.push(pi.scholar);
-    if (pi.orcid) sameAs.push(`https://orcid.org/${pi.orcid}`);
-    if (pi.linkedin) sameAs.push(pi.linkedin);
+    if (member.scholar) sameAs.push(member.scholar);
+    if (member.orcid) sameAs.push(`https://orcid.org/${member.orcid}`);
+    if (member.linkedin) sameAs.push(member.linkedin);
+    if (member.website) sameAs.push(member.website);
+    if (member.github) sameAs.push(member.github);
 
     return {
       "@context": "https://schema.org",
       "@type": "Person",
-      name: pi.name.replace(/,.*$/, ""),
-      ...(pi.alternateNames && { alternateName: pi.alternateNames }),
-      jobTitle: pi.role.split(" | ")[0],
+      name: member.name.replace(/,.*$/, ""),
+      ...(member.alternateNames && { alternateName: member.alternateNames }),
+      ...(member.role && { jobTitle: member.role.split(" | ")[0] }),
       worksFor: {
         "@type": "ResearchOrganization",
         name: "RICCC",
@@ -57,16 +68,16 @@ export default function TeamPage() {
         "@type": "CollegeOrUniversity",
         name: "Rush University System for Health",
       },
-      url: `${siteConfig.url}/team#${pi.slug}`,
-      ...(pi.photo && { image: `${siteConfig.url}${pi.photo}` }),
+      url: `${siteConfig.url}/team#${member.slug}`,
+      ...(member.photo && { image: `${siteConfig.url}${member.photo}` }),
       ...(sameAs.length > 0 && { sameAs }),
     };
   });
 
   return (
     <main className="bg-rush-surface min-h-screen">
-      {grouped.pi.map((pi, i) => (
-        <JsonLd key={pi.slug} data={piSchemas[i]} />
+      {schemaMembers.map((member, i) => (
+        <JsonLd key={member.slug} data={memberSchemas[i]} />
       ))}
       {/* ── Hero header ─────────────────────────────────────────────── */}
       <header className="pt-32 pb-20 max-w-screen-2xl mx-auto px-8">
