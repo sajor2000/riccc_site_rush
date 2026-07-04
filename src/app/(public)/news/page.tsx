@@ -64,20 +64,23 @@ export default function NewsPage() {
           <div className="space-y-20">
             {items.map((item) => {
               const dateLabel = formatNewsDate(item.date);
-              const paragraphs = item.body
-                .split("\n\n")
-                .map((p) => p.trim())
-                .filter(Boolean);
+              const href = `/news/${item.slug}`;
+              const summary =
+                item.excerpt ||
+                item.body.split("\n\n").map((p) => p.trim()).find(Boolean) ||
+                "";
 
               return (
                 <article
                   key={item.slug}
-                  id={item.slug}
-                  className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 scroll-mt-28"
+                  className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12"
                 >
                   {item.image && (
                     <div className="lg:col-span-5">
-                      <div className="overflow-hidden border border-rush-outline-variant/30 bg-rush-surface-container-low">
+                      <Link
+                        href={href}
+                        className="block overflow-hidden border border-rush-outline-variant/30 bg-rush-surface-container-low"
+                      >
                         <Image
                           src={item.image}
                           alt={item.imageAlt ?? item.title}
@@ -86,7 +89,7 @@ export default function NewsPage() {
                           className="w-full h-auto"
                           sizes="(max-width: 1024px) 100vw, 40vw"
                         />
-                      </div>
+                      </Link>
                     </div>
                   )}
 
@@ -99,23 +102,23 @@ export default function NewsPage() {
                       </p>
                     )}
 
-                    <h2 className="text-3xl md:text-4xl font-bold text-rush-dark-green leading-tight mb-6">
-                      {item.title}
+                    <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-6">
+                      <Link
+                        href={href}
+                        className="text-rush-dark-green hover:text-rush-teal transition-colors"
+                      >
+                        {item.title}
+                      </Link>
                     </h2>
 
-                    <div className="space-y-4">
-                      {paragraphs.map((p, i) => (
-                        <p
-                          key={i}
-                          className="text-base md:text-lg text-rush-on-surface-variant leading-relaxed"
-                        >
-                          {p}
-                        </p>
-                      ))}
-                    </div>
+                    {summary && (
+                      <p className="text-base md:text-lg text-rush-on-surface-variant leading-relaxed">
+                        {summary}
+                      </p>
+                    )}
 
                     {item.authors.length > 0 && (
-                      <p className="mt-8 text-sm text-rush-on-surface-variant">
+                      <p className="mt-6 text-sm text-rush-on-surface-variant">
                         <span className="font-mono text-xs uppercase tracking-widest text-rush-on-surface-variant/60 mr-2">
                           Featuring
                         </span>
@@ -139,6 +142,13 @@ export default function NewsPage() {
                         })}
                       </p>
                     )}
+
+                    <Link
+                      href={href}
+                      className="mt-8 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-rush-dark-green hover:text-rush-teal transition-colors underline underline-offset-4"
+                    >
+                      Read more
+                    </Link>
                   </div>
                 </article>
               );

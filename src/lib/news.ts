@@ -46,6 +46,11 @@ export function getAllNews(): NewsItem[] {
   return items.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 }
 
+/** Returns a single news item by slug, or null if none exists. */
+export function getNewsBySlug(slug: string): NewsItem | null {
+  return getAllNews().find((item) => item.slug === slug) ?? null;
+}
+
 /** Formats an ISO date (YYYY-MM-DD) as e.g. "May 6, 2026". Returns "" if unparseable. */
 export function formatNewsDate(iso: string): string {
   if (!iso) return "";
