@@ -12,7 +12,7 @@ const organizationJsonLd = {
   url: siteConfig.url,
   logo: `${siteConfig.url}/images/riccc-logo-transparent.webp`,
   description:
-    "ICU data science and clinical trials lab at Rush University, Chicago",
+    "Rush Interdisciplinary Consortium for Critical Care Trials and Data Science — ICU data science, AI, and clinical trials at Rush University, Chicago",
   foundingDate: "2025",
   address: {
     "@type": "PostalAddress",
