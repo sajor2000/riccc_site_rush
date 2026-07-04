@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Contact & Collaborate",
   description:
     "Partner with RICCC at Rush University, Chicago — connect with investigators including J.C. Rojas and Kevin Buell on research collaborations, trainee opportunities, and ICU data science.",
+  alternates: { canonical: "/contact" },
   openGraph: { url: "/contact" },
 };
 
@@ -16,7 +17,7 @@ export default function ContactPage() {
       <section className="pt-32 pb-16 max-w-screen-2xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           <div className="lg:col-span-8">
-            <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-6 block">
+            <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-6 block">
               Contact & Collaborate
             </span>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-rush-dark-green leading-[1.1] mb-8">
@@ -202,7 +203,7 @@ export default function ContactPage() {
       <section className="bg-rush-surface-container-low py-24 border-t border-rush-outline-variant/10">
         <div className="max-w-screen-2xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-4 block">
+            <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-4 block">
               Learn More
             </span>
             <h2 className="text-3xl font-bold text-rush-dark-green mb-4 tracking-tight">

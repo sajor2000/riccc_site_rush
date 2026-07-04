@@ -60,7 +60,7 @@ export function PiBio({ member, index = 0 }: PiBioProps) {
         {/* Text panel */}
         <div className={`lg:w-2/3 ${contentBg} p-10 md:p-16 flex flex-col justify-center`}>
           <div className={`max-w-xl ${isReversed ? "mr-auto" : "ml-auto"}`}>
-            <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-4 block">
+            <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-4 block">
               Principal Investigator
             </span>
 

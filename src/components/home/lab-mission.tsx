@@ -25,7 +25,7 @@ export function LabMission() {
         <div className="lg:col-span-8 space-y-16">
           {RESEARCH_PILLARS.map((pillar, index) => (
             <div key={pillar.id}>
-              <p className="font-mono text-rush-teal text-lg mb-2">
+              <p className="font-mono text-rush-dark-green text-lg mb-2">
                 {String(index + 1).padStart(2, "0")}.
               </p>
               <h3 className="text-2xl font-bold text-rush-dark-green mb-3">

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Mission | Critical Care Data Science & AI",
   description:
     "RICCC's mission at Rush University — ICU data science, AI, CLIF consortium federated research, pragmatic clinical trials, and collaboration in Chicago.",
+  alternates: { canonical: "/mission" },
   openGraph: { url: "/mission" },
 };
 
@@ -34,7 +35,7 @@ export default function MissionPage() {
       <section className="pt-32 pb-16 max-w-screen-2xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
           <div className="lg:col-span-8">
-            <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-6 block">
+            <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-6 block">
               Established {siteConfig.metrics.founded} &bull; Rush University
             </span>
             <h1 className="text-5xl md:text-7xl font-bold text-rush-dark-green tracking-tight leading-[1.1] mb-8">
@@ -90,7 +91,7 @@ export default function MissionPage() {
             {RESEARCH_PILLARS.map((pillar, index) => (
               <div key={pillar.id} className="ml-0 lg:ml-10 group">
                 <div className="flex items-center gap-4 mb-6">
-                  <span className="font-mono text-rush-teal text-lg">
+                  <span className="font-mono text-rush-dark-green text-lg">
                     {String(index + 1).padStart(2, "0")}.
                   </span>
                   <h3 className="text-2xl font-bold text-rush-dark-green">{pillar.title}</h3>
@@ -136,7 +137,7 @@ export default function MissionPage() {
                 </div>
                 <div className="min-w-0">
                   <h4 className="text-lg font-bold text-rush-dark-green mb-0.5">{pi.name}</h4>
-                  <p className="font-mono text-xs text-rush-teal tracking-widest mb-3">
+                  <p className="font-mono text-xs text-rush-dark-green tracking-widest mb-3">
                     {missionSubtitle(pi)}
                   </p>
                   <p className="text-sm text-rush-on-surface-variant leading-relaxed">

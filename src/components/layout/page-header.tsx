@@ -9,7 +9,7 @@ export function PageHeader({ title, description, label }: PageHeaderProps) {
     <header className="pt-32 pb-16 md:pb-24 px-6 lg:px-8">
       <div className="max-w-screen-2xl mx-auto">
         {label && (
-          <span className="font-mono text-xs uppercase tracking-widest text-rush-teal mb-4 block">
+          <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-4 block">
             {label}
           </span>
         )}

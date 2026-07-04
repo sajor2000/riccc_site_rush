@@ -29,7 +29,7 @@ export function PubCard({ pub }: { pub: Publication }) {
           </h3>
           <p className="text-sm text-rush-on-surface-variant mb-1">{pub.authors}</p>
           {pub.journal && (
-            <p className="text-sm text-rush-teal font-medium">
+            <p className="text-sm text-rush-dark-green font-medium">
               {pub.journal} {pub.year && `(${pub.year})`}
             </p>
           )}
