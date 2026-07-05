@@ -26,6 +26,19 @@ export function getPublicationsSnapshot(): Publication[] {
   }
 }
 
+/**
+ * True when a publication has real, renderable metadata. Source adapters can emit
+ * placeholder rows (e.g. PubMed returns `Publication (PMID: …)` / `Metadata
+ * unavailable` when an efetch detail lookup fails); these carry no title, authors,
+ * or year and must never reach the page — they'd render as broken "Unknown" cards.
+ */
+export function hasUsableMetadata(p: Publication): boolean {
+  const title = p.title?.trim() ?? "";
+  if (!title || /^Publication \(PMID:/i.test(title)) return false;
+  if ((p.authors?.trim().toLowerCase() ?? "") === "metadata unavailable") return false;
+  return true;
+}
+
 /** Dedup key: DOI when present, else a normalized title. */
 function pubKey(p: Publication): string {
   return p.doi?.toLowerCase() || p.title.toLowerCase().replace(/\s+/g, " ").trim();
@@ -55,7 +68,9 @@ export function mergeWithSnapshot(
   const byKey = new Map<string, Publication>();
   for (const p of snapshot) byKey.set(pubKey(p), p);
   for (const p of live) byKey.set(pubKey(p), p); // live overwrites snapshot
-  return Array.from(byKey.values()).sort(comparePublications);
+  return Array.from(byKey.values())
+    .filter(hasUsableMetadata)
+    .sort(comparePublications);
 }
 
 /**
@@ -71,8 +86,11 @@ export function unionSnapshot(
   fresh: readonly Publication[]
 ): Publication[] {
   const byKey = new Map<string, Publication>();
-  for (const p of existing) byKey.set(pubKey(p), { ...p });
+  for (const p of existing) {
+    if (hasUsableMetadata(p)) byKey.set(pubKey(p), { ...p });
+  }
   for (const p of fresh) {
+    if (!hasUsableMetadata(p)) continue;
     const key = pubKey(p);
     const cur = byKey.get(key);
     if (cur) {
