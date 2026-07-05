@@ -71,7 +71,9 @@ function MemberRow({
     >
       <div
         className={`shrink-0 w-20 h-20 sm:w-24 sm:h-24 rounded-sm overflow-hidden ${
-          variant === "dark" ? "bg-white/10 ring-1 ring-white/10" : "bg-rush-surface-container"
+          variant === "dark"
+            ? "bg-white/10 ring-1 ring-white/10"
+            : "bg-rush-secondary-container/50 ring-1 ring-rush-outline-variant/15"
         }`}
       >
         {member.photo ? (
@@ -88,8 +90,8 @@ function MemberRow({
         ) : (
           <div className="w-full h-full flex items-center justify-center">
             <span
-              className={`font-mono text-sm font-bold select-none ${
-                variant === "dark" ? "text-white/40" : "text-rush-on-surface-variant/45"
+              className={`font-mono text-lg font-bold select-none ${
+                variant === "dark" ? "text-white/85" : "text-rush-dark-green"
               }`}
             >
               {initials}

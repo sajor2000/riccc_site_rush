@@ -29,8 +29,8 @@ export function CompactMemberGrid({
             key={member.slug}
             className={`group flex items-center gap-4 rounded-sm px-5 py-4 ${surface} shadow-card-sm transition-colors hover:bg-rush-surface-container`}
           >
-            <div className="w-11 h-11 shrink-0 rounded-sm bg-rush-surface-container-high flex items-center justify-center ring-1 ring-rush-outline-variant/15">
-              <span className="font-mono text-xs font-bold text-rush-on-surface-variant/55 select-none uppercase">
+            <div className="w-11 h-11 shrink-0 rounded-sm bg-rush-secondary-container/50 flex items-center justify-center ring-1 ring-rush-outline-variant/15">
+              <span className="font-mono text-xs font-bold text-rush-dark-green select-none uppercase">
                 {initials}
               </span>
             </div>

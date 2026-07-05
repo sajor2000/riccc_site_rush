@@ -2,6 +2,7 @@ import { type Publication } from "./types";
 import { type SemanticPaper } from "./semantic-scholar";
 import { type OpenAlexWork } from "./openalex";
 import { siteConfig } from "./config";
+import { hasUsableMetadata } from "./publications-snapshot";
 
 /**
  * Merge publications from PubMed, Semantic Scholar, and OpenAlex.
@@ -76,9 +77,11 @@ export function mergePublications(
     }
   }
 
-  // Filter out off-topic papers using configurable exclude patterns
+  // Drop placeholder rows (e.g. PubMed efetch failures) with no usable metadata,
+  // then filter out off-topic papers using configurable exclude patterns.
   const excludePatterns = siteConfig.excludeTitlePatterns;
   const filtered = enriched.filter((pub) => {
+    if (!hasUsableMetadata(pub)) return false;
     const title = pub.title.toLowerCase();
     return !excludePatterns.some((pattern) => title.includes(pattern));
   });

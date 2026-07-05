@@ -43,7 +43,12 @@ export function PubFilters({ publications }: { publications: Publication[] }) {
       );
     }
 
-    const sy = Object.keys(g).sort((a, b) => b.localeCompare(a));
+    // Newest year first; any "Unknown" (missing year) group always sorts last.
+    const sy = Object.keys(g).sort((a, b) => {
+      if (a === "Unknown") return 1;
+      if (b === "Unknown") return -1;
+      return b.localeCompare(a);
+    });
     return { grouped: g, sortedYears: sy };
   }, [filtered]);
 
