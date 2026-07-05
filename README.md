@@ -44,18 +44,24 @@ git secret reveal  # requires GPG key
 
 ```
 content/            # MDX/JSON content (git-backed CMS)
-  team/*.mdx        # Team member profiles
-  site-config.json  # Lab name, PubMed query, metrics
+  team/*.mdx        # Team member profiles (name: "TBD" entries are filtered out)
+  news/*.mdx        # News articles → /news list + /news/[slug] pages
+  site-config.json  # Consortium name, PubMed query, links
   spotlights.json   # Research spotlights
-public/images/      # Team photos, logos
+  publications.json # Publications snapshot (live APIs merge on top)
+public/images/      # Team photos (1024² WebP), logos
 src/
-  app/(public)/     # Public pages (team, research, contact, etc.)
+  app/(public)/     # Public pages (team, research, news, contact, etc.)
   app/staff/        # Admin panel (passphrase-protected)
   app/api/          # API routes (contact, staff CRUD, revalidation)
   components/       # React components
-  lib/              # Shared utilities (team, publications, config)
+  lib/              # Shared utilities (team, news, publications, config)
   lib/staff/        # Admin panel backend (auth, GitHub I/O, validation)
 ```
+
+The site is investigator-neutral: visible copy leads with the RICCC consortium name, while
+investigator names live only in the SEO layer (keywords, `Person`/`NewsArticle` JSON-LD). See
+`CLAUDE.md` for branding, SEO, and color-contrast conventions before making UI changes.
 
 ## Staff Admin Panel
 

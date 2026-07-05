@@ -15,7 +15,7 @@ This guide is for lab members who need to update their profile, add new team mem
 3. Update your fields:
    - **Name**: Full name with degrees (e.g., "Jane Doe, MD, PhD")
    - **Role/Title**: Your position (e.g., "PhD Student, Biomedical Informatics")
-   - **Photo**: Drag and drop a headshot (max 4.5 MB, auto-resized to 400x400)
+   - **Photo**: Drag and drop a headshot (max 4.5 MB, auto-cropped to a 1024×1024 square). Use a rectangular original or a full-size LinkedIn photo — not a small circular Teams thumbnail.
    - **Bio**: Write 2-3 sentences about your research interests
    - **PubMed Author Name**: Your PubMed author name (e.g., "Doe J") — this auto-fetches your publications
    - **Academic links**: Google Scholar URL, LinkedIn URL, ORCID, personal website, GitHub — all optional
