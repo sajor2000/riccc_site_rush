@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-05T16:59:21.376Z",
-  "count": 153,
+  "generatedAt": "2026-08-01T08:24:09.089Z",
+  "count": 156,
   "sources": {
-    "pubmed": 71,
-    "semanticScholar": 0,
-    "openalex": 92
+    "pubmed": 72,
+    "semanticScholar": 12,
+    "openalex": 104
   },
   "authors": [
     "Juan Rojas",
@@ -18,7 +18,7 @@
       "journal": "British medical journal",
       "year": "2026",
       "doi": "10.1136/bmj-2025-086612",
-      "citationCount": 2,
+      "citationCount": 4,
       "source": "semantic-scholar",
       "volume": "393",
       "pages": "e086612"
@@ -127,7 +127,7 @@
       "volume": "32",
       "issue": "7",
       "pages": "1093-1100",
-      "citationCount": 96,
+      "citationCount": 105,
       "source": "openalex"
     },
     {
@@ -260,7 +260,7 @@
       "journal": "American Journal of Emergency Medicine",
       "year": "2025",
       "doi": "10.1016/j.ajem.2025.09.016",
-      "citationCount": 1,
+      "citationCount": 2,
       "source": "semantic-scholar",
       "volume": "99",
       "pages": "76-82"
@@ -288,7 +288,7 @@
       "volume": "13",
       "issue": "6",
       "pages": "556-568",
-      "citationCount": 35,
+      "citationCount": 37,
       "source": "openalex"
     },
     {
@@ -648,7 +648,7 @@
       "doi": "10.1186/s44247-024-00135-3",
       "volume": "2",
       "issue": "1",
-      "citationCount": 10,
+      "citationCount": 12,
       "source": "openalex"
     },
     {
@@ -793,7 +793,7 @@
       "volume": "331",
       "issue": "14",
       "pages": "1195",
-      "citationCount": 115,
+      "citationCount": 118,
       "source": "openalex"
     },
     {
@@ -807,7 +807,7 @@
       "issue": "8",
       "pages": "1327-1330",
       "source": "pubmed",
-      "citationCount": 0
+      "citationCount": 1
     },
     {
       "pmid": "",
@@ -878,7 +878,7 @@
       "volume": "5",
       "issue": "2",
       "pages": "274-285",
-      "citationCount": 3,
+      "citationCount": 5,
       "source": "openalex"
     },
     {
@@ -926,7 +926,7 @@
       "volume": "39",
       "issue": "4",
       "pages": "769-782",
-      "citationCount": 29,
+      "citationCount": 31,
       "source": "openalex"
     },
     {
@@ -951,7 +951,7 @@
       "issue": "2",
       "pages": "e299-e301",
       "source": "pubmed",
-      "citationCount": 0
+      "citationCount": 2
     },
     {
       "pmid": "",
@@ -1008,7 +1008,7 @@
       "volume": "207",
       "issue": "12",
       "pages": "1602-1611",
-      "citationCount": 30,
+      "citationCount": 31,
       "source": "openalex"
     },
     {
@@ -1114,7 +1114,7 @@
       "volume": "3",
       "issue": "2",
       "pages": "312-323",
-      "citationCount": 15,
+      "citationCount": 17,
       "source": "openalex"
     },
     {
@@ -1141,7 +1141,7 @@
       "issue": "5",
       "pages": "1343-1346",
       "source": "pubmed",
-      "citationCount": 0
+      "citationCount": 15
     },
     {
       "pmid": "",
@@ -1153,7 +1153,7 @@
       "volume": "161",
       "issue": "6",
       "pages": "1621-1627",
-      "citationCount": 46,
+      "citationCount": 47,
       "source": "openalex"
     },
     {
@@ -1222,7 +1222,7 @@
       "volume": "387",
       "issue": "19",
       "pages": "1759-1769",
-      "citationCount": 212,
+      "citationCount": 213,
       "source": "openalex"
     },
     {
@@ -1236,7 +1236,7 @@
       "issue": "15",
       "pages": "4015-4017",
       "source": "pubmed",
-      "citationCount": 0
+      "citationCount": 14
     },
     {
       "pmid": "",
@@ -1248,7 +1248,7 @@
       "volume": "11",
       "issue": "12",
       "pages": "e42971",
-      "citationCount": 8,
+      "citationCount": 9,
       "source": "openalex"
     },
     {
@@ -1313,6 +1313,32 @@
     },
     {
       "pmid": "",
+      "title": "Impact of COVID-19 on Cardiovascular Testing in the United States Versus the Rest of the World",
+      "authors": "Cole B. Hirschfeld, Leslee J. Shaw, Michelle A. Williams, et al.",
+      "journal": "JACC. Cardiovascular imaging",
+      "year": "2021",
+      "doi": "10.1016/j.jcmg.2021.03.007",
+      "volume": "14",
+      "issue": "9",
+      "pages": "1787-1799",
+      "citationCount": 39,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
+      "title": "Impact of COVID-19 Pandemic on Cardiovascular Testing in Asia",
+      "authors": "Takashi Kudo, Ryan Lahey, Cole B. Hirschfeld, et al.",
+      "journal": "JACC Asia",
+      "year": "2021",
+      "doi": "10.1016/j.jacasi.2021.06.002",
+      "volume": "1",
+      "issue": "2",
+      "pages": "187-199",
+      "citationCount": 13,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
       "title": "Integrating Physicians Into Lean Quality Improvement Through a Structured Educational Program",
       "authors": "Ajanta Patel, Hasime Adili, J.C. Rojas, et al.",
       "journal": "American Journal of Medical Quality",
@@ -1344,7 +1370,7 @@
       "journal": "Tropical medicine & international health",
       "year": "2021",
       "doi": "10.1111/tmi.13652",
-      "citationCount": 16,
+      "citationCount": 17,
       "source": "semantic-scholar",
       "volume": "26",
       "issue": "10",
@@ -1395,7 +1421,7 @@
       "volume": "204",
       "issue": "3",
       "pages": "294-302",
-      "citationCount": 33,
+      "citationCount": 34,
       "source": "openalex"
     },
     {
@@ -1430,7 +1456,7 @@
       "volume": "2",
       "issue": "2",
       "pages": "176-184",
-      "citationCount": 88,
+      "citationCount": 89,
       "source": "openalex"
     },
     {
@@ -1597,7 +1623,7 @@
       "volume": "3",
       "issue": "6",
       "pages": "e2012606",
-      "citationCount": 141,
+      "citationCount": 142,
       "source": "openalex"
     },
     {
@@ -1726,7 +1752,7 @@
       "issue": "11",
       "pages": "e457-e458",
       "source": "pubmed",
-      "citationCount": 0
+      "citationCount": 7
     },
     {
       "pmid": "",
@@ -1739,6 +1765,19 @@
       "issue": "3",
       "pages": "C34-C37",
       "citationCount": 4,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
+      "title": "Comparing a centralized institutional and student-run peer-assisted learning program in medicine",
+      "authors": "Kevin G. Buell, William R. Pitts, Matthew J Edmondson, et al.",
+      "journal": "Education for Health",
+      "year": "2018",
+      "doi": "10.4103/efh.efh_78_18",
+      "volume": "31",
+      "issue": "2",
+      "pages": "134",
+      "citationCount": 2,
       "source": "openalex"
     },
     {
