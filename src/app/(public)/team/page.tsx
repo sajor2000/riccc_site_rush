@@ -211,7 +211,7 @@ export default function TeamPage() {
               trainees who want to work on ICU research problems.
             </p>
             <Link
-              href="/contact"
+              href="/internships"
               className="font-mono text-xs uppercase tracking-widest text-rush-dark-green border-b border-rush-dark-green/30 pb-0.5 hover:border-rush-dark-green transition-colors"
             >
               View Opportunities
