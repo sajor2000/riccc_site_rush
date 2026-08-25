@@ -79,3 +79,51 @@ export const SKILL_OPTIONS = [
   "Machine learning",
 ] as const;
 export type SkillOption = (typeof SKILL_OPTIONS)[number];
+
+export const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+] as const;
+
+export const SUMMER_START_MONTHS = ["May", "June"] as const;
+export const SUMMER_END_MONTHS = ["July", "August", "September"] as const;
+
+export const MAJOR_OPTIONS = [
+  "Computer Science",
+  "Data Science",
+  "Statistics / Biostatistics",
+  "Biomedical Informatics",
+  "Public Health",
+  "Medicine / Pre-med",
+  "Engineering",
+  "Mathematics",
+  "Biology / Life Sciences",
+  "Other",
+] as const;
+
+export const HEARD_ABOUT_OPTIONS = [
+  "RICCC website",
+  "Rush University",
+  "Professor or advisor",
+  "LinkedIn",
+  "Friend or classmate",
+  "Conference or talk",
+  "Other",
+] as const;
+
+/** Graduation year options relative to a summer cycle year. */
+export function graduationYearOptions(summerYear: number): number[] {
+  const years: number[] = [];
+  for (let y = summerYear - 1; y <= summerYear + 5; y++) years.push(y);
+  return years;
+}
