@@ -52,39 +52,41 @@ export default function InternshipsPage() {
   const cycle = getInternshipCycle();
   const validThrough = `${cycle.deadlineYear}-12-01`;
 
-  const jobPostingJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "JobPosting",
-    title: `Summer ${cycle.summerYear} Internship — Applied Healthcare Data Science`,
-    description:
-      "Summer internship with RICCC (Rush Interdisciplinary Consortium for Critical Care Trials and Data Science) at Rush University in Chicago. Motivated college and master's students work on applied healthcare data science, ICU research, clinical data, and related projects. Applications due December 1 (America/Chicago).",
-    datePosted: `${cycle.deadlineYear}-01-01`,
-    validThrough,
-    employmentType: "INTERN",
-    hiringOrganization: {
-      "@type": "ResearchOrganization",
-      name: siteConfig.name,
-      sameAs: siteConfig.url,
-      url: siteConfig.url,
-    },
-    jobLocation: {
-      "@type": "Place",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Chicago",
-        addressRegion: "IL",
-        addressCountry: "US",
-      },
-    },
-    applicantLocationRequirements: {
-      "@type": "Country",
-      name: "US",
-    },
-    industry: "Healthcare; Data Science; Critical Care Research",
-    occupationalCategory: "15-2051.00",
-    url: `${siteConfig.url}/internships`,
-    directApply: true,
-  };
+  const jobPostingJsonLd = cycle.open
+    ? {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        title: `Summer ${cycle.summerYear} Internship — Applied Healthcare Data Science`,
+        description:
+          "Summer internship with RICCC (Rush Interdisciplinary Consortium for Critical Care Trials and Data Science) at Rush University in Chicago. Motivated college and master's students work on applied healthcare data science, ICU research, clinical data, and related projects. Applications due December 1 (America/Chicago).",
+        datePosted: `${cycle.deadlineYear}-01-01`,
+        validThrough,
+        employmentType: "INTERN",
+        hiringOrganization: {
+          "@type": "ResearchOrganization",
+          name: siteConfig.name,
+          sameAs: siteConfig.url,
+          url: siteConfig.url,
+        },
+        jobLocation: {
+          "@type": "Place",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Chicago",
+            addressRegion: "IL",
+            addressCountry: "US",
+          },
+        },
+        applicantLocationRequirements: {
+          "@type": "Country",
+          name: "US",
+        },
+        industry: "Healthcare; Data Science; Critical Care Research",
+        occupationalCategory: "15-2051.00",
+        url: `${siteConfig.url}/internships`,
+        directApply: true,
+      }
+    : null;
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -107,7 +109,7 @@ export default function InternshipsPage() {
 
   return (
     <main className="bg-rush-surface text-rush-on-surface">
-      <JsonLd data={jobPostingJsonLd} />
+      {jobPostingJsonLd && <JsonLd data={jobPostingJsonLd} />}
       <JsonLd data={breadcrumbJsonLd} />
 
       <section className="pt-32 pb-16 max-w-screen-2xl mx-auto px-6 lg:px-8">
