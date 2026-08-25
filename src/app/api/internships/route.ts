@@ -46,7 +46,7 @@ const InternshipSchema = z
   .object({
     name: z.string().min(1).max(200),
     email: z.string().email().max(254),
-    phone: z.string().min(1).max(40),
+    phone: z.string().max(40).optional().default(""),
     school: z.string().min(1).max(200),
     degreeLevel: z.enum(DEGREE_LEVELS),
     major: z.string().min(1).max(200),
@@ -56,7 +56,7 @@ const InternshipSchema = z
     skills: z.array(z.enum(SKILL_OPTIONS)).max(SKILL_OPTIONS.length).default([]),
     skillsOther: z.string().max(200).optional().default(""),
     whyRiccc: z.string().min(1).max(2500),
-    experience: z.string().min(1).max(2500),
+    experience: z.string().min(1).max(1200),
     resumeUrl: httpUrl,
     portfolioUrl: z
       .string()
@@ -113,7 +113,7 @@ function buildHtml(data: InternshipData, summerYear: number, siteUrl: string): s
   <table style="width: 100%; border-collapse: collapse; margin-bottom: 24px;">
     ${row("Name", escapeHtml(data.name))}
     ${row("Email", `<a href="mailto:${escapeHtml(data.email)}" style="color: #00A66C;">${escapeHtml(data.email)}</a>`, true)}
-    ${row("Phone", escapeHtml(data.phone))}
+    ${row("Phone", escapeHtml(data.phone.trim() || "—"))}
     ${row("School", escapeHtml(data.school), true)}
     ${row("Degree level", escapeHtml(data.degreeLevel))}
     ${row("Major / program", escapeHtml(data.major), true)}
@@ -199,7 +199,7 @@ export async function POST(req: NextRequest) {
         "",
         `Name: ${data.name}`,
         `Email: ${data.email}`,
-        `Phone: ${data.phone}`,
+        `Phone: ${data.phone.trim() || "—"}`,
         `School: ${data.school}`,
         `Degree level: ${data.degreeLevel}`,
         `Major / program: ${data.major}`,

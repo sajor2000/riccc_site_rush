@@ -53,6 +53,18 @@ describe("sanitizeHeaderValue", () => {
   });
 });
 
+describe("graduationYearSelectOptions", () => {
+  it("includes a wide year range and before/after sentinels", async () => {
+    const { graduationYearSelectOptions } = await import("./internships");
+    const opts = graduationYearSelectOptions(2027);
+    expect(opts[0]).toBe("Before 2017");
+    expect(opts).toContain("2017");
+    expect(opts).toContain("2027");
+    expect(opts).toContain("2037");
+    expect(opts.at(-1)).toBe("After 2037");
+  });
+});
+
 describe("isHttpUrl", () => {
   it("allows http and https only", () => {
     expect(isHttpUrl("https://example.com/cv.pdf")).toBe(true);
