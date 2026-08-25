@@ -9,18 +9,13 @@ import {
   sanitizeHeaderValue,
   SKILL_OPTIONS,
 } from "@/lib/internships";
+import { getNotifyRecipients } from "@/lib/notify-recipients";
 
 function getResend() {
   const key = process.env.RESEND_API_KEY;
   if (!key) throw new Error("RESEND_API_KEY is not set");
   return new Resend(key);
 }
-
-const RECIPIENTS = [
-  "juan_rojas@rush.edu",
-  "juancroj@gmail.com",
-  "Kevin_Buell@rush.edu",
-];
 
 // Rate limit: 3 submissions per IP per 15 minutes
 const submissions = new Map<string, { count: number; resetAt: number }>();
@@ -193,11 +188,11 @@ export async function POST(req: NextRequest) {
     .join(", ");
 
   try {
-    await getResend().emails.send({
+    const { data: sent, error } = await getResend().emails.send({
       from: `RICCC Lab <noreply@${domain}>`,
-      to: RECIPIENTS,
+      to: getNotifyRecipients(),
       replyTo: data.email,
-      subject: `Summer Internship Application: ${safeName}`,
+      subject: `[RICCC Internship] Summer ${cycle.summerYear}: ${safeName}`,
       html: buildHtml(data, cycle.summerYear, siteUrl),
       text: [
         `Summer ${cycle.summerYear} Internship Application`,
@@ -228,6 +223,14 @@ export async function POST(req: NextRequest) {
         "X-Entity-Ref-ID": `riccc-internship-${Date.now()}`,
       },
     });
+
+    if (error || !sent?.id) {
+      console.error("[internships] Resend error:", error);
+      return NextResponse.json(
+        { error: "Failed to send. Please email us directly at info@riccc-lab.com" },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ ok: true });
   } catch (err) {

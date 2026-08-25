@@ -2,18 +2,13 @@ import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { Resend } from "resend";
 import { z } from "zod";
+import { getNotifyRecipients } from "@/lib/notify-recipients";
 
 function getResend() {
   const key = process.env.RESEND_API_KEY;
   if (!key) throw new Error("RESEND_API_KEY is not set");
   return new Resend(key);
 }
-
-const RECIPIENTS = [
-  "juan_rojas@rush.edu",
-  "juancroj@gmail.com",
-  "Kevin_Buell@rush.edu",
-];
 
 // Rate limit: 3 submissions per IP per 15 minutes
 const submissions = new Map<string, { count: number; resetAt: number }>();
@@ -116,9 +111,9 @@ export async function POST(req: NextRequest) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? `https://${domain}`;
 
   try {
-    await getResend().emails.send({
+    const { data: sent, error } = await getResend().emails.send({
       from: `RICCC Lab <noreply@${domain}>`,
-      to: RECIPIENTS,
+      to: getNotifyRecipients(),
       replyTo: email,
       subject: `RICCC Collaboration Inquiry: ${track}`,
       html: buildHtml(name, email, track, proposal, siteUrl),
@@ -137,6 +132,14 @@ export async function POST(req: NextRequest) {
         "X-Entity-Ref-ID": `riccc-contact-${Date.now()}`,
       },
     });
+
+    if (error || !sent?.id) {
+      console.error("[contact] Resend error:", error);
+      return NextResponse.json(
+        { error: "Failed to send. Please email us directly at info@riccc-lab.com" },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ ok: true });
   } catch (err) {
