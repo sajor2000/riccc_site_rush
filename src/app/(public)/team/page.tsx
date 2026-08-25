@@ -208,14 +208,23 @@ export default function TeamPage() {
             </h3>
             <p className="text-rush-on-surface-variant text-sm mb-4 max-w-lg">
               We are always happy to hear from clinicians, data scientists, and
-              trainees who want to work on ICU research problems.
+              trainees who want to work on ICU research problems. College and
+              master&apos;s students can also apply for our summer internship.
             </p>
-            <Link
-              href="/contact"
-              className="font-mono text-xs uppercase tracking-widest text-rush-dark-green border-b border-rush-dark-green/30 pb-0.5 hover:border-rush-dark-green transition-colors"
-            >
-              View Opportunities
-            </Link>
+            <div className="flex flex-wrap gap-x-6 gap-y-3">
+              <Link
+                href="/contact"
+                className="font-mono text-xs uppercase tracking-widest text-rush-dark-green border-b border-rush-dark-green/30 pb-0.5 hover:border-rush-dark-green transition-colors"
+              >
+                Contact Us
+              </Link>
+              <Link
+                href="/internships"
+                className="font-mono text-xs uppercase tracking-widest text-rush-dark-green border-b border-rush-dark-green/30 pb-0.5 hover:border-rush-dark-green transition-colors"
+              >
+                Summer Internship
+              </Link>
+            </div>
           </div>
         </div>
       </section>

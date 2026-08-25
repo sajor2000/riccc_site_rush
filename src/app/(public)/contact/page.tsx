@@ -72,18 +72,18 @@ export default function ContactPage() {
                 Trainees &amp; Students
               </h3>
               <p className="text-base leading-relaxed mb-6 text-rush-dark-green/70">
-                Rush students, residents, and fellows, as well as trainees at other institutions,
-                are welcome to reach out about research opportunities. Availability varies, so
-                get in touch to see what we have open.
+                College and master&apos;s students can apply for our summer internship in
+                applied healthcare data science (deadline December 1). Residents, fellows,
+                and other trainees are welcome to reach out about year-round opportunities.
               </p>
             </div>
             <div>
-              <a
-                href="#inquiry"
+              <Link
+                href="/internships"
                 className="inline-flex items-center gap-2 font-bold underline underline-offset-8 decoration-rush-teal transition-all hover:gap-4 text-rush-dark-green"
               >
-                Contact Us &rarr;
-              </a>
+                Summer Internship &rarr;
+              </Link>
             </div>
           </div>
         </div>
