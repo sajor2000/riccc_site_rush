@@ -440,6 +440,19 @@ export function InternshipApplicationForm() {
         </p>
       )}
 
+      <p className="text-xs text-rush-on-surface-variant leading-relaxed">
+        Your application (including contact details and resume link) is emailed to
+        RICCC investigators for review and is processed by our email provider. We
+        use it only to evaluate internship candidates. Questions:{" "}
+        <a
+          href="mailto:info@riccc-lab.com"
+          className="text-rush-dark-green underline underline-offset-2"
+        >
+          info@riccc-lab.com
+        </a>
+        .
+      </p>
+
       <button
         type="submit"
         disabled={status === "sending"}

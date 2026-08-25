@@ -5,6 +5,8 @@ import { z } from "zod";
 import {
   DEGREE_LEVELS,
   getInternshipCycle,
+  isHttpUrl,
+  sanitizeHeaderValue,
   SKILL_OPTIONS,
 } from "@/lib/internships";
 
@@ -40,39 +42,54 @@ function checkInternshipRateLimit(ip: string): boolean {
   return true;
 }
 
-const InternshipSchema = z.object({
-  name: z.string().min(1).max(200),
-  email: z.string().email().max(254),
-  phone: z.string().min(1).max(40),
-  school: z.string().min(1).max(200),
-  degreeLevel: z.enum(DEGREE_LEVELS),
-  major: z.string().min(1).max(200),
-  graduation: z.string().min(1).max(40),
-  availabilityStart: z.string().min(1).max(40),
-  availabilityEnd: z.string().min(1).max(40),
-  skills: z.array(z.enum(SKILL_OPTIONS)).max(SKILL_OPTIONS.length).default([]),
-  skillsOther: z.string().max(200).optional().default(""),
-  whyRiccc: z.string().min(1).max(2500),
-  experience: z.string().min(1).max(2500),
-  resumeUrl: z.string().url().max(500),
-  portfolioUrl: z
-    .string()
-    .max(500)
-    .optional()
-    .default("")
-    .refine((v) => !v || z.string().url().safeParse(v).success, {
-      message: "Invalid portfolio URL",
-    }),
-  heardAbout: z.string().max(500).optional().default(""),
-  // Honeypot — hidden field that bots fill in, humans leave empty
-  website: z.string().max(0, "Bot detected").optional().default(""),
-}).refine(
-  (data) => data.skills.length > 0 || data.skillsOther.trim().length > 0,
-  { message: "Select at least one skill or describe other relevant skills.", path: ["skills"] }
-);
+const httpUrl = z
+  .string()
+  .max(500)
+  .refine(isHttpUrl, { message: "URL must start with http:// or https://" });
+
+const InternshipSchema = z
+  .object({
+    name: z.string().min(1).max(200),
+    email: z.string().email().max(254),
+    phone: z.string().min(1).max(40),
+    school: z.string().min(1).max(200),
+    degreeLevel: z.enum(DEGREE_LEVELS),
+    major: z.string().min(1).max(200),
+    graduation: z.string().min(1).max(40),
+    availabilityStart: z.string().min(1).max(40),
+    availabilityEnd: z.string().min(1).max(40),
+    skills: z.array(z.enum(SKILL_OPTIONS)).max(SKILL_OPTIONS.length).default([]),
+    skillsOther: z.string().max(200).optional().default(""),
+    whyRiccc: z.string().min(1).max(2500),
+    experience: z.string().min(1).max(2500),
+    resumeUrl: httpUrl,
+    portfolioUrl: z
+      .string()
+      .max(500)
+      .optional()
+      .default("")
+      .refine((v) => !v || isHttpUrl(v), {
+        message: "URL must start with http:// or https://",
+      }),
+    heardAbout: z.string().max(500).optional().default(""),
+    // Honeypot — allow any string so bots that fill it get silent success
+    website: z.string().max(200).optional().default(""),
+  })
+  .refine(
+    (data) => data.skills.length > 0 || data.skillsOther.trim().length > 0,
+    {
+      message: "Select at least one skill or describe other relevant skills.",
+      path: ["skills"],
+    }
+  );
 
 function escapeHtml(s: string): string {
-  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 type InternshipData = z.infer<typeof InternshipSchema>;
@@ -121,7 +138,7 @@ function buildHtml(data: InternshipData, summerYear: number, siteUrl: string): s
     <div style="margin-top: 8px; padding: 16px; background: #f8f4e5; border-radius: 4px; white-space: pre-wrap;">${escapeHtml(data.experience)}</div>
   </div>
   <div style="font-size: 12px; color: #a59f9f; border-top: 1px solid #eaeaea; padding-top: 12px;">
-    Sent from the RICCC Lab website internship form · <a href="${siteUrl}/internships" style="color: #00A66C;">riccc-lab.com/internships</a>
+    Sent from the RICCC Lab website internship form · <a href="${escapeHtml(siteUrl)}/internships" style="color: #00A66C;">riccc-lab.com/internships</a>
   </div>
 </body>
 </html>`;
@@ -164,12 +181,13 @@ export async function POST(req: NextRequest) {
   const data = parsed.data;
 
   // Honeypot triggered — silently succeed so bots think it worked
-  if (data.website) {
+  if (data.website.trim()) {
     return NextResponse.json({ ok: true });
   }
 
   const domain = process.env.RESEND_DOMAIN ?? "riccc-lab.com";
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? `https://${domain}`;
+  const safeName = sanitizeHeaderValue(data.name);
   const skillsLine = [...data.skills, data.skillsOther.trim()]
     .filter(Boolean)
     .join(", ");
@@ -179,7 +197,7 @@ export async function POST(req: NextRequest) {
       from: `RICCC Lab <noreply@${domain}>`,
       to: RECIPIENTS,
       replyTo: data.email,
-      subject: `Summer Internship Application: ${data.name}`,
+      subject: `Summer Internship Application: ${safeName}`,
       html: buildHtml(data, cycle.summerYear, siteUrl),
       text: [
         `Summer ${cycle.summerYear} Internship Application`,

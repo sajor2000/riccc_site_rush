@@ -2,18 +2,20 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { InternshipApplicationForm } from "@/components/internships/application-form";
 import { siteConfig } from "@/lib/config";
-import { formatDeadline, getInternshipCycle } from "@/lib/internships";
+import { getInternshipCycle } from "@/lib/internships";
+
+/** Always compute open/closed against live Chicago calendar — do not statically freeze. */
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Summer Internship",
-  description: `Apply for a summer internship with ${siteConfig.name} at Rush University — for college and master's students interested in applied healthcare data science. Applications due December 1.`,
+  description: `Apply for a summer internship with ${siteConfig.name} at Rush University — for college and master's students interested in applied healthcare data science. Applications due December 1 (America/Chicago).`,
   alternates: { canonical: "/internships" },
   openGraph: { url: "/internships" },
 };
 
 export default function InternshipsPage() {
   const cycle = getInternshipCycle();
-  const deadlineLabel = formatDeadline(cycle.deadline);
 
   return (
     <main className="bg-rush-surface text-rush-on-surface">
@@ -50,10 +52,22 @@ export default function InternshipsPage() {
             <h2 className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-3">
               Deadline
             </h2>
-            <p className="text-rush-on-surface-variant leading-relaxed">
-              Submit by <strong className="text-rush-on-surface">{deadlineLabel}</strong>{" "}
-              for Summer {cycle.summerYear}. We review after the deadline.
-            </p>
+            {cycle.open ? (
+              <p className="text-rush-on-surface-variant leading-relaxed">
+                Submit by{" "}
+                <strong className="text-rush-on-surface">{cycle.deadlineLabel}</strong>{" "}
+                (Central Time) for Summer {cycle.summerYear}. We review after the
+                deadline.
+              </p>
+            ) : (
+              <p className="text-rush-on-surface-variant leading-relaxed">
+                Applications are closed for this cycle. The next window opens{" "}
+                <strong className="text-rush-on-surface">
+                  {cycle.reopensLabel ?? "January 1"}
+                </strong>
+                , with a deadline of {cycle.deadlineLabel} for Summer {cycle.summerYear}.
+              </p>
+            )}
           </div>
           <div className="bg-rush-surface-container p-8 rounded-sm">
             <h2 className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-3">
@@ -84,16 +98,13 @@ export default function InternshipsPage() {
               {cycle.open ? (
                 <p className="text-rush-on-surface-variant text-lg leading-relaxed mb-8">
                   Complete the form below. Applications for Summer {cycle.summerYear}{" "}
-                  close on {deadlineLabel}.
+                  close on {cycle.deadlineLabel} (Central Time).
                 </p>
               ) : (
                 <p className="text-rush-on-surface-variant text-lg leading-relaxed mb-8">
                   The deadline for this cycle has passed. Applications for Summer{" "}
-                  {cycle.summerYear} reopen on{" "}
-                  {cycle.reopensAt
-                    ? formatDeadline(cycle.reopensAt)
-                    : "January 1"}
-                  , with a deadline of {deadlineLabel}.
+                  {cycle.summerYear} reopen on {cycle.reopensLabel ?? "January 1"},
+                  with a deadline of {cycle.deadlineLabel}.
                 </p>
               )}
               <p className="text-sm text-rush-on-surface-variant">
