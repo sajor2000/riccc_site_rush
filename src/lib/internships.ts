@@ -95,8 +95,14 @@ export const MONTHS = [
   "December",
 ] as const;
 
-export const SUMMER_START_MONTHS = ["May", "June"] as const;
-export const SUMMER_END_MONTHS = ["July", "August", "September"] as const;
+/** Summer-window months (inclusive) for availability start and end. */
+export const AVAILABILITY_MONTHS = [
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+] as const;
 
 export const MAJOR_OPTIONS = [
   "Computer Science",
@@ -121,9 +127,15 @@ export const HEARD_ABOUT_OPTIONS = [
   "Other",
 ] as const;
 
-/** Graduation year options relative to a summer cycle year. */
-export function graduationYearOptions(summerYear: number): number[] {
-  const years: number[] = [];
-  for (let y = summerYear - 1; y <= summerYear + 5; y++) years.push(y);
+/**
+ * Graduation year choices relative to a summer cycle year.
+ * Wide numeric range plus before/after sentinels so no truthful year is unrepresentable.
+ */
+export function graduationYearSelectOptions(summerYear: number): string[] {
+  const first = summerYear - 10;
+  const last = summerYear + 10;
+  const years: string[] = [`Before ${first}`];
+  for (let y = first; y <= last; y++) years.push(String(y));
+  years.push(`After ${last}`);
   return years;
 }

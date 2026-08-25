@@ -2,14 +2,13 @@
 
 import { useMemo, useState, type FormEvent } from "react";
 import {
+  AVAILABILITY_MONTHS,
   DEGREE_LEVELS,
-  graduationYearOptions,
+  graduationYearSelectOptions,
   HEARD_ABOUT_OPTIONS,
   MAJOR_OPTIONS,
   MONTHS,
   SKILL_OPTIONS,
-  SUMMER_END_MONTHS,
-  SUMMER_START_MONTHS,
   type DegreeLevel,
   type SkillOption,
 } from "@/lib/internships";
@@ -89,7 +88,10 @@ export function InternshipApplicationForm({ summerYear, deadlineLabel }: Props) 
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
-  const gradYears = useMemo(() => graduationYearOptions(summerYear), [summerYear]);
+  const gradYears = useMemo(
+    () => graduationYearSelectOptions(summerYear),
+    [summerYear]
+  );
   const whyWords = wordCount(form.whyRiccc);
 
   function handleChange(
@@ -448,7 +450,7 @@ export function InternshipApplicationForm({ summerYear, deadlineLabel }: Props) 
                 Select year…
               </option>
               {gradYears.map((y) => (
-                <option key={y} value={String(y)}>
+                <option key={y} value={y}>
                   {y}
                 </option>
               ))}
@@ -477,7 +479,7 @@ export function InternshipApplicationForm({ summerYear, deadlineLabel }: Props) 
               style={selectStyle}
               required
             >
-              {SUMMER_START_MONTHS.map((m) => (
+              {AVAILABILITY_MONTHS.map((m) => (
                 <option key={m} value={m}>
                   {m} {summerYear}
                 </option>
@@ -498,12 +500,16 @@ export function InternshipApplicationForm({ summerYear, deadlineLabel }: Props) 
               style={selectStyle}
               required
             >
-              {SUMMER_END_MONTHS.map((m) => (
+              {AVAILABILITY_MONTHS.map((m) => (
                 <option key={m} value={m}>
                   {m} {summerYear}
                 </option>
               ))}
             </select>
+            <p className="mt-2 text-xs text-rush-on-surface-variant">
+              Choose the closest months in the May–September window that match
+              your schedule.
+            </p>
           </div>
         </div>
       </fieldset>
