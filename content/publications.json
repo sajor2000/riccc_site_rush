@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-08-01T08:24:09.089Z",
+  "generatedAt": "2026-09-01T11:18:19.640Z",
   "count": 156,
   "sources": {
     "pubmed": 72,
-    "semanticScholar": 12,
+    "semanticScholar": 24,
     "openalex": 104
   },
   "authors": [
@@ -114,7 +114,7 @@
       "volume": "51",
       "issue": "3",
       "pages": "556-569",
-      "citationCount": 20,
+      "citationCount": 21,
       "source": "openalex"
     },
     {
@@ -127,7 +127,7 @@
       "volume": "32",
       "issue": "7",
       "pages": "1093-1100",
-      "citationCount": 105,
+      "citationCount": 123,
       "source": "openalex"
     },
     {
@@ -288,7 +288,7 @@
       "volume": "13",
       "issue": "6",
       "pages": "556-568",
-      "citationCount": 37,
+      "citationCount": 43,
       "source": "openalex"
     },
     {
@@ -648,7 +648,7 @@
       "doi": "10.1186/s44247-024-00135-3",
       "volume": "2",
       "issue": "1",
-      "citationCount": 12,
+      "citationCount": 14,
       "source": "openalex"
     },
     {
@@ -671,7 +671,7 @@
       "volume": "13",
       "issue": "12",
       "pages": "3429",
-      "citationCount": 2,
+      "citationCount": 3,
       "source": "openalex"
     },
     {
@@ -793,7 +793,7 @@
       "volume": "331",
       "issue": "14",
       "pages": "1195",
-      "citationCount": 118,
+      "citationCount": 122,
       "source": "openalex"
     },
     {
@@ -878,7 +878,7 @@
       "volume": "5",
       "issue": "2",
       "pages": "274-285",
-      "citationCount": 5,
+      "citationCount": 6,
       "source": "openalex"
     },
     {
@@ -926,7 +926,7 @@
       "volume": "39",
       "issue": "4",
       "pages": "769-782",
-      "citationCount": 31,
+      "citationCount": 32,
       "source": "openalex"
     },
     {
@@ -1222,7 +1222,7 @@
       "volume": "387",
       "issue": "19",
       "pages": "1759-1769",
-      "citationCount": 213,
+      "citationCount": 219,
       "source": "openalex"
     },
     {
@@ -1248,7 +1248,7 @@
       "volume": "11",
       "issue": "12",
       "pages": "e42971",
-      "citationCount": 9,
+      "citationCount": 10,
       "source": "openalex"
     },
     {
@@ -1360,7 +1360,7 @@
       "volume": "36",
       "issue": "8",
       "pages": "2400-2407",
-      "citationCount": 22,
+      "citationCount": 23,
       "source": "openalex"
     },
     {
@@ -1408,7 +1408,7 @@
       "volume": "11",
       "issue": "10",
       "pages": "e052013",
-      "citationCount": 6,
+      "citationCount": 7,
       "source": "openalex"
     },
     {
@@ -1421,7 +1421,7 @@
       "volume": "204",
       "issue": "3",
       "pages": "294-302",
-      "citationCount": 34,
+      "citationCount": 36,
       "source": "openalex"
     },
     {
@@ -1456,7 +1456,7 @@
       "volume": "2",
       "issue": "2",
       "pages": "176-184",
-      "citationCount": 89,
+      "citationCount": 91,
       "source": "openalex"
     },
     {
@@ -1623,7 +1623,7 @@
       "volume": "3",
       "issue": "6",
       "pages": "e2012606",
-      "citationCount": 142,
+      "citationCount": 143,
       "source": "openalex"
     },
     {
@@ -1688,7 +1688,7 @@
       "volume": "28",
       "issue": "8",
       "pages": "627-634",
-      "citationCount": 35,
+      "citationCount": 36,
       "source": "openalex"
     },
     {
@@ -1714,7 +1714,7 @@
       "volume": "8",
       "issue": "4",
       "pages": "e000597",
-      "citationCount": 19,
+      "citationCount": 20,
       "source": "openalex"
     },
     {
