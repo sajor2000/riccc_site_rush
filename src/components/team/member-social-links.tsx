@@ -5,7 +5,7 @@ import { GoogleScholarIcon, LinkedInIcon } from "@/components/icons/brand-social
 import { isLinkedInUrl, isSafeUrl } from "@/lib/url";
 import { cn } from "@/lib/utils";
 
-type SocialVariant = "pi" | "staff-light" | "staff-dark" | "compact";
+type SocialVariant = "pi" | "staff-light" | "staff-dark" | "compact" | "labeled";
 
 interface SocialItem {
   key: string;
@@ -80,6 +80,7 @@ export function MemberSocialLinks({
   if (items.length === 0) return null;
 
   const isCompact = variant === "compact";
+  const isLabeled = variant === "labeled";
 
   const wrap = cn(
     "inline-flex items-center justify-center shrink-0 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rush-teal focus-visible:ring-offset-2 rounded-sm",
@@ -90,8 +91,27 @@ export function MemberSocialLinks({
     variant === "staff-dark" &&
       "w-9 h-9 text-white/55 hover:text-rush-secondary-container hover:bg-white/10",
     variant === "compact" &&
-      "min-w-11 min-h-11 w-11 h-11 text-rush-on-surface-variant/70 hover:text-rush-dark-green hover:bg-rush-surface-container-high"
+      "min-w-11 min-h-11 w-11 h-11 text-rush-on-surface-variant/70 hover:text-rush-dark-green hover:bg-rush-surface-container-high",
+    variant === "labeled" &&
+      "min-h-11 px-1 font-mono text-xs uppercase tracking-widest text-rush-dark-green border-b border-rush-dark-green/30 pb-0.5 hover:border-rush-dark-green"
   );
+
+  const labelForKey = (key: string): string => {
+    switch (key) {
+      case "linkedin":
+        return "LinkedIn";
+      case "scholar":
+        return "Scholar";
+      case "orcid":
+        return "ORCID";
+      case "website":
+        return "Website";
+      case "github":
+        return "GitHub";
+      default:
+        return key;
+    }
+  };
 
   return (
     <div
@@ -111,7 +131,8 @@ export function MemberSocialLinks({
           title={item.label}
           aria-label={item.label}
         >
-          {ICON_MAP[item.key]?.(isCompact)}
+          {!isLabeled ? ICON_MAP[item.key]?.(isCompact) : null}
+          {isLabeled ? <span>{labelForKey(item.key)}</span> : null}
         </a>
       ))}
     </div>
