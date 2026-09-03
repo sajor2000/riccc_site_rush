@@ -2,15 +2,18 @@ import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV === "development";
 
+// Dev-only allowance so impeccable live mode can load. Guarded by NODE_ENV.
+const __impeccableLiveDev = isDev ? " http://localhost:8400" : "";
+
 // Content Security Policy per Next.js production checklist
 // https://nextjs.org/docs/app/guides/content-security-policy#without-nonces
 const cspHeader = `
   default-src 'self';
-  script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com ${isDev ? "'unsafe-eval'" : ""};
+  script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com ${isDev ? "'unsafe-eval'" : ""}${__impeccableLiveDev};
   style-src 'self' 'unsafe-inline';
   img-src 'self' data: blob:;
   font-src 'self' https://fonts.gstatic.com;
-  connect-src 'self' https://va.vercel-analytics.com https://vitals.vercel-insights.com https://eutils.ncbi.nlm.nih.gov https://api.semanticscholar.org https://api.openalex.org;
+  connect-src 'self' https://va.vercel-analytics.com https://vitals.vercel-insights.com https://eutils.ncbi.nlm.nih.gov https://api.semanticscholar.org https://api.openalex.org${__impeccableLiveDev};
   frame-ancestors 'none';
   base-uri 'self';
   form-action 'self';

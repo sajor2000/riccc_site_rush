@@ -10,6 +10,7 @@ target_fingerprint: "sha256:08e94f4fcef2082d55b31ea0519c534528469af1c1388e5d9eb2
 target_path: /workspace/src/app/(public)/collaborations/page.tsx
 timestamp: 2026-09-03T12-47-56Z
 slug: src-app-public-collaborations-page-tsx
+closed: true
 ---
 Method: dual-agent (A: bc-98a200cb-60d2-5c21-8ec7-14137b006ca8 · B: bc-713b9fd4-4de4-5f49-809c-d0d751a7caee)
 

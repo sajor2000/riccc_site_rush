@@ -111,7 +111,7 @@ export default function CollaborationsPage() {
           <p className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-4">
             {siteConfig.name} · Across Rush
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-rush-dark-green leading-[1.1]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-rush-dark-green leading-[1.1] tracking-[-0.04em] max-w-[14ch]">
             Multidisciplinary Collaborations
           </h1>
           <div className="h-1 w-24 bg-rush-teal mt-6" aria-hidden />
@@ -179,9 +179,9 @@ export default function CollaborationsPage() {
                         id={member.slug}
                         className="scroll-mt-28"
                       >
-                        <div className="flex gap-4 sm:gap-5">
+                        <div className="flex items-start gap-4 sm:gap-5">
                           <div
-                            className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 rounded-sm bg-rush-secondary-container/50 flex items-center justify-center ring-1 ring-rush-outline-variant/15"
+                            className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 rounded-sm bg-rush-secondary-container/50 flex items-center justify-center ring-1 ring-rush-outline-variant/15 mt-1"
                             aria-hidden
                           >
                             <span className="font-mono text-sm font-bold text-rush-dark-green select-none uppercase">
