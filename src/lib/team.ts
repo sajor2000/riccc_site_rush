@@ -3,8 +3,14 @@ import path from "path";
 import matter from "gray-matter";
 
 export type { TeamTier } from "./team-constants";
-export { TEAM_TIERS, TIER_DISPLAY_ORDER, TIER_LABELS } from "./team-constants";
+export {
+  TEAM_TIERS,
+  TIER_DISPLAY_ORDER,
+  TIER_LABELS,
+  COLLABORATION_AREA_ORDER,
+} from "./team-constants";
 import type { TeamTier } from "./team-constants";
+import { COLLABORATION_AREA_ORDER } from "./team-constants";
 
 export interface TeamMember {
   slug: string;
@@ -24,6 +30,8 @@ export interface TeamMember {
   missionSubtitle?: string;
   missionBlurb?: string;
   alternateNames?: string[];
+  /** Discipline grouping for Multidisciplinary Collaborations section. */
+  collaborationArea?: string;
 }
 
 const tierOrder: Record<TeamTier, number> = {
@@ -35,6 +43,13 @@ const tierOrder: Record<TeamTier, number> = {
 };
 
 const validTiers = new Set<string>(["pi", "staff", "student", "alumni", "collaborator"]);
+
+/** Reject non-string frontmatter values before grouping calls `.trim()`. */
+export function normalizeCollaborationArea(value: unknown): string | undefined {
+  if (typeof value !== "string") return undefined;
+  const trimmed = value.trim();
+  return trimmed || undefined;
+}
 
 export function getAllTeamMembers(): TeamMember[] {
   const teamDir = path.join(process.cwd(), "content/team");
@@ -67,6 +82,7 @@ export function getAllTeamMembers(): TeamMember[] {
       missionSubtitle: data.mission_subtitle || undefined,
       missionBlurb: data.mission_blurb || undefined,
       alternateNames: data.alternate_names || undefined,
+      collaborationArea: normalizeCollaborationArea(data.collaboration_area),
     };
   });
 
@@ -104,5 +120,32 @@ export function getTeamMembersByTier(): Record<TeamTier, TeamMember[]> {
   }
 
   return grouped;
+}
+
+/** Group collaborators by collaboration_area for Multidisciplinary Collaborations. */
+export function groupCollaboratorsByArea(
+  collaborators: TeamMember[]
+): { area: string; members: TeamMember[] }[] {
+  const byArea = new Map<string, TeamMember[]>();
+
+  for (const member of collaborators) {
+    const area = normalizeCollaborationArea(member.collaborationArea) ?? "Collaborators";
+    const list = byArea.get(area) ?? [];
+    list.push(member);
+    byArea.set(area, list);
+  }
+
+  const ordered: { area: string; members: TeamMember[] }[] = [];
+  for (const area of COLLABORATION_AREA_ORDER) {
+    const members = byArea.get(area);
+    if (members && members.length > 0) {
+      ordered.push({ area, members });
+      byArea.delete(area);
+    }
+  }
+  for (const [area, members] of byArea) {
+    ordered.push({ area, members });
+  }
+  return ordered;
 }
 

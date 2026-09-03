@@ -30,6 +30,7 @@ export const MemberSchema = z.object({
   mission_subtitle: z.string().max(300).optional().or(z.literal("")),
   mission_blurb: z.string().max(1000).optional().or(z.literal("")),
   alternate_names: z.array(z.string().max(100)).optional(),
+  collaboration_area: z.string().max(100).optional().or(z.literal("")),
   bio: z.string().max(5000).optional().default(""),
 });
 
