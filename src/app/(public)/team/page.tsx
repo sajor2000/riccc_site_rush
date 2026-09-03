@@ -195,9 +195,16 @@ export default function TeamPage() {
             <div className="h-1 w-24 bg-rush-teal mt-5" aria-hidden />
             <p className="mt-6 text-base text-rush-on-surface-variant leading-relaxed max-w-2xl">
               {siteConfig.name} partners with Rush colleagues in emergency medicine,
-              critical care, respiratory care, and human-centered design on research,
-              clinical trials, and patient- and family-centered innovation.
+              critical care, respiratory care, and human-centered design. Collaborators
+              work with Dr. J.C. Rojas and Dr. Jared Greenberg on clinical trials and
+              related projects.
             </p>
+            <Link
+              href="/collaborations"
+              className="inline-flex mt-6 font-mono text-xs uppercase tracking-widest text-rush-dark-green border-b border-rush-dark-green/30 pb-0.5 hover:border-rush-dark-green transition-colors"
+            >
+              View collaborator profiles
+            </Link>
           </div>
 
           <div className="space-y-14 ml-0 lg:ml-12">
