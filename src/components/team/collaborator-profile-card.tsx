@@ -20,6 +20,7 @@ export function collaboratorBioParagraphs(bio: string): string[] {
     );
 }
 
+/** Choose a Rush outbound label from the profile URL path. */
 function profileLinkLabel(url: string): string {
   try {
     const path = new URL(url).pathname.toLowerCase();
@@ -31,6 +32,7 @@ function profileLinkLabel(url: string): string {
   return "Rush profile";
 }
 
+/** Full collaborator profile card for the /collaborations directory. */
 export function CollaboratorProfileCard({
   member,
   surface = "low",

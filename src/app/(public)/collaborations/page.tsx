@@ -31,10 +31,12 @@ export const metadata: Metadata = {
   ],
 };
 
+/** Build a URL-safe section id from a collaboration area label. */
 function areaSectionId(area: string): string {
   return area.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 }
 
+/** Public directory of Rush multidisciplinary collaborators partnering with RICCC. */
 export default function CollaborationsPage() {
   const grouped = getTeamMembersByTier();
   const areas = groupCollaboratorsByArea(grouped.collaborator);

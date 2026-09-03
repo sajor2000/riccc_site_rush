@@ -13,7 +13,7 @@ interface SocialItem {
   label: string;
 }
 
-/** Validated social link items for a team member (shared by predicate + renderer). */
+/** Return a canonical GitHub profile URL for a validated handle. */
 export function getMemberGithubProfileUrl(handle: string): string | undefined {
   if (/^[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/.test(handle)) {
     return `https://github.com/${handle}`;
@@ -21,6 +21,7 @@ export function getMemberGithubProfileUrl(handle: string): string | undefined {
   return undefined;
 }
 
+/** Build validated external profile links for a team member. */
 function getSocialItems(member: TeamMember): SocialItem[] {
   const items: SocialItem[] = [];
 
@@ -72,6 +73,7 @@ const ICON_MAP: Record<string, (compact: boolean) => ReactNode> = {
   github: (c) => <Github className={c ? "h-3.5 w-3.5" : "h-[1.15rem] w-[1.15rem]"} strokeWidth={1.75} />,
 };
 
+/** Render external profile links for a team member. */
 export function MemberSocialLinks({
   member,
   variant,
