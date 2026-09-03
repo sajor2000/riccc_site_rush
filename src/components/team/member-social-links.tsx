@@ -66,12 +66,17 @@ export function MemberSocialLinks({
   member,
   variant,
   className,
+  omitKeys,
 }: {
   member: TeamMember;
   variant: SocialVariant;
   className?: string;
+  /** Hide specific social keys (e.g. website when a labeled profile link is shown nearby). */
+  omitKeys?: ReadonlyArray<SocialItem["key"]>;
 }) {
-  const items = getSocialItems(member);
+  const items = getSocialItems(member).filter(
+    (item) => !omitKeys?.includes(item.key)
+  );
   if (items.length === 0) return null;
 
   const isCompact = variant === "compact";
@@ -85,7 +90,7 @@ export function MemberSocialLinks({
     variant === "staff-dark" &&
       "w-9 h-9 text-white/55 hover:text-rush-secondary-container hover:bg-white/10",
     variant === "compact" &&
-      "w-7 h-7 text-rush-on-surface-variant/70 hover:text-rush-dark-green hover:bg-rush-surface-container-high"
+      "min-w-11 min-h-11 w-11 h-11 text-rush-on-surface-variant/70 hover:text-rush-dark-green hover:bg-rush-surface-container-high"
   );
 
   return (

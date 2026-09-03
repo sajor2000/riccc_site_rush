@@ -196,8 +196,7 @@ export default function TeamPage() {
             <p className="mt-6 text-base text-rush-on-surface-variant leading-relaxed max-w-2xl">
               {siteConfig.name} partners with Rush colleagues in emergency medicine,
               critical care, respiratory care, and human-centered design. Collaborators
-              work with Dr. J.C. Rojas and Dr. Kevin Buell on clinical trials and
-              related projects.
+              work with RICCC investigators on clinical trials and related projects.
             </p>
             <Link
               href="/collaborations"
