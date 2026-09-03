@@ -20,6 +20,7 @@ export const TIER_LABELS: Record<TeamTier, string> = {
 /** Display order for Multidisciplinary Collaborations domain headings. */
 export const COLLABORATION_AREA_ORDER = [
   "Emergency Medicine",
+  "Critical Care Medicine",
   "Respiratory Care",
   "Human-Centered Design",
 ] as const;

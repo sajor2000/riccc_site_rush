@@ -12,7 +12,7 @@ export const revalidate = 3600; // ISR: revalidate at most every hour (on-demand
 export const metadata: Metadata = {
   title: "Team | ICU Researchers & Data Scientists",
   description:
-    "RICCC team at Rush University, Chicago — investigators, data scientists, trainees, and multidisciplinary collaborations across emergency medicine, respiratory care, and human-centered design. Investigators include J.C. Rojas and Kevin Buell.",
+    "RICCC team at Rush University, Chicago — investigators, data scientists, trainees, and multidisciplinary collaborations across emergency medicine, critical care, respiratory care, and human-centered design. Investigators include J.C. Rojas and Kevin Buell.",
   alternates: { canonical: "/team" },
   openGraph: { url: "/team" },
 };
@@ -195,7 +195,7 @@ export default function TeamPage() {
             <div className="h-1 w-24 bg-rush-teal mt-5" aria-hidden />
             <p className="mt-6 text-base text-rush-on-surface-variant leading-relaxed max-w-2xl">
               {siteConfig.name} partners with Rush colleagues in emergency medicine,
-              respiratory care, and human-centered design on critical care research,
+              critical care, respiratory care, and human-centered design on research,
               clinical trials, and patient- and family-centered innovation.
             </p>
           </div>

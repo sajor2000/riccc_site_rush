@@ -43,6 +43,31 @@ describe("groupCollaboratorsByArea", () => {
     expect(grouped[0].members[0].slug).toBe("gottlieb");
   });
 
+  it("inserts Critical Care Medicine in canonical order when present", () => {
+    const grouped = groupCollaboratorsByArea([
+      stub({
+        slug: "li",
+        name: "Jie Li",
+        collaborationArea: "Respiratory Care",
+      }),
+      stub({
+        slug: "greenberg",
+        name: "Jared Greenberg",
+        collaborationArea: "Critical Care Medicine",
+      }),
+      stub({
+        slug: "gottlieb",
+        name: "Michael Gottlieb",
+        collaborationArea: "Emergency Medicine",
+      }),
+    ]);
+    expect(grouped.map((g) => g.area)).toEqual([
+      "Emergency Medicine",
+      "Critical Care Medicine",
+      "Respiratory Care",
+    ]);
+  });
+
   it("falls back when collaboration_area is missing", () => {
     const grouped = groupCollaboratorsByArea([
       stub({ slug: "x", name: "Someone" }),
