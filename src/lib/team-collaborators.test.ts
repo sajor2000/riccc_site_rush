@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { groupCollaboratorsByArea, type TeamMember } from "./team";
+import {
+  groupCollaboratorsByArea,
+  normalizeCollaborationArea,
+  type TeamMember,
+} from "./team";
 
 function stub(partial: Partial<TeamMember> & Pick<TeamMember, "slug" | "name">): TeamMember {
   return {
@@ -75,5 +79,27 @@ describe("groupCollaboratorsByArea", () => {
     expect(grouped).toEqual([
       { area: "Collaborators", members: [expect.objectContaining({ slug: "x" })] },
     ]);
+  });
+
+  it("falls back when collaboration_area is a non-string value", () => {
+    const grouped = groupCollaboratorsByArea([
+      stub({
+        slug: "x",
+        name: "Someone",
+        collaborationArea: 123 as unknown as string,
+      }),
+    ]);
+    expect(grouped[0].area).toBe("Collaborators");
+  });
+});
+
+describe("normalizeCollaborationArea", () => {
+  it("returns trimmed strings and rejects non-strings", () => {
+    expect(normalizeCollaborationArea("  Emergency Medicine  ")).toBe(
+      "Emergency Medicine"
+    );
+    expect(normalizeCollaborationArea("")).toBeUndefined();
+    expect(normalizeCollaborationArea(123)).toBeUndefined();
+    expect(normalizeCollaborationArea(null)).toBeUndefined();
   });
 });

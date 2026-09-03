@@ -14,6 +14,13 @@ interface SocialItem {
 }
 
 /** Validated social link items for a team member (shared by predicate + renderer). */
+export function getMemberGithubProfileUrl(handle: string): string | undefined {
+  if (/^[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/.test(handle)) {
+    return `https://github.com/${handle}`;
+  }
+  return undefined;
+}
+
 function getSocialItems(member: TeamMember): SocialItem[] {
   const items: SocialItem[] = [];
 
@@ -29,8 +36,11 @@ function getSocialItems(member: TeamMember): SocialItem[] {
   if (member.website && isSafeUrl(member.website)) {
     items.push({ key: "website", href: member.website, label: `${member.name} website` });
   }
-  if (member.github && /^[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/.test(member.github)) {
-    items.push({ key: "github", href: `https://github.com/${member.github}`, label: `${member.name} on GitHub` });
+  if (member.github) {
+    const githubUrl = getMemberGithubProfileUrl(member.github);
+    if (githubUrl) {
+      items.push({ key: "github", href: githubUrl, label: `${member.name} on GitHub` });
+    }
   }
 
   return items;

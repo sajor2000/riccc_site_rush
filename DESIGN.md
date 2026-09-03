@@ -55,6 +55,8 @@ components:
     textColor: "{colors.rush-dark-green}"
     rounded: "{rounded.sm}"
     padding: "12px 24px"
+    borderColor: "{colors.rush-outline-variant}"
+    borderWidth: "1px"
   link-mono:
     textColor: "{colors.rush-dark-green}"
     typography: "{typography.mono-label}"
@@ -95,7 +97,7 @@ Critical Care Editorial: ivory Rush surfaces, dark-green headings, mono uppercas
 ## Components
 
 - Primary button: solid `rush-dark-green`, white text, `min-h-11`.
-- Secondary: outline on outline-variant.
+- Secondary (`button-secondary`): transparent fill, `rush-dark-green` text, `1px` border `rush-outline-variant`, `min-h-11`.
 - Mono text links: underline via border-b, dark-green.
 - Compact member rows: initials tile + name + role + socials.
 - Teal rule: `h-1 w-16|w-24 bg-rush-teal` under titles.

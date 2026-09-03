@@ -44,6 +44,13 @@ const tierOrder: Record<TeamTier, number> = {
 
 const validTiers = new Set<string>(["pi", "staff", "student", "alumni", "collaborator"]);
 
+/** Reject non-string frontmatter values before grouping calls `.trim()`. */
+export function normalizeCollaborationArea(value: unknown): string | undefined {
+  if (typeof value !== "string") return undefined;
+  const trimmed = value.trim();
+  return trimmed || undefined;
+}
+
 export function getAllTeamMembers(): TeamMember[] {
   const teamDir = path.join(process.cwd(), "content/team");
 
@@ -75,7 +82,7 @@ export function getAllTeamMembers(): TeamMember[] {
       missionSubtitle: data.mission_subtitle || undefined,
       missionBlurb: data.mission_blurb || undefined,
       alternateNames: data.alternate_names || undefined,
-      collaborationArea: data.collaboration_area || undefined,
+      collaborationArea: normalizeCollaborationArea(data.collaboration_area),
     };
   });
 
@@ -122,7 +129,7 @@ export function groupCollaboratorsByArea(
   const byArea = new Map<string, TeamMember[]>();
 
   for (const member of collaborators) {
-    const area = member.collaborationArea?.trim() || "Collaborators";
+    const area = normalizeCollaborationArea(member.collaborationArea) ?? "Collaborators";
     const list = byArea.get(area) ?? [];
     list.push(member);
     byArea.set(area, list);

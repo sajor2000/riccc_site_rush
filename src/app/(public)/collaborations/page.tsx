@@ -6,6 +6,7 @@ import {
   getMemberInitials,
 } from "@/lib/team";
 import { CollaboratorProfileCard } from "@/components/team/collaborator-profile-card";
+import { getMemberGithubProfileUrl } from "@/components/team/member-social-links";
 import { JsonLd } from "@/components/seo/json-ld";
 import { siteConfig } from "@/lib/config";
 
@@ -77,7 +78,8 @@ export default function CollaborationsPage() {
     if (member.orcid) sameAs.push(`https://orcid.org/${member.orcid}`);
     if (member.linkedin) sameAs.push(member.linkedin);
     if (member.website) sameAs.push(member.website);
-    if (member.github) sameAs.push(member.github);
+    const githubUrl = member.github ? getMemberGithubProfileUrl(member.github) : undefined;
+    if (githubUrl) sameAs.push(githubUrl);
 
     return {
       "@context": "https://schema.org",
@@ -85,14 +87,6 @@ export default function CollaborationsPage() {
       name: member.name.replace(/,.*$/, ""),
       ...(member.alternateNames && { alternateName: member.alternateNames }),
       ...(member.role && { jobTitle: member.role.split(" | ")[0] }),
-      worksFor: {
-        "@type": "ResearchOrganization",
-        name: siteConfig.name,
-        parentOrganization: {
-          "@type": "CollegeOrUniversity",
-          name: "Rush University System for Health",
-        },
-      },
       affiliation: {
         "@type": "CollegeOrUniversity",
         name: "Rush University System for Health",
