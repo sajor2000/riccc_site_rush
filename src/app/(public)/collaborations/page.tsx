@@ -9,7 +9,7 @@ export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Multidisciplinary Collaborations",
-  description: `${siteConfig.name} multidisciplinary collaborations at Rush University, Chicago — emergency medicine, critical care, respiratory care, and human-centered design partners working with investigators including J.C. Rojas and Jared Greenberg on clinical trials and related research.`,
+  description: `${siteConfig.name} multidisciplinary collaborations at Rush University, Chicago — emergency medicine, critical care, respiratory care, and human-centered design partners working with investigators including J.C. Rojas and Kevin Buell on clinical trials and related research.`,
   alternates: { canonical: "/collaborations" },
   openGraph: {
     title: `Multidisciplinary Collaborations | ${siteConfig.name}`,
@@ -59,7 +59,7 @@ export default function CollaborationsPage() {
           <p className="text-xl text-rush-on-surface-variant leading-relaxed">
             {siteConfig.name} works with Rush colleagues in emergency medicine,
             critical care, respiratory care, and human-centered design. Each
-            collaborator partners with Dr. J.C. Rojas and/or Dr. Jared Greenberg
+            collaborator partners with Dr. J.C. Rojas and/or Dr. Kevin Buell
             on clinical trials and other projects connected to the lab.
           </p>
         </div>
