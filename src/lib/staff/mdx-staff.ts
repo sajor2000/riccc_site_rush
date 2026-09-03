@@ -19,6 +19,7 @@ const FIELD_ORDER: (keyof MemberFrontmatter)[] = [
   "mission_subtitle",
   "mission_blurb",
   "alternate_names",
+  "collaboration_area",
   "previous_tier",
 ];
 

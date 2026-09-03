@@ -13,6 +13,13 @@ export const TIER_LABELS: Record<TeamTier, string> = {
   pi: "Principal Investigators",
   staff: "Staff",
   student: "Students & Trainees",
-  collaborator: "Collaborators",
+  collaborator: "Multidisciplinary Collaborations",
   alumni: "Alumni",
 };
+
+/** Display order for Multidisciplinary Collaborations domain headings. */
+export const COLLABORATION_AREA_ORDER = [
+  "Emergency Medicine",
+  "Respiratory Care",
+  "Human-Centered Design",
+] as const;

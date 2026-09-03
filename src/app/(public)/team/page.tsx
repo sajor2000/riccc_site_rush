@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getTeamMembersByTier } from "@/lib/team";
+import { getTeamMembersByTier, groupCollaboratorsByArea } from "@/lib/team";
 import { PiBio } from "@/components/team/pi-bio";
 import { StaffGrid } from "@/components/team/staff-grid";
 import { CompactMemberGrid } from "@/components/team/compact-member-grid";
@@ -12,13 +12,14 @@ export const revalidate = 3600; // ISR: revalidate at most every hour (on-demand
 export const metadata: Metadata = {
   title: "Team | ICU Researchers & Data Scientists",
   description:
-    "J.C. Rojas, Kevin Buell, and the RICCC team — clinicians and data scientists advancing ICU AI and clinical trials at Rush University, Chicago.",
+    "RICCC team at Rush University, Chicago — investigators, data scientists, trainees, and multidisciplinary collaborations across emergency medicine, respiratory care, and human-centered design. Investigators include J.C. Rojas and Kevin Buell.",
   alternates: { canonical: "/team" },
   openGraph: { url: "/team" },
 };
 
 export default function TeamPage() {
   const grouped = getTeamMembersByTier();
+  const collaborationAreas = groupCollaboratorsByArea(grouped.collaborator);
 
   const hasMembers =
     grouped.pi.length > 0 ||
@@ -30,8 +31,9 @@ export default function TeamPage() {
   const hasGrid =
     grouped.staff.length > 0 ||
     grouped.student.length > 0 ||
-    grouped.alumni.length > 0 ||
-    grouped.collaborator.length > 0;
+    grouped.alumni.length > 0;
+
+  const hasCollaborations = collaborationAreas.length > 0;
 
   // Person JSON-LD for every named, currently-affiliated member (not alumni),
   // so the whole team — not just PIs — is discoverable by name in search.
@@ -159,15 +161,6 @@ export default function TeamPage() {
               </div>
             )}
 
-            {grouped.collaborator.length > 0 && (
-              <div>
-                <p className="font-mono text-[10px] uppercase tracking-widest text-rush-dark-green mb-6">
-                  03. Collaborators
-                </p>
-                <CompactMemberGrid members={grouped.collaborator} />
-              </div>
-            )}
-
             {grouped.alumni.length > 0 && (
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-widest text-rush-on-surface-variant/50 mb-6">
@@ -179,6 +172,43 @@ export default function TeamPage() {
                 />
               </div>
             )}
+          </div>
+        </section>
+      )}
+
+      {hasCollaborations && (
+        <section
+          id="multidisciplinary-collaborations"
+          className="max-w-screen-2xl mx-auto px-6 lg:px-8 py-24 border-t border-rush-outline-variant/15"
+          aria-labelledby="collaborations-heading"
+        >
+          <div className="ml-0 lg:ml-12 mb-14 max-w-3xl">
+            <span className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-3 block">
+              Across Rush
+            </span>
+            <h2
+              id="collaborations-heading"
+              className="text-3xl md:text-4xl font-bold text-rush-dark-green leading-tight"
+            >
+              Multidisciplinary Collaborations
+            </h2>
+            <div className="h-1 w-24 bg-rush-teal mt-5" aria-hidden />
+            <p className="mt-6 text-base text-rush-on-surface-variant leading-relaxed max-w-2xl">
+              {siteConfig.name} partners with Rush colleagues in emergency medicine,
+              respiratory care, and human-centered design on critical care research,
+              clinical trials, and patient- and family-centered innovation.
+            </p>
+          </div>
+
+          <div className="space-y-14 ml-0 lg:ml-12">
+            {collaborationAreas.map(({ area, members }) => (
+              <div key={area}>
+                <h3 className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-5">
+                  {area}
+                </h3>
+                <CompactMemberGrid members={members} />
+              </div>
+            ))}
           </div>
         </section>
       )}
