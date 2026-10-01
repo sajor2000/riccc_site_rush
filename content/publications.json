@@ -1,16 +1,64 @@
 {
-  "generatedAt": "2026-09-01T11:18:19.640Z",
-  "count": 156,
+  "generatedAt": "2026-10-01T12:40:54.305Z",
+  "count": 171,
   "sources": {
-    "pubmed": 72,
-    "semanticScholar": 24,
-    "openalex": 104
+    "pubmed": 74,
+    "semanticScholar": 26,
+    "openalex": 114
   },
   "authors": [
     "Juan Rojas",
     "Kevin Buell"
   ],
   "publications": [
+    {
+      "pmid": "",
+      "title": "A17-01 A Location Agnostic EHR Definition of Critical Illness Using the Common Longitudinal ICU Data Format (CLIF)",
+      "authors": "Nicholas E. Ingraham, K. Chhikara, D Therese, et al.",
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "year": "2026",
+      "doi": "10.1093/ajrccm/aamag162.3140",
+      "volume": "212",
+      "issue": "Supplement_1",
+      "citationCount": 0,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
+      "title": "A26-05 Differential Severity Classification and Prognostic Performance of PaO2/FIO2 Versus Spo2/fIO2 Ratios in Adults With Acute Hypoxemic Respiratory Failure",
+      "authors": "Chad H. Hochberg, S Goldfarb, Anna Barker, et al.",
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "year": "2026",
+      "doi": "10.1093/ajrccm/aamag162.022",
+      "volume": "212",
+      "issue": "Supplement_1",
+      "citationCount": 0,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
+      "title": "A96-06 Diurnal and Institutional Variation in Sedation and Extubation in Mechanical Ventilation: A Multicenter Study of Six Hospital Systems",
+      "authors": "Z F Liao, S Guleria, K. Chhikara, et al.",
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "year": "2026",
+      "doi": "10.1093/ajrccm/aamag162.4658",
+      "volume": "212",
+      "issue": "Supplement_1",
+      "citationCount": 0,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
+      "title": "A97-01 Redefining White Blood Cell and Temperature Thresholds for Sepsis Detection: A Multicenter, Data-Driven Analysis",
+      "authors": "D Hunt, Kevin G. Buell, Nicholas E. Ingraham, et al.",
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "year": "2026",
+      "doi": "10.1093/ajrccm/aamag162.6161",
+      "volume": "212",
+      "issue": "Supplement_1",
+      "citationCount": 0,
+      "source": "openalex"
+    },
     {
       "pmid": "41951238",
       "title": "Airway management of adults in the acute care setting",
@@ -22,6 +70,100 @@
       "source": "semantic-scholar",
       "volume": "393",
       "pages": "e086612"
+    },
+    {
+      "pmid": "",
+      "title": "B104-04 Characteristics and Outcomes of Ed Patients Requiring Non-invasive Respiratory Support Admitted to Different Levels of Care",
+      "authors": "S Goldfarb, W-T Liao, Anna Barker, et al.",
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "year": "2026",
+      "doi": "10.1093/ajrccm/aamag162.3249",
+      "volume": "212",
+      "issue": "Supplement_1",
+      "citationCount": 0,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
+      "title": "B104-13 Patient Preferred Language and Continuous Neuromuscular Blockade During Invasive Mechanical Ventilation: A Multicenter Retrospective Cohort Study",
+      "authors": "A C Ortiz, C F Chesley, J P Reilly, et al.",
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "year": "2026",
+      "doi": "10.1093/ajrccm/aamag162.4706",
+      "volume": "212",
+      "issue": "Supplement_1",
+      "citationCount": 0,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
+      "title": "B104-21 The Epidemiology of Hospital Code Status Designations Across Six US Health Systems",
+      "authors": "Z.A. Lokhandwala, Brenna Park-Egan, Vaishvik Chaudhari, et al.",
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "year": "2026",
+      "doi": "10.1093/ajrccm/aamag162.984",
+      "volume": "212",
+      "issue": "Supplement_1",
+      "citationCount": 0,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
+      "title": "B25-18 Trends in Multidrug-resistant Pseudomonas Aeruginosa in ICU Patients Across U.S. Healthcare Systems, 2018-2024",
+      "authors": "C Liu, Vaishvik Chaudhari, W-T Liao, et al.",
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "year": "2026",
+      "doi": "10.1093/ajrccm/aamag162.4241",
+      "volume": "212",
+      "issue": "Supplement_1",
+      "citationCount": 0,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
+      "title": "B55-20 Use of Neuromuscular Blockade in Moderate-to-Severe Hypoxemic Respiratory Failure Is Highly Variable Across a Large, Multi-Center Cohort",
+      "authors": "Anna Barker, Chad H. Hochberg, M Nuppnau, et al.",
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "year": "2026",
+      "doi": "10.1093/ajrccm/aamag162.110",
+      "volume": "212",
+      "issue": "Supplement_1",
+      "citationCount": 0,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
+      "title": "B96-02 Cumulative Air Pollution Exposure Increases the Severity of Acute Respiratory Failure: A U.S. Multicenter Study",
+      "authors": "Peter M. Graffy, K. Chhikara, S Guleria, et al.",
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "year": "2026",
+      "doi": "10.1093/ajrccm/aamag162.132",
+      "volume": "212",
+      "issue": "Supplement_1",
+      "citationCount": 0,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
+      "title": "C24-01 Individualized Treatment Effects of Cefepime vs Piperacillin-Tazobactam in Adults Hospitalized With Acute Infection",
+      "authors": "Edward T Qian, Emma J. Graham Linck, Alexandra B. Spicer, et al.",
+      "journal": "American Journal of Respiratory and Critical Care Medicine",
+      "year": "2026",
+      "doi": "10.1093/ajrccm/aamag162.6199",
+      "volume": "212",
+      "issue": "Supplement_1",
+      "citationCount": 0,
+      "source": "openalex"
+    },
+    {
+      "pmid": "",
+      "title": "Changes in Antiviral Treatment for Hospitalized Adults with Influenza in U.S. Emergency Departments",
+      "authors": "Kevin G. Buell, Raeesh Vahora, Kody N. Le, et al.",
+      "journal": "Journal of Emergency Medicine",
+      "year": "2026",
+      "doi": "10.1016/j.jemermed.2026.09.002",
+      "citationCount": 0,
+      "source": "semantic-scholar"
     },
     {
       "pmid": "",
@@ -58,6 +200,16 @@
     },
     {
       "pmid": "",
+      "title": "Epidemiology of Nephrolithiasis Among United States Emergency Departments Over a Nine-Year Period",
+      "authors": "Grace V. Riley, Kevin G. Buell, Eric Moyer, et al.",
+      "journal": "Journal of Emergency Medicine",
+      "year": "2026",
+      "doi": "10.1016/j.jemermed.2026.09.009",
+      "citationCount": 0,
+      "source": "semantic-scholar"
+    },
+    {
+      "pmid": "",
       "title": "Federation, not centralization: a new paradigm for electronic health record–based critical care research",
       "authors": "Patrick G. Lyons, Kevin G. Buell, Kathryn A. Riman, et al.",
       "journal": "Annals of the American Thoracic Society",
@@ -66,7 +218,7 @@
       "volume": "23",
       "issue": "4",
       "pages": "475-482",
-      "citationCount": 0,
+      "citationCount": 1,
       "source": "openalex"
     },
     {
@@ -93,6 +245,25 @@
       "citationCount": 0
     },
     {
+      "pmid": "42528499",
+      "title": "PAUSE-Agents: A Clinician-in-the-Loop Multi-Agent AI Pipeline for ICU-to-Ward Handoff Briefs.",
+      "authors": "Amagai S, Liao WT, Murphy C, et al.",
+      "journal": "medRxiv",
+      "year": "2026",
+      "doi": "10.64898/2026.07.10.26357759",
+      "source": "pubmed"
+    },
+    {
+      "pmid": "42696412",
+      "title": "Personalized Oxygen Saturation Targets Compared to the Oxygen Saturation Experienced in Care Among Mechanically Ventilated Adults.",
+      "authors": "Seitz KP, Spicer AB, Buell KG, et al.",
+      "journal": "Ann Am Thorac Soc",
+      "year": "2026",
+      "doi": "10.1093/annalsats/aaoag281",
+      "source": "pubmed",
+      "citationCount": 0
+    },
+    {
       "pmid": "",
       "title": "1086: LLM PERFORMANCE ON BOARD REVIEW IN CRITICAL CARE (LLM-BRICC)",
       "authors": "Sivasubramanium V. Bhavani, Ankit Sakhuja, Catherine A. Gao, et al.",
@@ -114,7 +285,7 @@
       "volume": "51",
       "issue": "3",
       "pages": "556-569",
-      "citationCount": 21,
+      "citationCount": 22,
       "source": "openalex"
     },
     {
@@ -127,7 +298,7 @@
       "volume": "32",
       "issue": "7",
       "pages": "1093-1100",
-      "citationCount": 123,
+      "citationCount": 141,
       "source": "openalex"
     },
     {
@@ -260,7 +431,7 @@
       "journal": "American Journal of Emergency Medicine",
       "year": "2025",
       "doi": "10.1016/j.ajem.2025.09.016",
-      "citationCount": 2,
+      "citationCount": 3,
       "source": "semantic-scholar",
       "volume": "99",
       "pages": "76-82"
@@ -288,7 +459,7 @@
       "volume": "13",
       "issue": "6",
       "pages": "556-568",
-      "citationCount": 43,
+      "citationCount": 44,
       "source": "openalex"
     },
     {
@@ -425,7 +596,7 @@
       "journal": "American Journal of Emergency Medicine",
       "year": "2025",
       "doi": "10.1016/j.ajem.2025.06.067",
-      "citationCount": 6,
+      "citationCount": 8,
       "source": "semantic-scholar",
       "volume": "96",
       "pages": "201-207"
@@ -453,7 +624,7 @@
       "volume": "54",
       "issue": "7",
       "pages": "1597-1609",
-      "citationCount": 0,
+      "citationCount": 1,
       "source": "openalex"
     },
     {
@@ -587,7 +758,7 @@
       "journal": "American Journal of Emergency Medicine",
       "year": "2025",
       "doi": "10.1016/j.ajem.2025.03.012",
-      "citationCount": 2,
+      "citationCount": 3,
       "source": "semantic-scholar",
       "volume": "92",
       "pages": "126-134"
@@ -599,7 +770,7 @@
       "journal": "Applied Clinical Informatics",
       "year": "2025",
       "doi": "10.1055/a-2815-2064",
-      "citationCount": 0,
+      "citationCount": 1,
       "source": "semantic-scholar",
       "volume": "17",
       "issue": "01",
@@ -648,7 +819,7 @@
       "doi": "10.1186/s44247-024-00135-3",
       "volume": "2",
       "issue": "1",
-      "citationCount": 14,
+      "citationCount": 17,
       "source": "openalex"
     },
     {
@@ -793,7 +964,7 @@
       "volume": "331",
       "issue": "14",
       "pages": "1195",
-      "citationCount": 122,
+      "citationCount": 125,
       "source": "openalex"
     },
     {
@@ -926,7 +1097,7 @@
       "volume": "39",
       "issue": "4",
       "pages": "769-782",
-      "citationCount": 32,
+      "citationCount": 34,
       "source": "openalex"
     },
     {
@@ -1008,7 +1179,7 @@
       "volume": "207",
       "issue": "12",
       "pages": "1602-1611",
-      "citationCount": 31,
+      "citationCount": 32,
       "source": "openalex"
     },
     {
@@ -1127,7 +1298,7 @@
       "volume": "17",
       "issue": "8",
       "pages": "594-600",
-      "citationCount": 9,
+      "citationCount": 10,
       "source": "openalex"
     },
     {
@@ -1153,7 +1324,7 @@
       "volume": "161",
       "issue": "6",
       "pages": "1621-1627",
-      "citationCount": 47,
+      "citationCount": 48,
       "source": "openalex"
     },
     {
@@ -1222,7 +1393,7 @@
       "volume": "387",
       "issue": "19",
       "pages": "1759-1769",
-      "citationCount": 219,
+      "citationCount": 225,
       "source": "openalex"
     },
     {
@@ -1248,7 +1419,7 @@
       "volume": "11",
       "issue": "12",
       "pages": "e42971",
-      "citationCount": 10,
+      "citationCount": 12,
       "source": "openalex"
     },
     {
@@ -1360,7 +1531,7 @@
       "volume": "36",
       "issue": "8",
       "pages": "2400-2407",
-      "citationCount": 23,
+      "citationCount": 24,
       "source": "openalex"
     },
     {
@@ -1456,7 +1627,7 @@
       "volume": "2",
       "issue": "2",
       "pages": "176-184",
-      "citationCount": 91,
+      "citationCount": 92,
       "source": "openalex"
     },
     {
@@ -1688,7 +1859,7 @@
       "volume": "28",
       "issue": "8",
       "pages": "627-634",
-      "citationCount": 36,
+      "citationCount": 37,
       "source": "openalex"
     },
     {
@@ -1714,7 +1885,7 @@
       "volume": "8",
       "issue": "4",
       "pages": "e000597",
-      "citationCount": 20,
+      "citationCount": 21,
       "source": "openalex"
     },
     {
@@ -1752,7 +1923,7 @@
       "issue": "11",
       "pages": "e457-e458",
       "source": "pubmed",
-      "citationCount": 7
+      "citationCount": 8
     },
     {
       "pmid": "",
@@ -1852,7 +2023,7 @@
       "journal": "",
       "year": "2013",
       "doi": "10.15381/ANALES.V67I3.1301",
-      "citationCount": 11,
+      "citationCount": 12,
       "source": "semantic-scholar"
     },
     {
