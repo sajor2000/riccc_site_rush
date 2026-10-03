@@ -7,10 +7,15 @@ import {
 } from "@/lib/internship-applications";
 
 function csvEscape(value: string): string {
-  if (/[",\n\r]/.test(value)) {
-    return `"${value.replace(/"/g, '""')}"`;
+  // Neutralize Excel/Sheets formula injection on leading control chars.
+  let v = value;
+  if (/^[=+\-@\t\r]/.test(v)) {
+    v = `'${v}`;
   }
-  return value;
+  if (/[",\n\r]/.test(v)) {
+    return `"${v.replace(/"/g, '""')}"`;
+  }
+  return v;
 }
 
 /** GET /api/staff/internship-applications/export?cycle=YYYY — CSV download. */

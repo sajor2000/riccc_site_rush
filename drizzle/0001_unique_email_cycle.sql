@@ -1,0 +1,2 @@
+DROP INDEX "internship_applications_email_cycle_idx";--> statement-breakpoint
+CREATE UNIQUE INDEX "internship_applications_email_cycle_uidx" ON "internship_applications" USING btree ("email","cycle_year");

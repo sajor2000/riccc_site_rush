@@ -160,6 +160,18 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // Production must persist; email-only fallback is local/dev only.
+  if (!applicationId && process.env.NODE_ENV === "production") {
+    console.error("[internships] DATABASE_URL missing — refusing production submit");
+    return NextResponse.json(
+      {
+        error:
+          "Application storage is temporarily unavailable. Please email us directly at info@riccc-lab.com",
+      },
+      { status: 503 }
+    );
+  }
+
   try {
     const { data: sent, error } = await getResend().emails.send({
       from: `RICCC Lab <noreply@${domain}>`,
@@ -199,8 +211,11 @@ export async function POST(req: NextRequest) {
 
     if (error || !sent?.id) {
       console.error("[internships] Resend error:", error);
-      // Application is already stored — tell the applicant to email if needed,
-      // but staff can still review the saved row.
+      // Application is already in Neon — succeed so the applicant does not retry
+      // and create duplicate work; staff still see the row.
+      if (applicationId) {
+        return NextResponse.json({ ok: true });
+      }
       return NextResponse.json(
         { error: "Failed to send. Please email us directly at info@riccc-lab.com" },
         { status: 500 }
@@ -218,6 +233,9 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("[internships] send error:", err);
+    if (applicationId) {
+      return NextResponse.json({ ok: true });
+    }
     return NextResponse.json(
       { error: "Failed to send. Please email us directly at info@riccc-lab.com" },
       { status: 500 }

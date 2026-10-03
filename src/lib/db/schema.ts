@@ -6,6 +6,7 @@ import {
   pgTable,
   text,
   timestamp,
+  uniqueIndex,
   uuid,
 } from "drizzle-orm/pg-core";
 
@@ -51,7 +52,7 @@ export const internshipApplications = pgTable(
       table.cycleYear,
       table.createdAt.desc()
     ),
-    index("internship_applications_email_cycle_idx").on(
+    uniqueIndex("internship_applications_email_cycle_uidx").on(
       table.email,
       table.cycleYear
     ),
