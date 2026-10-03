@@ -28,6 +28,12 @@ export default function StaffLayout({ children }: { children: React.ReactNode })
             >
               Members
             </a>
+            <a
+              href="/staff/applications"
+              className="text-white/70 hover:text-white text-sm transition-colors"
+            >
+              Applications
+            </a>
             <button
               onClick={handleLogout}
               className="text-white/50 hover:text-white text-xs font-mono uppercase tracking-widest transition-colors"
