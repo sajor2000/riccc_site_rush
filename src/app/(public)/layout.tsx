@@ -7,12 +7,15 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "ResearchOrganization",
   name: "RICCC",
-  alternateName:
+  alternateName: [
     "Rush Interdisciplinary Consortium for Critical Care Trials and Data Science",
+    "RICCC Lab",
+  ],
   url: siteConfig.url,
   logo: `${siteConfig.url}/images/riccc-logo-transparent.webp`,
   description:
-    "Rush Interdisciplinary Consortium for Critical Care Trials and Data Science — ICU data science, AI, and clinical trials at Rush University, Chicago",
+    "Rush Interdisciplinary Consortium for Critical Care Trials and Data Science — ICU data science, AI, clinical trials, research collaborations, and summer internships at Rush University, Chicago",
+  email: "info@riccc-lab.com",
   foundingDate: "2025",
   address: {
     "@type": "PostalAddress",
@@ -20,10 +23,41 @@ const organizationJsonLd = {
     addressRegion: "IL",
     addressCountry: "US",
   },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "research collaboration",
+      email: "info@riccc-lab.com",
+      url: `${siteConfig.url}/contact`,
+      availableLanguage: "English",
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "internship applications",
+      email: "info@riccc-lab.com",
+      url: `${siteConfig.url}/internships`,
+      availableLanguage: "English",
+    },
+  ],
+  knowsAbout: [
+    "ICU data science",
+    "Critical care clinical trials",
+    "Clinical artificial intelligence",
+    "Federated healthcare research",
+    "CLIF consortium",
+    "Healthcare data science internships",
+    "Multidisciplinary critical care collaboration",
+  ],
   parentOrganization: {
     "@type": "CollegeOrUniversity",
     name: "Rush University System for Health",
     url: "https://www.rush.edu",
+  },
+  memberOf: {
+    "@type": "ResearchOrganization",
+    name: "CLIF Consortium",
+    alternateName: "Common Longitudinal ICU Format Consortium",
+    url: siteConfig.links.clif,
   },
   member: [
     {
@@ -47,6 +81,7 @@ const organizationJsonLd = {
   sameAs: [
     "https://github.com/riccc-rush-lab",
     ...siteConfig.links.googleScholarProfiles.map((p) => p.url),
+    siteConfig.links.clif,
   ],
 };
 

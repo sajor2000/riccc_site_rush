@@ -13,21 +13,27 @@ import { siteConfig } from "@/lib/config";
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "Multidisciplinary Collaborations",
-  description: `${siteConfig.name} multidisciplinary collaborations at Rush University, Chicago — emergency medicine, critical care, respiratory care, and human-centered design partners working with investigators including J.C. Rojas and Kevin Buell on clinical trials and related research.`,
+  title: "Research Collaborations in Critical Care & Data Science",
+  description: `Partner with ${siteConfig.name} at Rush University, Chicago — multidisciplinary research collaborations in emergency medicine, critical care, respiratory care, and human-centered design. Propose ICU data science or clinical trial partnerships. Investigators include J.C. Rojas and Kevin Buell.`,
   alternates: { canonical: "/collaborations" },
   openGraph: {
-    title: `Multidisciplinary Collaborations | ${siteConfig.name}`,
+    title: `Research Collaborations | ${siteConfig.name}`,
+    description: `Multidisciplinary critical care and data science collaborations at Rush University, Chicago. Partner with ${siteConfig.name} on clinical trials and federated ICU research.`,
     url: "/collaborations",
     type: "website",
   },
   keywords: [
     "RICCC collaborations",
+    "research collaboration Rush University",
+    "ICU research partnership Chicago",
+    "critical care research collaboration",
     "Rush multidisciplinary research",
     "critical care collaborations Chicago",
     "emergency medicine collaboration Rush",
     "respiratory care research Rush",
     "human-centered design healthcare Rush",
+    "federated ICU research collaboration",
+    "collaborate with RICCC",
   ],
 };
 
@@ -44,10 +50,15 @@ export default function CollaborationsPage() {
   const pageJsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: "Multidisciplinary Collaborations",
+    name: "Research Collaborations in Critical Care & Data Science",
     description:
-      "Rush University collaborators partnering with RICCC on clinical trials and related critical care research.",
+      "Rush University collaborators and external partners working with RICCC on clinical trials, ICU data science, and related critical care research.",
     url: `${siteConfig.url}/collaborations`,
+    about: {
+      "@type": "ResearchOrganization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
     isPartOf: {
       "@type": "WebSite",
       name: siteConfig.name,
@@ -62,14 +73,45 @@ export default function CollaborationsPage() {
       {
         "@type": "ListItem",
         position: 1,
-        name: "Team",
-        item: `${siteConfig.url}/team`,
+        name: "Home",
+        item: siteConfig.url,
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: "Multidisciplinary Collaborations",
+        name: "Research Collaborations",
         item: `${siteConfig.url}/collaborations`,
+      },
+    ],
+  };
+
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Who collaborates with RICCC?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "RICCC partners with Rush colleagues in emergency medicine, critical care, respiratory care, and human-centered design, and welcomes external investigators interested in ICU data science, federated research, and critical care clinical trials.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do I propose a research collaboration with RICCC?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Use the contact form at riccc-lab.com/contact to describe your project and how it connects with ICU data science or clinical trials. Email info@riccc-lab.com for partnership questions.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What kinds of research partnerships does RICCC support?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Multi-center clinical trials, federated data studies through the CLIF Consortium, joint grant applications, and multidisciplinary projects tied to critical care and healthcare data science at Rush University in Chicago.",
+        },
       },
     ],
   };
@@ -103,6 +145,7 @@ export default function CollaborationsPage() {
     <main className="bg-rush-surface text-rush-on-surface min-h-screen">
       <JsonLd data={pageJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
+      <JsonLd data={faqJsonLd} />
       {personSchemas.map((schema, i) => (
         <JsonLd key={grouped.collaborator[i].slug} data={schema} />
       ))}
@@ -113,10 +156,10 @@ export default function CollaborationsPage() {
             <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-rush-on-surface-variant">
               <li>
                 <Link
-                  href="/team"
+                  href="/"
                   className="hover:text-rush-dark-green transition-colors"
                 >
-                  Team
+                  Home
                 </Link>
               </li>
               <li aria-hidden className="text-rush-outline-variant">
@@ -133,20 +176,21 @@ export default function CollaborationsPage() {
           <p className="font-mono text-xs uppercase tracking-widest text-rush-dark-green mb-4">
             {siteConfig.name} · Across Rush
           </p>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-rush-dark-green leading-[1.1] tracking-[-0.04em] max-w-[14ch]">
-            Multidisciplinary Collaborations
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-rush-dark-green leading-[1.1] tracking-[-0.04em] max-w-[18ch]">
+            Research Collaborations in Critical Care &amp; Data Science
           </h1>
           <div className="h-1 w-24 bg-rush-teal mt-6" aria-hidden />
           <p className="mt-6 text-xl text-rush-on-surface-variant leading-relaxed">
             {siteConfig.name} works with Rush colleagues in emergency medicine,
             critical care, respiratory care, and human-centered design. Each
-            collaborator partners with RICCC investigators on clinical trials and
-            other projects connected to the lab.
+            collaborator partners with RICCC on clinical trials, ICU data science,
+            and related projects. External investigators are welcome to propose a
+            partnership.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              href="/contact"
+              href="/contact#inquiry"
               className="inline-flex items-center justify-center bg-rush-dark-green text-white px-6 py-3 rounded-sm font-semibold text-sm hover:opacity-90 transition-opacity min-h-11"
             >
               Propose a collaboration
@@ -268,7 +312,8 @@ export default function CollaborationsPage() {
             Continue with RICCC
           </h2>
           <p className="text-rush-on-surface-variant mb-6 max-w-2xl leading-relaxed">
-            Meet the full RICCC team, or reach out about a collaboration.
+            Meet the full RICCC team, reach out about a collaboration, or explore
+            the summer internship for college and master&apos;s students.
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
@@ -278,10 +323,16 @@ export default function CollaborationsPage() {
               View the team
             </Link>
             <Link
-              href="/contact"
+              href="/contact#inquiry"
               className="inline-flex items-center justify-center bg-rush-dark-green text-white px-6 py-3 rounded-sm font-semibold text-sm hover:opacity-90 transition-opacity min-h-11"
             >
               Contact about a collaboration
+            </Link>
+            <Link
+              href="/internships"
+              className="inline-flex items-center justify-center border border-rush-outline-variant text-rush-dark-green px-6 py-3 rounded-sm font-semibold text-sm hover:bg-rush-surface-container transition-colors min-h-11"
+            >
+              Summer internship
             </Link>
           </div>
         </div>

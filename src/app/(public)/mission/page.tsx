@@ -168,10 +168,16 @@ export default function MissionPage() {
               Inquire About Collaboration
             </Link>
             <Link
-              href="/publications"
+              href="/collaborations"
+              className="border border-rush-outline-variant text-rush-dark-green px-10 py-5 rounded-sm font-bold text-lg hover:bg-rush-surface-container transition-colors"
+            >
+              View Collaborations
+            </Link>
+            <Link
+              href="/internships"
               className="text-rush-dark-green font-bold px-10 py-5 underline underline-offset-8 decoration-rush-teal hover:text-rush-teal transition-colors"
             >
-              Read Our Latest Work
+              Summer Internship
             </Link>
           </div>
         </div>
