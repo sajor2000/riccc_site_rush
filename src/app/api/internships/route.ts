@@ -1,14 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { headers } from "next/headers";
 import { Resend } from "resend";
-import { z } from "zod";
+import { getInternshipCycle, sanitizeHeaderValue } from "@/lib/internships";
 import {
-  DEGREE_LEVELS,
-  getInternshipCycle,
-  isHttpUrl,
-  sanitizeHeaderValue,
-  SKILL_OPTIONS,
-} from "@/lib/internships";
+  InternshipSchema,
+  type InternshipData,
+} from "@/lib/internships-schema";
+import {
+  insertInternshipApplication,
+  updateApplicationResendId,
+} from "@/lib/internship-applications";
 import { getNotifyRecipients } from "@/lib/notify-recipients";
 
 function getResend() {
@@ -37,47 +38,6 @@ function checkInternshipRateLimit(ip: string): boolean {
   return true;
 }
 
-const httpUrl = z
-  .string()
-  .max(500)
-  .refine(isHttpUrl, { message: "URL must start with http:// or https://" });
-
-const InternshipSchema = z
-  .object({
-    name: z.string().min(1).max(200),
-    email: z.string().email().max(254),
-    phone: z.string().max(40).optional().default(""),
-    school: z.string().min(1).max(200),
-    degreeLevel: z.enum(DEGREE_LEVELS),
-    major: z.string().min(1).max(200),
-    graduation: z.string().min(1).max(40),
-    availabilityStart: z.string().min(1).max(40),
-    availabilityEnd: z.string().min(1).max(40),
-    skills: z.array(z.enum(SKILL_OPTIONS)).max(SKILL_OPTIONS.length).default([]),
-    skillsOther: z.string().max(200).optional().default(""),
-    whyRiccc: z.string().min(1).max(2500),
-    experience: z.string().min(1).max(1200),
-    resumeUrl: httpUrl,
-    portfolioUrl: z
-      .string()
-      .max(500)
-      .optional()
-      .default("")
-      .refine((v) => !v || isHttpUrl(v), {
-        message: "URL must start with http:// or https://",
-      }),
-    heardAbout: z.string().max(500).optional().default(""),
-    // Honeypot — allow any string so bots that fill it get silent success
-    website: z.string().max(200).optional().default(""),
-  })
-  .refine(
-    (data) => data.skills.length > 0 || data.skillsOther.trim().length > 0,
-    {
-      message: "Select at least one skill or describe other relevant skills.",
-      path: ["skills"],
-    }
-  );
-
 function escapeHtml(s: string): string {
   return s
     .replace(/&/g, "&amp;")
@@ -86,8 +46,6 @@ function escapeHtml(s: string): string {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 }
-
-type InternshipData = z.infer<typeof InternshipSchema>;
 
 function row(label: string, value: string, alt = false): string {
   const bg = alt ? ' style="background: #f8f4e5;"' : "";
@@ -187,6 +145,21 @@ export async function POST(req: NextRequest) {
     .filter(Boolean)
     .join(", ");
 
+  // Persist first so a Resend failure still leaves a reviewable row.
+  let applicationId: string | null = null;
+  try {
+    applicationId = await insertInternshipApplication(data, {
+      cycleYear: cycle.summerYear,
+      submittedIp: ip === "unknown" ? undefined : ip,
+    });
+  } catch (err) {
+    console.error("[internships] persist error:", err);
+    return NextResponse.json(
+      { error: "Failed to save application. Please email us directly at info@riccc-lab.com" },
+      { status: 500 }
+    );
+  }
+
   try {
     const { data: sent, error } = await getResend().emails.send({
       from: `RICCC Lab <noreply@${domain}>`,
@@ -220,16 +193,26 @@ export async function POST(req: NextRequest) {
         "Sent from the RICCC Lab website internship form",
       ].join("\n"),
       headers: {
-        "X-Entity-Ref-ID": `riccc-internship-${Date.now()}`,
+        "X-Entity-Ref-ID": `riccc-internship-${applicationId ?? Date.now()}`,
       },
     });
 
     if (error || !sent?.id) {
       console.error("[internships] Resend error:", error);
+      // Application is already stored — tell the applicant to email if needed,
+      // but staff can still review the saved row.
       return NextResponse.json(
         { error: "Failed to send. Please email us directly at info@riccc-lab.com" },
         { status: 500 }
       );
+    }
+
+    if (applicationId && sent.id) {
+      try {
+        await updateApplicationResendId(applicationId, sent.id);
+      } catch (err) {
+        console.error("[internships] resend id update error:", err);
+      }
     }
 
     return NextResponse.json({ ok: true });
