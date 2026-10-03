@@ -1,18 +1,78 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { InquiryForm } from "@/components/contact/inquiry-form";
+import { JsonLd } from "@/components/seo/json-ld";
+import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Contact & Collaborate",
   description:
-    "Partner with RICCC at Rush University, Chicago — connect with investigators including J.C. Rojas and Kevin Buell on research collaborations, trainee opportunities, and ICU data science.",
+    "Partner with RICCC at Rush University, Chicago — propose research collaborations, explore multidisciplinary partners, or ask about trainee opportunities and the summer internship in healthcare data science. Investigators include J.C. Rojas and Kevin Buell.",
   alternates: { canonical: "/contact" },
-  openGraph: { url: "/contact" },
+  openGraph: {
+    title: `Contact & Collaborate | ${siteConfig.name}`,
+    description:
+      "Propose a research collaboration or ask about internships with RICCC at Rush University, Chicago — ICU data science, clinical trials, and federated research.",
+    url: "/contact",
+    type: "website",
+  },
+  keywords: [
+    "contact RICCC",
+    "collaborate with RICCC",
+    "research collaboration Rush University",
+    "ICU research partnership Chicago",
+    "critical care collaboration inquiry",
+    "Rush University data science internship contact",
+  ],
+};
+
+const contactJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact & Collaborate",
+  description:
+    "Contact RICCC at Rush University, Chicago to propose research collaborations, ask about multidisciplinary partners, or learn about trainee and internship opportunities.",
+  url: `${siteConfig.url}/contact`,
+  mainEntity: {
+    "@type": "ResearchOrganization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    email: "info@riccc-lab.com",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "research collaboration",
+      email: "info@riccc-lab.com",
+      url: `${siteConfig.url}/contact`,
+      availableLanguage: "English",
+    },
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: siteConfig.url,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Contact & Collaborate",
+      item: `${siteConfig.url}/contact`,
+    },
+  ],
 };
 
 export default function ContactPage() {
   return (
     <main className="bg-rush-surface text-rush-on-surface">
+      <JsonLd data={contactJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
+
       {/* Hero */}
       <section className="pt-32 pb-16 max-w-screen-2xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
@@ -25,8 +85,8 @@ export default function ContactPage() {
             </h1>
             <p className="text-xl text-rush-on-surface-variant max-w-2xl leading-relaxed">
               We are a small group, and we like working with people who share our interests
-              in ICU data science, federated research, and clinical trials. If that sounds
-              like you, let us know.
+              in ICU data science, federated research, and clinical trials. Propose a
+              collaboration, explore our Rush partners, or ask about the summer internship.
             </p>
           </div>
         </div>
@@ -57,12 +117,20 @@ export default function ContactPage() {
                   Joint grant applications
                 </li>
               </ul>
-              <a
-                href="#inquiry"
-                className="inline-flex items-center gap-2 font-bold underline underline-offset-8 decoration-rush-teal transition-all hover:gap-4 text-rush-dark-green"
-              >
-                Discuss Collaboration &rarr;
-              </a>
+              <div className="flex flex-wrap gap-x-6 gap-y-2">
+                <a
+                  href="#inquiry"
+                  className="inline-flex items-center gap-2 font-bold underline underline-offset-8 decoration-rush-teal transition-all hover:gap-4 text-rush-dark-green"
+                >
+                  Discuss Collaboration &rarr;
+                </a>
+                <Link
+                  href="/collaborations"
+                  className="inline-flex items-center gap-2 font-bold underline underline-offset-8 decoration-rush-teal transition-all hover:gap-4 text-rush-dark-green"
+                >
+                  Meet Rush Partners &rarr;
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -130,7 +198,14 @@ export default function ContactPage() {
               </h3>
               <p className="text-base leading-relaxed mb-6 text-rush-on-surface-variant">
                 Investigators at other institutions or industry partners interested in
-                collaborative research, data sharing, or joint projects.
+                collaborative research, data sharing, or joint projects. See our{" "}
+                <Link
+                  href="/collaborations"
+                  className="font-semibold text-rush-dark-green underline underline-offset-4"
+                >
+                  Rush multidisciplinary partners
+                </Link>{" "}
+                for how collaboration works on campus.
               </p>
             </div>
             <div>

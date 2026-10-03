@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Hero } from "@/components/home/hero";
 import { LabMission } from "@/components/home/lab-mission";
 import { ResearchSpotlights } from "@/components/home/research-spotlights";
+import { GetInvolved } from "@/components/home/get-involved";
 import { JsonLd } from "@/components/seo/json-ld";
 import { siteConfig } from "@/lib/config";
 
@@ -11,13 +12,13 @@ export const metadata: Metadata = {
       "RICCC | Rush Interdisciplinary Consortium for Critical Care Trials and Data Science",
   },
   description:
-    "RICCC — the Rush Interdisciplinary Consortium for Critical Care Trials and Data Science at Rush University, Chicago. Advancing ICU data science, clinical AI, and critical care trials through federated research with the CLIF consortium. Investigators include J.C. Rojas and Kevin Buell.",
+    "RICCC at Rush University, Chicago — ICU data science, clinical AI, and critical care trials via the CLIF consortium. Explore research collaborations and a summer internship in healthcare data science. Investigators include J.C. Rojas and Kevin Buell.",
   openGraph: {
     url: "/",
     title:
       "RICCC | Rush Interdisciplinary Consortium for Critical Care Trials and Data Science",
     description:
-      "Advancing ICU data science, clinical AI, and critical care trials at Rush University, Chicago.",
+      "ICU data science, critical care trials, research collaborations, and summer internships at Rush University, Chicago.",
   },
 };
 
@@ -110,7 +111,29 @@ const websiteJsonLd = {
   ],
   url: siteConfig.url,
   description:
-    "ICU data science, AI, and clinical trials consortium at Rush University, Chicago. Investigators include J.C. Rojas and Kevin Buell.",
+    "ICU data science, AI, and clinical trials consortium at Rush University, Chicago. Research collaborations and summer internships in healthcare data science. Investigators include J.C. Rojas and Kevin Buell.",
+  publisher: {
+    "@type": "ResearchOrganization",
+    name: "RICCC",
+    url: siteConfig.url,
+  },
+  hasPart: [
+    {
+      "@type": "WebPage",
+      name: "Research Collaborations",
+      url: `${siteConfig.url}/collaborations`,
+    },
+    {
+      "@type": "WebPage",
+      name: "Summer Internship in Healthcare Data Science",
+      url: `${siteConfig.url}/internships`,
+    },
+    {
+      "@type": "WebPage",
+      name: "Contact & Collaborate",
+      url: `${siteConfig.url}/contact`,
+    },
+  ],
 };
 
 export default function HomePage() {
@@ -123,6 +146,7 @@ export default function HomePage() {
       <Hero />
       <LabMission />
       <ResearchSpotlights />
+      <GetInvolved />
     </main>
   );
 }

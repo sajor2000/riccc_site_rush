@@ -30,6 +30,10 @@ export async function generateMetadata(): Promise<Metadata> {
       "applied healthcare data science",
       "master's summer internship Chicago",
       "college internship data science Chicago",
+      "summer research internship Chicago",
+      "clinical AI internship",
+      "healthcare machine learning internship",
+      "Rush University summer research program",
     ],
     alternates: { canonical: "/internships" },
     openGraph: {
@@ -72,6 +76,7 @@ export default function InternshipsPage() {
           "@type": "Place",
           address: {
             "@type": "PostalAddress",
+            streetAddress: "Rush University System for Health",
             addressLocality: "Chicago",
             addressRegion: "IL",
             addressCountry: "US",
@@ -81,12 +86,43 @@ export default function InternshipsPage() {
           "@type": "Country",
           name: "US",
         },
+        educationRequirements: {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "undergraduate or master's student",
+        },
+        qualifications:
+          "Motivated undergraduate or master's student interested in clinical data, statistics, or machine learning in healthcare — especially critical care and ICU settings.",
+        responsibilities:
+          "Contribute to applied healthcare data science projects supporting ICU research, clinical data analysis, and critical care AI with RICCC investigators at Rush University.",
         industry: "Healthcare; Data Science; Critical Care Research",
         occupationalCategory: "15-2051.00",
         url: `${siteConfig.url}/internships`,
         directApply: true,
+        identifier: {
+          "@type": "PropertyValue",
+          name: siteConfig.name,
+          value: `riccc-summer-internship-${cycle.summerYear}`,
+        },
       }
     : null;
+
+  const pageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: PAGE_TITLE,
+    description: `Summer ${cycle.summerYear} internship in applied healthcare data science with RICCC at Rush University in Chicago. For college and master's students. Deadline ${cycle.deadlineLabel} (Central Time).`,
+    url: `${siteConfig.url}/internships`,
+    isPartOf: {
+      "@type": "WebSite",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    about: {
+      "@type": "ResearchOrganization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  };
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -107,10 +143,51 @@ export default function InternshipsPage() {
     ],
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Who can apply for the RICCC summer internship?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Motivated college (undergraduate) and master's students interested in clinical data, statistics, or machine learning in healthcare — especially critical care and ICU settings.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "When is the RICCC internship application deadline?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: `Applications are due ${cycle.deadlineLabel} (Central Time / America/Chicago) for Summer ${cycle.summerYear}. The application window typically opens January 1.`,
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Where is the RICCC healthcare data science internship based?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The internship is based in Chicago at Rush University with RICCC (Rush Interdisciplinary Consortium for Critical Care Trials and Data Science).",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What do RICCC summer interns work on?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Interns contribute to applied healthcare data science projects at the intersection of ICU research, clinical data, and critical care AI.",
+        },
+      },
+    ],
+  };
+
   return (
     <main className="bg-rush-surface text-rush-on-surface">
       {jobPostingJsonLd && <JsonLd data={jobPostingJsonLd} />}
+      <JsonLd data={pageJsonLd} />
       <JsonLd data={breadcrumbJsonLd} />
+      <JsonLd data={faqJsonLd} />
 
       <section className="pt-32 pb-16 max-w-screen-2xl mx-auto px-6 lg:px-8">
         <div className="max-w-3xl">
@@ -235,6 +312,20 @@ export default function InternshipsPage() {
                 >
                   info@riccc-lab.com
                 </a>
+                {" · "}
+                <Link
+                  href="/collaborations"
+                  className="text-rush-dark-green font-semibold underline underline-offset-4"
+                >
+                  Research collaborations
+                </Link>
+                {" · "}
+                <Link
+                  href="/contact"
+                  className="text-rush-dark-green font-semibold underline underline-offset-4"
+                >
+                  Contact
+                </Link>
               </p>
             </div>
 
