@@ -53,7 +53,7 @@ export function ApplicationList() {
     setError("");
     try {
       const res = await fetch(
-        `/api/staff/internship-applications?cycle=${cycle}&limit=100`
+        `/api/staff/internship-applications?cycle=${cycle}&limit=500`
       );
       if (!res.ok) {
         const d = await res.json().catch(() => ({}));
@@ -130,7 +130,11 @@ export function ApplicationList() {
       <div className="rounded-sm border border-rush-outline-variant bg-white overflow-hidden">
         <div className="flex items-center justify-between px-4 py-3 border-b border-rush-outline-variant/60">
           <span className="font-mono text-xs uppercase tracking-widest text-rush-umber">
-            {loading ? "Loading…" : `${total} applicant${total === 1 ? "" : "s"}`}
+            {loading
+              ? "Loading…"
+              : rows.length < total
+                ? `Showing ${rows.length} of ${total} applicants — use Export CSV for the full cycle`
+                : `${total} applicant${total === 1 ? "" : "s"}`}
           </span>
           <button
             type="button"

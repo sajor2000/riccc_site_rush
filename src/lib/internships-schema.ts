@@ -10,7 +10,10 @@ const httpUrl = z
 export const InternshipSchema = z
   .object({
     name: z.string().min(1).max(200),
-    email: z.string().email().max(254),
+    email: z.preprocess(
+      (v) => (typeof v === "string" ? v.trim().toLowerCase() : v),
+      z.string().email().max(254)
+    ),
     phone: z.string().max(40).optional().default(""),
     school: z.string().min(1).max(200),
     degreeLevel: z.enum(DEGREE_LEVELS),

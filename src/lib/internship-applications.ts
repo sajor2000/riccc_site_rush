@@ -73,9 +73,37 @@ export async function insertInternshipApplication(
     return null;
   }
 
+  const values = toApplicationInsert(data, meta);
+
+  // One application per email per cycle: re-submit updates materials, keeps review.
   const [row] = await db
     .insert(internshipApplications)
-    .values(toApplicationInsert(data, meta))
+    .values(values)
+    .onConflictDoUpdate({
+      target: [
+        internshipApplications.email,
+        internshipApplications.cycleYear,
+      ],
+      set: {
+        name: values.name,
+        phone: values.phone,
+        school: values.school,
+        degreeLevel: values.degreeLevel,
+        major: values.major,
+        graduation: values.graduation,
+        availabilityStart: values.availabilityStart,
+        availabilityEnd: values.availabilityEnd,
+        skills: values.skills,
+        skillsOther: values.skillsOther,
+        whyRiccc: values.whyRiccc,
+        experience: values.experience,
+        resumeUrl: values.resumeUrl,
+        portfolioUrl: values.portfolioUrl,
+        heardAbout: values.heardAbout,
+        submittedIp: values.submittedIp,
+        createdAt: sql`now()`,
+      },
+    })
     .returning({ id: internshipApplications.id });
 
   return row?.id ?? null;
@@ -104,7 +132,7 @@ export async function listInternshipApplications(opts: {
     return { items: [], total: 0 };
   }
 
-  const limit = Math.min(Math.max(opts.limit ?? 50, 1), 200);
+  const limit = Math.min(Math.max(opts.limit ?? 50, 1), 500);
   const offset = Math.max(opts.offset ?? 0, 0);
   const where = eq(internshipApplications.cycleYear, opts.cycleYear);
 

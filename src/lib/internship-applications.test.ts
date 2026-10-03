@@ -31,6 +31,14 @@ describe("InternshipSchema", () => {
     expect(parsed.success).toBe(true);
   });
 
+  it("normalizes email to lowercase", () => {
+    const parsed = InternshipSchema.parse({
+      ...validPayload,
+      email: "  Ada@Example.EDU ",
+    });
+    expect(parsed.email).toBe("ada@example.edu");
+  });
+
   it("rejects when skills and skillsOther are both empty", () => {
     const parsed = InternshipSchema.safeParse({
       ...validPayload,
